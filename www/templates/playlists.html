@@ -1,5 +1,8 @@
 <ion-view view-title="Playlists">
   <ion-content>
+
+<win-date-picker current="date" on-change="dateChanged()"></win-date-picker>
+  
     <ion-list>
       <ion-item ng-repeat="playlist in playlists" href="#/app/playlists/{{playlist.id}}">
         {{playlist.title}}
