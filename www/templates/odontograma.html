@@ -1,4 +1,4 @@
-<ion-view view-title="Listview Example">
+<ion-view view-title="Odontograma">
  <ion-content>
     <button ng-click="toggleEditMode()">Toggle <span>Mode: </span><span>{{mode.text}}</span></button>
     <span ng-show="mode.text === 'edit'">
@@ -15,17 +15,7 @@
         
         <win-item-template>
             <div class="smallListIconTextItem">
-              
-                <img src="{{item.data.picture}}" class="smallListIconTextItem-Image" />
-                <div class="smallListIconTextItem-Detail">
-                    <h4>{{item.data.title}}</h4>
-                    <h6>{{item.data.text}}</h6>
-                </div>
-               
-               
                <pieza-completa item='item.data'/>
-              
-
             </div>
         </win-item-template>
         <win-grid-layout></win-grid-layout>
@@ -33,4 +23,3 @@
 
 </ion-content>
 </ion-view>
-

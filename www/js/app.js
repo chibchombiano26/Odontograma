@@ -67,12 +67,12 @@ angular.module('starter', ['ionic', 'winjs', 'starter.controllers'])
     }
   })
 
-.state('app.exampleListView', {
-    url: "/exampleListView",
+.state('app.odontograma', {
+    url: "/odontograma",
     views: {
       'menuContent': {
-        templateUrl: "templates/examples/listView.Html",
-        controller: 'listViewSampleCtrl'
+        templateUrl: "templates/odontograma.html",
+        controller: 'odontogramaCtrl'
       }
     }
   });

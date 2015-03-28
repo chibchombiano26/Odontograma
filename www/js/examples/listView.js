@@ -14,8 +14,8 @@ angular.module('starter')
     };
 
     $scope.items = [
-        { title: "Marvelous Mint", text: "Gelato", picture: "/images/fruits/60Mint.png" },
-        { title: "Succulent Strawberry", text: "Sorbet", picture: "/images/fruits/60Strawberry.png" },
+        { title: "Marvelous Mint", text: "Gelato", picture: "/images/fruits/60Mint.png", central : 'red', arriba : 'yellow', abajo: 'green', superior: 'blue', inferior: 'gray', izquierda : 'transparent', derecha: 'green' },
+        { title: "Succulent Strawberry", text: "Sorbet", picture: "/images/fruits/60Strawberry.png", central : 'red', arriba : 'yellow', abajo: 'green', superior: 'blue', inferior: 'gray', izquierda : 'transparent', derecha: 'green' },
         { title: "Banana Blast", text: "Low-fat frozen yogurt", picture: "/images/fruits/60Banana.png" },
         { title: "Lavish Lemon Ice", text: "Sorbet", picture: "/images/fruits/60Lemon.png" },
         { title: "Creamy Orange", text: "Sorbet", picture: "/images/fruits/60Orange.png" },
