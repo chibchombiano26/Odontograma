@@ -71,11 +71,13 @@ src: url('fonts/raphael/raphaelicons-webfont.eot?#iefix') format('embedded-opent
 /* Estilos para las cajas horizontales tratamientos */
 .horizontal {
     margin: 0;
-    padding: 0;
+    padding: 0;   
 }
 
 .horizontal li {
     display: inline-block;
     border: 1px solid #000;
+    height: 50px;
+    overflow: hidden;
 }
 

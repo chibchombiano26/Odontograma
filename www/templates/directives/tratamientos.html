@@ -1,11 +1,13 @@
 <ul class="horizontal">
      <li>
-     	<div>
-     		<p style="font-family:{{item.Fuente}};">{{item.Simbolo}}</p>
+     	<div style="height:100%; width:50px;background-color: {{item.Color}};">
+     		<p ng-hide="!item.Simbolo" style="font-family:{{item.Fuente}}; color: {{item.ColorAdicional}}; text-align: center;">
+                    {{item.Simbolo}}
+               </p>
      	</div>
      </li>
      <li>
-	     <div>
+	     <div style="height:100%; width:200px;">
 	     	{{item.Descripcion}}	
 	     </div>
      </li>     
