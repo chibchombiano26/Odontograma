@@ -75,6 +75,16 @@ angular.module('starter', ['ionic', 'winjs', 'starter.controllers'])
         controller: 'odontogramaCtrl'
       }
     }
+  })
+
+.state('app.tratamientos', {
+    url: "/tratamientos",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/tratamientos.html",
+        controller: 'tratamientosCtrl'
+      }
+    }
   });
 
   // if none of the above states are matched, use this as the fallback

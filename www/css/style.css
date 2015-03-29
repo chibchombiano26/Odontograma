@@ -1,3 +1,29 @@
+@font-face{ 
+font-family: 'Glyphyx';
+src: url('fonts/Glyphyx/Glyphyx.eot');
+src: url('fonts/Glyphyx/Glyphyx.eot?#iefix') format('embedded-opentype'),
+     url('fonts/Glyphyx/Glyphyx.woff') format('woff'),
+     url('fonts/Glyphyx/Glyphyx.ttf') format('truetype');         
+}
+
+@font-face{ 
+font-family: 'signify';
+src: url('fonts/signify/signifylite-webfont.eot');
+src: url('fonts/signify/signifylite-webfont.eot?#iefix') format('embedded-opentype'),
+     url('fonts/signify/signifylite-webfont.woff') format('woff'),
+     url('fonts/signify/signifylite-webfont.ttf') format('truetype'),
+     url('fonts/signify/signifylite-webfont.svg#webfont') format('svg');
+}
+
+ @font-face{ 
+font-family: 'raphael';
+src: url('fonts/raphael/raphaelicons-webfont.eot');
+src: url('fonts/raphael/raphaelicons-webfont.eot?#iefix') format('embedded-opentype'),
+     url('fonts/raphael/raphaelicons-webfont.woff') format('woff'),
+     url('fonts/raphael/raphaelicons-webfont.ttf') format('truetype'),
+     url('fonts/raphael/raphaelicons-webfont.svg#webfont') format('svg');
+}
+
 .smallListIconTextItem
 {
     width: 100%;
@@ -39,5 +65,17 @@
 
 .listView .win-container.win-container-even {
    
+}
+
+
+/* Estilos para las cajas horizontales tratamientos */
+.horizontal {
+    margin: 0;
+    padding: 0;
+}
+
+.horizontal li {
+    display: inline-block;
+    border: 1px solid #000;
 }
 

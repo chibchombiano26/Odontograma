@@ -1,5 +1,23 @@
+
+
 angular.module('starter')
-.controller("odontogramaCtrl", function ($scope) {
+.controller("odontogramaCtrl", ['$scope', 'dataTableStorageFactory', 'dataBlobStorageFactory', 
+
+    function ($scope, dataTableStorageFactory, dataBlobStorageFactory) {
+    
+    $scope.items = [];
+    $scope.status;
+
+     function get() {
+        dataBlobStorageFactory.getTableByPartitionAndRowKey('odontogramas','hefesoft.entities.odontologia.odontograma.odontograma','601')
+            .success(function (data) {
+                $scope.items = data;
+            })
+            .error(function (error) {
+                $scope.status = 'Unable to load customer data: ' + error.message;
+            });
+    }
+
     var Mode = {
         editMode: {
             text: "edit",
@@ -12,14 +30,6 @@ angular.module('starter')
             tapBehavior: "none"
         }
     };
-
-    $scope.items = [
-        { central : 'red', arriba : 'yellow', abajo: 'green', superior: 'blue', inferior: 'gray', izquierda : 'transparent', derecha: 'green' },
-        { central : 'red', arriba : 'yellow', abajo: 'green', superior: 'blue', inferior: 'gray', izquierda : 'transparent', derecha: 'green' },
-        { central : 'red', arriba : 'yellow', abajo: 'green', superior: 'blue', inferior: 'gray', izquierda : 'transparent', derecha: 'green' },
-        { central : 'red', arriba : 'yellow', abajo: 'green', superior: 'blue', inferior: 'gray', izquierda : 'transparent', derecha: 'green' },
-        { central : 'red', arriba : 'yellow', abajo: 'green', superior: 'blue', inferior: 'gray', izquierda : 'transparent', derecha: 'green' },
-    ];
 
     $scope.addItem = function () {
         $scope.items.splice(0, 0, {
@@ -46,4 +56,6 @@ angular.module('starter')
 
     $scope.mode = Mode.readOnly;
     $scope.selection = [];
-});
+
+    get();
+}]);

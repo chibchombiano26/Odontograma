@@ -6,6 +6,9 @@ angular.module('starter')
 		scope: {			
 			item : '='
 		},
-		templateUrl: 'templates/directives/piezaDental.html'
+		templateUrl: 'templates/directives/piezaDental.html',
+		controller : function($scope){
+			$scope.item.central = 'transparent';
+		}
 	};
 }])
