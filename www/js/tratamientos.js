@@ -1,9 +1,9 @@
 
 
 angular.module('starter')
-.controller("tratamientosCtrl", ['$scope', 'dataTableStorageFactory', 'dataBlobStorageFactory', 
+.controller("tratamientosCtrl", ['$scope', 'dataTableStorageFactory', 'dataBlobStorageFactory','sharedDataService', 
 
-    function ($scope, dataTableStorageFactory, dataBlobStorageFactory) {
+    function ($scope, dataTableStorageFactory, dataBlobStorageFactory, sharedDataService) {
     
     var itemPrueba = {
         "PartitionKey":"item",
@@ -35,8 +35,24 @@ angular.module('starter')
         "$$hashKey":"object:20"
     };
 
+
+    var Mode = {
+        selectMode: {
+            text: "edit",
+            selectionMode: "single",
+            tapBehavior: "directSelect"            
+        }
+    }
+
     $scope.items = [];   
     $scope.items.push(itemPrueba);
+
+    $scope.mode = Mode.selectMode;
+    $scope.selection = [];
+
+    $scope.clickSeleccionado = function(e){
+        sharedDataService.putTratamientoSeleccionado(e);
+    }
 
      function get() {
         dataBlobStorageFactory.getTableByPartition('tpdiagnosticos','item')
@@ -48,5 +64,5 @@ angular.module('starter')
             });
     }
 
-    get();
+    //get();
 }]);

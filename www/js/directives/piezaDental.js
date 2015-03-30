@@ -7,8 +7,20 @@ angular.module('starter')
 			item : '='
 		},
 		templateUrl: 'templates/directives/piezaDental.html',
-		controller : function($scope){
-			$scope.item.central = 'transparent';
-		}
+		controller : 'piezaCompletaController'
 	};
+}])
+
+angular.module('starter')
+.controller('piezaCompletaController', ['$scope','sharedDataService', function ($scope, sharedDataService) {
+	
+	$scope.item.central = 'transparent';
+
+	$scope.test = function(e){
+		var tratamientoSeleccionado = sharedDataService.getTratamientoSeleccionado();
+
+		if(typeof tratamientoSeleccionado != 'undefined'){		
+			$scope.item.central =  tratamientoSeleccionado.ColorAdicional;
+		}
+	}
 }])

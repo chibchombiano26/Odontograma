@@ -1,17 +1,17 @@
 
 
 angular.module('starter')
-.controller("odontogramaCtrl", ['$scope', 'dataTableStorageFactory', 'dataBlobStorageFactory', 
+.controller("odontogramaCtrl", ['$scope', 'dataTableStorageFactory', 'dataBlobStorageFactory', 'sharedDataService', 
 
-    function ($scope, dataTableStorageFactory, dataBlobStorageFactory) {
+    function ($scope, dataTableStorageFactory, dataBlobStorageFactory, sharedDataService) {
     
-    $scope.items = [];
+    $scope.items = [{},{}];
     $scope.status;
 
      function get() {
         dataBlobStorageFactory.getTableByPartitionAndRowKey('odontogramas','hefesoft.entities.odontologia.odontograma.odontograma','601')
             .success(function (data) {
-                $scope.items = data;
+                //$scope.items = data;
             })
             .error(function (error) {
                 $scope.status = 'Unable to load customer data: ' + error.message;

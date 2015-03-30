@@ -1,14 +1,21 @@
 <ion-view view-title="Tratamientos">
  <ion-content>
     
-    <div ng-repeat="n in items">
-      
-    <div class="row">      
-      <tratamientos item='n'/>
-    </div>
-
-    </div>
-    
+  <div>
+     <win-list-view class="listView win-selectionstylefilled"
+                   item-data-source="items"
+                   selection-mode="mode.selectionMode"
+                   tap-behavior="mode.tapBehavior"
+                   header="select('.header')"
+                   selection="selection">
+        <win-item-template>
+            <div ng-click="clickSeleccionado(item.data)">
+               <tratamientos item='item.data'/>
+            </div>
+        </win-item-template>
+        <win-list-layout></win-list-layout>
+    </win-list-view>
+    </div>    
 
 </ion-content>
 </ion-view>
