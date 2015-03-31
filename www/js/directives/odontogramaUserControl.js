@@ -12,7 +12,25 @@ angular.module('starter')
 
     function ($scope, dataTableStorageFactory, dataBlobStorageFactory, sharedDataService) {
     
-    $scope.items = [{},{},{},{},{},{}];   
+    $scope.items = [        
+        {numeroPiezaDental: 18},
+        {numeroPiezaDental: 17},
+        {numeroPiezaDental: 16},
+        {numeroPiezaDental: 15},
+        {numeroPiezaDental: 14},
+        {numeroPiezaDental: 13},
+        {numeroPiezaDental: 12},
+        {numeroPiezaDental: 11},
+
+        {numeroPiezaDental: 21},
+        {numeroPiezaDental: 22},
+        {numeroPiezaDental: 23},
+        {numeroPiezaDental: 24},
+        {numeroPiezaDental: 25},
+        {numeroPiezaDental: 26},
+        {numeroPiezaDental: 27},
+        {numeroPiezaDental: 28},        
+    ];
 
 
     $scope.status;
