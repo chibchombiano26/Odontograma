@@ -1,11 +1,20 @@
-
+angular.module('starter').
+directive('odontogramaUserControl', [function () {
+	return {
+		restrict: 'E',
+		controller : 'odontogramaCtrl',
+		templateUrl : 'templates/directives/odontogramaUserControl.html'
+	};
+}]);
 
 angular.module('starter')
 .controller("odontogramaCtrl", ['$scope', 'dataTableStorageFactory', 'dataBlobStorageFactory', 'sharedDataService', 
 
     function ($scope, dataTableStorageFactory, dataBlobStorageFactory, sharedDataService) {
     
-    $scope.items = [{},{},{},{}];
+    $scope.items = [{},{},{},{},{},{}];   
+
+
     $scope.status;
 
      function get() {

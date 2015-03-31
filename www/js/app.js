@@ -26,9 +26,9 @@ angular.module('starter', ['ionic', 'winjs', 'starter.controllers'])
   .state('app', {
     url: "/app",
     abstract: true,
-    templateUrl: "templates/menu.html",
+    templateUrl: "templates/menus/principal.html",
     controller: 'AppCtrl'
-  })
+  }) 
 
   .state('app.search', {
     url: "/search",
@@ -71,21 +71,11 @@ angular.module('starter', ['ionic', 'winjs', 'starter.controllers'])
     url: "/odontograma",
     views: {
       'menuContent': {
-        templateUrl: "templates/odontograma.html",
-        controller: 'odontogramaCtrl'
-      }
-    }
-  })
-
-.state('app.tratamientos', {
-    url: "/tratamientos",
-    views: {
-      'menuContent': {
-        templateUrl: "templates/tratamientos.html",
-        controller: 'tratamientosCtrl'
+        templateUrl: "templates/odontograma.html",       
       }
     }
   });
+
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/playlists');

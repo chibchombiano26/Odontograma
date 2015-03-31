@@ -1,4 +1,11 @@
-
+angular.module('starter').
+directive('tratamientoUserControl', [function () {
+	return {
+		restrict: 'E',
+		controller : 'tratamientosCtrl',
+        templateUrl: 'templates/directives/tratamientosUserControl.html'
+	};
+}]);
 
 angular.module('starter')
 .controller("tratamientosCtrl", ['$scope', 'dataTableStorageFactory', 'dataBlobStorageFactory','sharedDataService', 
@@ -64,5 +71,5 @@ angular.module('starter')
             });
     }
 
-    //get();
+    get();
 }]);

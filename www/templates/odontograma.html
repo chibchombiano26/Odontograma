@@ -1,14 +1,17 @@
 <ion-view view-title="Odontograma">
- <ion-content>
-   
-   <diV style="display:inline-flex">
-     <div  ng-repeat="n in items">
-     	<a class="item">
-	        <pieza-completa item='n'>
-	        </pieza-completa>     
-        </a>
-     </div>
-   </diV>
+ <ion-content>  
+
+    <win-hub>
+        
+        <win-hub-section header="'Tratamientos'" is-header-static="true">     
+          <tratamiento-user-control/>  
+        </win-hub-section>
+        
+        <win-hub-section header="'Odontograma'">    
+         <odontograma-user-control/>
+        </win-hub-section>
+        
+    </win-hub>
 
 </ion-content>
 </ion-view>
