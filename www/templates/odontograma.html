@@ -1,25 +1,14 @@
 <ion-view view-title="Odontograma">
  <ion-content>
-    <button ng-click="toggleEditMode()">Toggle <span>Mode: </span><span>{{mode.text}}</span></button>
-    <span ng-show="mode.text === 'edit'">
-        <button ng-click="addItem()">Add Item</button>
-        <button ng-click="removeItem()">Remove Item(s)</button>
-    </span>
-    
-    <win-list-view 
-                   item-data-source="items"
-                   selection-mode="mode.selectionMode"
-                   tap-behavior="mode.tapBehavior"
-                   header="select('.header')"
-                   selection="selection">
-        
-        <win-item-template>
-            
-               <pieza-completa item='item.data'/>
-            
-        </win-item-template>
-        <win-grid-layout></win-grid-layout>
-    </win-list-view>
+   
+   <diV style="display:inline-flex">
+     <div  ng-repeat="n in items">
+     	<a class="item">
+	        <pieza-completa item='n'>
+	        </pieza-completa>     
+        </a>
+     </div>
+   </diV>
 
 </ion-content>
 </ion-view>

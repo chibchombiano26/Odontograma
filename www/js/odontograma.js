@@ -5,7 +5,7 @@ angular.module('starter')
 
     function ($scope, dataTableStorageFactory, dataBlobStorageFactory, sharedDataService) {
     
-    $scope.items = [{},{}];
+    $scope.items = [{},{},{},{}];
     $scope.status;
 
      function get() {
