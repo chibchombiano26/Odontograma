@@ -6,7 +6,7 @@
         <button ng-click="removeItem()">Remove Item(s)</button>
     </span>
     
-    <win-list-view class="listView win-selectionstylefilled"
+    <win-list-view 
                    item-data-source="items"
                    selection-mode="mode.selectionMode"
                    tap-behavior="mode.tapBehavior"
@@ -14,9 +14,9 @@
                    selection="selection">
         
         <win-item-template>
-            <div class="smallListIconTextItem">
+            
                <pieza-completa item='item.data'/>
-            </div>
+            
         </win-item-template>
         <win-grid-layout></win-grid-layout>
     </win-list-view>
