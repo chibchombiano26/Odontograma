@@ -9,9 +9,11 @@
         </button>
       </ion-nav-buttons>
 
-       <ion-nav-buttons side="right">
-        <button class="button button-icon button-clear ion-navicon" menu-toggle="right">
-        </button>
+       <ion-nav-buttons hide-back-button="true" side="right">
+        <div id="rightButton" ng-controller="rightMenuController as vmRight">
+          <button class="button button-icon button-clear ion-navicon"  menu-toggle="right">
+          </button>
+        </div>
       </ion-nav-buttons>
   
     </ion-nav-bar>
@@ -47,7 +49,7 @@
     <ion-header-bar class="bar-stable">
       <h1 class="title">right</h1>
     </ion-header-bar>
-    <ion-nav-view name="menuSubcontent" ache-view="false"></ion-nav-view>
+    <ion-nav-view name="menuSubcontent" cache-view="false"></ion-nav-view>
   </ion-side-menu> 
 
 </ion-side-menus>
