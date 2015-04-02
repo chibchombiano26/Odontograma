@@ -4,8 +4,6 @@
     {{item.numeroPiezaDental}}
   </div>
 
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
@@ -19,8 +17,8 @@
    viewBox="0 0 75.653666 90.600001"
    id="svg2"
    version="1.1"
-   inkscape:version="0.48.4 r9939"
-   sodipodi:docname="Pieza_Completa_blue.svg">
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="Pieza_Completa.svg">
   <defs
      id="defs4" />
   <sodipodi:namedview
@@ -30,14 +28,14 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.4"
-     inkscape:cx="-136.37836"
-     inkscape:cy="6.6633612"
+     inkscape:zoom="15.839192"
+     inkscape:cx="13.992318"
+     inkscape:cy="14.998264"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1600"
-     inkscape:window-height="847"
+     inkscape:window-width="1366"
+     inkscape:window-height="715"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
@@ -54,7 +52,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -69,43 +67,157 @@
        id="bordes"
        inkscape:connector-curvature="0" />
     <path
-       ng-click="clickAplicar(item)"
+       ng-click="clickAplicar(item, 'central')"
        style="fill:{{item.central}}"
        d="m 341.38098,579.09065 c -3.91749,-1.69917 -5.86089,-3.5342 -7.831,-7.3943 -6.37379,-12.48832 8.31945,-25.7737 23.08201,-20.87036 9.71964,3.22834 13.21644,13.4736 7.69928,22.55808 -2.74748,4.52397 -7.99112,7.06991 -14.47968,7.0303 -3.02286,-0.0184 -6.83464,-0.61413 -8.47061,-1.32372 z"
-       id="path3413"
+       id="central"
        inkscape:connector-curvature="0" />
     <path
-       style="fill:#0000ff"
+       ng-click="clickAplicar(item, 'abajo')"
+       style="fill:{{item.abajo}}"
        d="m 336.21261,592.87417 c -3.53571,-1.17903 -7.37384,-2.87804 -8.52918,-3.77557 -2.43133,-1.8888 -2.06379,-2.61983 3.55445,-7.06955 l 3.33303,-2.63981 4.99946,2.24363 c 5.97955,2.68345 13.85862,3.01202 19.6048,0.81753 l 3.73415,-1.42608 3.8466,3.84661 3.84661,3.84661 -6.26639,2.92949 c -5.46389,2.55433 -7.2543,2.95775 -13.98067,3.15016 -6.34148,0.1814 -8.85828,-0.16082 -14.14286,-1.92302 z"
-       id="path3415"
-       inkscape:connector-curvature="0" />
+       id="abajo"
+       inkscape:connector-curvature="0"
+       inkscape:label="#abajo" />
     <path
-       style="fill:#0000ff"
+       ng-click="clickAplicar(item, 'inferior')"
+       style="fill:{{item.inferior}}"
        d="m 328.77549,600.77647 1.7491,-6.24288 4.77137,1.61081 c 8.70972,2.94038 20.62674,2.66592 29.27289,-0.6742 1.03727,-0.40071 1.98331,0.89578 4.02252,5.51261 l 2.66628,6.03654 -22.11563,0 -22.11564,0 1.74911,-6.24288 z"
-       id="path3417"
+       id="inferior"
        inkscape:connector-curvature="0" />
     <path
-       style="fill:#0000ff"
+       ng-click="clickAplicar(item, 'derecha')"
+       style="fill:{{item.derecha}}"
        d="m 369.30732,583.01513 -3.9216,-3.6148 2.7175,-3.78405 c 3.85752,-5.3715 4.34657,-12.27627 1.28429,-18.13275 l -2.17079,-4.15157 4.56047,-2.72773 c 2.50825,-1.50026 4.92859,-2.72774 5.37852,-2.72774 0.44994,0 2.11271,2.41071 3.69505,5.35714 2.52646,4.70444 2.87904,6.14222 2.89386,11.80075 0.0142,5.41056 -0.37655,7.22118 -2.43709,11.29377 -1.34968,2.66759 -3.71951,6.07678 -5.26629,7.57598 l -2.81232,2.72581 -3.9216,-3.61481 z"
-       id="path3419"
-       inkscape:connector-curvature="0" />
+       id="derecha"
+       inkscape:connector-curvature="0"
+       inkscape:label="#derecha" />
     <path
-       style="fill:#0000ff"
+       ng-click="clickAplicar(item, 'arriba')"
+       style="fill:{{item.arriba}}"
        d="m 364.01267,550.35555 c -0.32599,-0.52746 -2.31479,-1.72078 -4.41954,-2.65182 -5.70679,-2.52438 -14.25389,-2.31379 -20.40613,0.5028 l -4.79579,2.19559 -4.6607,-2.63034 c -2.56338,-1.44668 -4.85757,-2.94888 -5.09819,-3.33821 -0.78586,-1.27154 9.4556,-6.76663 15.08389,-8.0933 11.85189,-2.79366 22.67478,-0.5684 32.29354,6.63979 3.12354,2.34074 3.14025,2.31094 -3.38646,6.03931 -2.73843,1.56432 -4.20665,1.98982 -4.61062,1.33618 z"
        id="arriba"
        inkscape:connector-curvature="0"
-       inkscape:label="#path3421" />
+       inkscape:label="#arriba" />
     <path
-       style="fill:#0000ff"
+       ng-click="clickAplicar(item, 'superior')"
+       style="fill:{{item.superior}}"
        d="m 364.85574,534.97711 c -8.12998,-3.74493 -21.15236,-3.93648 -31.01638,-0.45625 l -3.53647,1.24774 -1.27646,-4.44606 c -0.70205,-2.44533 -1.53561,-5.50676 -1.85235,-6.80319 l -0.57588,-2.35715 23.54903,0 23.54903,0 -1.77434,7.28572 c -0.97589,4.00714 -2.17756,7.25321 -2.6704,7.21349 -0.49282,-0.0397 -2.47093,-0.79766 -4.39578,-1.6843 z"
        id="superior"
        inkscape:connector-curvature="0"
-       inkscape:label="#path3423" />
+       inkscape:label="#superior" />
     <path
-       style="fill:#0000ff"
+       ng-click="clickAplicar(item, 'izquierda')"
+       style="fill:{{item.izquierda}}"
        d="m 319.21747,581.09078 c -6.88796,-10.01242 -6.83176,-23.19472 0.13583,-31.85654 l 2.01051,-2.4994 5.06726,2.85368 c 2.78699,1.56953 5.15047,2.90603 5.25216,2.97002 0.1017,0.064 -0.76616,1.99492 -1.92857,4.29098 -2.72992,5.39228 -2.72208,10.10824 0.0258,15.52456 1.1766,2.31918 2.14089,4.41463 2.14286,4.65656 0.004,0.51869 -9.0873,7.70299 -9.74792,7.70299 -0.24852,0 -1.57958,-1.63928 -2.95792,-3.64285 z"
-       id="path3425"
+       id="izquierda"
        inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:15.10000038px;line-height:125%;
+       font-family:{{item.textocentralFuente}};
+       letter-spacing:0px;word-spacing:0px;
+       fill:{{item.textocentralFuenteColor}};
+       fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="344.80692"
+       y="568.76453"
+       id="textCentral"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3351"
+         x="344.80692"
+         y="568.76453">{{item.textocentral}}</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:15.10000038px;line-height:125%;
+       font-family:{{item.textoderechaFuente}};
+       letter-spacing:0px;word-spacing:0px;
+       fill:{{item.textoderechaFuenteColor}};
+       fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="372.9549"
+       y="569.62634"
+       id="textDerecha"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3351-7"
+         x="372.9549"
+         y="569.62634">{{item.textoderecha}}</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:15.10000038px;line-height:125%;
+       font-family:{{item.textoarribaFuente}};
+       letter-spacing:0px;word-spacing:0px;
+       fill:{{item.textoarribaFuenteColor}};
+       fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="344.73627"
+       y="545.22107"
+       id="textArriba"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3351-7-4"
+         x="344.73627"
+         y="545.22107">{{item.textoarriba}}</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:15.10000038px;line-height:125%;
+       font-family:{{item.textoabajoFuente}};
+       letter-spacing:0px;word-spacing:0px;
+       fill:{{item.textoabajoFuenteColor}};
+       fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="345.42783"
+       y="593.10077"
+       id="textAbajo"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3351-7-4-8"
+         x="345.42783"
+         y="593.10077">{{item.textoabajo}}</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:15.10000038px;line-height:125%;
+       font-family:{{item.textosuperiorFuente}};
+       letter-spacing:0px;word-spacing:0px;
+       fill:{{item.textosuperiorFuenteColor}};
+       fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="345.68961"
+       y="530.53979"
+       id="textSuperior"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3351-7-4-0"
+         x="345.68961"
+         y="530.53979">{{item.textosuperior}}</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:15.10000038px;line-height:125%;
+       font-family:{{item.textoizquierdaFuente}};
+       letter-spacing:0px;word-spacing:0px;
+       fill:{{item.textoizquierdaFuenteColor}};
+       fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="316.327"
+       y="568.29163"
+       id="textIzquierda"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3351-7-4-0-4"
+         x="316.327"
+         y="568.29163">{{item.textoizquierda}}</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:15.10000038px;line-height:125%;
+       font-family:{{item.textoinferiorFuente}};
+       letter-spacing:0px;word-spacing:0px;
+       fill:{{item.textoinferiorFuenteColor}};
+       fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="344.73627"
+       y="606.6156"
+       id="textInferior"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3351-7-4-8-3"
+         x="344.73627"
+         y="606.6156">{{item.textoinferior}}</tspan></text>
   </g>
 </svg>
+
 </div>

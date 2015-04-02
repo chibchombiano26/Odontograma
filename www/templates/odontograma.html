@@ -2,28 +2,10 @@
  <ion-content>  
 
     <win-hub>
-        
-        <win-hub-section header="'Tratamientos'" is-header-static="true">     
-          <tratamiento-user-control/>  
-        </win-hub-section>
-        
- 		    <win-hub-section header="'Pieza seleccionada'">
-         <div ng-controller="piezaSeleccionadaCtrl">
-  	       <pieza-completa es-pieza-completa="'true'" width="90" height="90" item='item'>
-           </pieza-completa> 
-         </div>
-       </win-hub-section>
-
-
         <win-hub-section header="'Odontograma'">    
          <odontograma-user-control item="vm.item"/>
         </win-hub-section>
-
-       
-    
     </win-hub>
-
-      
 
 </ion-content>
 </ion-view>

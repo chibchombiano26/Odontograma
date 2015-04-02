@@ -2,13 +2,13 @@
 <div class="list list-inset">
   <label class="item item-input">
     <i class="icon ion-search placeholder-icon"></i>
-    <input type="text" placeholder="Search">
+    <input type="text" placeholder="Search" ng-keyup="buscar($event)" ng-model="textoBuscar">
   </label>
 </div>
 
 <ion-list>
   <ion-item ng-repeat="n in items">
-  	<a menu-close>
+  	<a ui-sref="app.piezaCompleta">
     	<tratamientos item='n' ng-click="clickSeleccionado(n)"/>
     </a>
   </ion-item>

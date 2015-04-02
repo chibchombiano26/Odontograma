@@ -67,19 +67,28 @@ angular.module('starter', ['ionic', 'winjs', 'starter.controllers'])
     }
   })
 
+  .state('app.tratamientos', {
+    url: "/tratamientos",
+    views: {
+      'menuSubcontent': {
+        templateUrl: "templates/views/tratamientosYPiezaDental.html",        
+      }
+    }
+  })
+
+ 
+
 .state('app.odontograma', {
     url: "/odontograma",
     views: {
         'menuContent': {
             templateUrl: "templates/odontograma.html",            
-        },
-        'menuSubcontent': {
-            templateUrl: "templates/menus/tratamientos.html"
-          }
+        }       
         }
     });
 
 
+
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/playlists');
+  $urlRouterProvider.otherwise('/app/odontograma');
 })

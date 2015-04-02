@@ -8,9 +8,9 @@ directive('tratamientoUserControl', [function () {
 }]);
 
 angular.module('starter')
-.controller("tratamientosCtrl", ['$scope', 'dataTableStorageFactory', 'dataBlobStorageFactory','sharedDataService', 
+.controller("tratamientosCtrl", ['$rootScope','$scope', 'dataTableStorageFactory', 'dataBlobStorageFactory','sharedDataService', 
 
-    function ($scope, dataTableStorageFactory, dataBlobStorageFactory, sharedDataService) {
+    function ($rootScope, $scope, dataTableStorageFactory, dataBlobStorageFactory, sharedDataService) {
     
     var itemPrueba = {
         "PartitionKey":"item",
@@ -51,11 +51,31 @@ angular.module('starter')
         }
     }
 
+    var Listado = [];
     $scope.items = [];   
-    $scope.items.push(itemPrueba);
+    Listado.push(itemPrueba);
+    $scope.items = Listado;
 
     $scope.mode = Mode.selectMode;
     $scope.selection = [];
+
+   
+    $scope.textoBuscar = "";
+    
+    $scope.buscar = function(e){ 
+     var textoComparar = $scope.textoBuscar; 
+     var resultados;
+       if(!S(textoComparar).isEmpty()){
+            resultados = _.filter(Listado, function(item){
+              return S(item.Descripcion).contains(textoComparar);
+            });
+       }
+       else{            
+            resultados = Listado;        
+       }
+
+       $scope.items = resultados;
+    }
 
     $scope.clickSeleccionado = function(e){
         sharedDataService.putTratamientoSeleccionado(e);
@@ -64,6 +84,7 @@ angular.module('starter')
      function get() {
         dataBlobStorageFactory.getTableByPartition('tpdiagnosticos','item')
             .success(function (data) {
+                Listado = data;
                 $scope.items = data;
             })
             .error(function (error) {

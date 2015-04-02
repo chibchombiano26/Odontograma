@@ -23,10 +23,24 @@ angular.module('starter')
 	function ($rootScope, $scope, sharedDataService, aplicarTratamientoService) {
 		
 		$scope.item.central = 'transparent';
+		$scope.item.izquierda = 'transparent';
+		$scope.item.derecha = 'transparent';
+		$scope.item.abajo = 'transparent';
+		$scope.item.arriba = 'transparent';
+		$scope.item.superior = 'transparent';
+		$scope.item.inferior = 'transparent';
 
-		$scope.clickAplicar = function(e){
+		$scope.clickAplicar = function(e, parte){
 
-		$scope.item = aplicarTratamientoService.aplicar($scope.item);
+		var elemento = aplicarTratamientoService.aplicar($scope.item, parte);
+
+		for(var propertyName in elemento) {
+					
+			$scope.item[propertyName] = elemento[propertyName];
+		}
+
+
+		
 
 		if(!angular.isUndefined($scope.esPiezaCompleta) && $scope.item.numeroPiezaDental !== "Pieza seleccionada"){
 			//si se da click sobre la pieza completa debe avizasrle al elemento dentro del listado
@@ -45,5 +59,4 @@ angular.module('starter')
 		var seleccionado = args.seleccionado;
 		$scope.item = seleccionado.item;
 	});
-
 }])
