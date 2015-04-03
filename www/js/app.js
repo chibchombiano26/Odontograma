@@ -20,7 +20,13 @@ angular.module('starter', ['ionic', 'winjs', 'starter.controllers'])
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($compileProvider,$stateProvider, $urlRouterProvider) {
+   
+   $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|ghttps?|ms-appx|x-wmapp0):/);
+   // // Use $compileProvider.urlSanitizationWhitelist(...) for Angular 1.2
+   $compileProvider.imgSrcSanitizationWhitelist(/^\s*(https?|ftp|file|ms-appx|x-wmapp0):|data:image\//);
+
+
   $stateProvider
 
   .state('app', {

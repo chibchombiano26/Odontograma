@@ -37,3 +37,54 @@ src: url('fonts/raphael/raphaelicons-webfont.eot?#iefix') format('embedded-opent
     overflow: hidden;
 }
 
+.flex-container {
+ 
+ 
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  
+  -webkit-flex-flow: row wrap;  
+  -webkit-flex-wrap: wrap;
+   flex-wrap: wrap;
+   
+/* Deforma en firefox
+  display: -webkit-box;
+-webkit-box-orient: horizontal;
+-webkit-box-pack: center;
+-webkit-box-align: center;
+
+display: -moz-box;
+-moz-box-orient: horizontal;
+-moz-box-pack: center;
+-moz-box-align: center;
+
+display: box;
+box-orient: horizontal;
+box-pack: center;
+box-align: center;
+*/  
+
+
+}
+
+.flex-item {  
+
+  text-align: center;
+}
+
+.slider-bounce {
+  transition-duration:0.5s;
+  transition-timing-function: ease-out;
+  transition-property: all;
+}
+
+.horizontal-slider {
+  width: 500px;
+  position: relative;
+  left:0px;
+  translate3d(0px,0,0);
+}
+

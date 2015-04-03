@@ -3203,13 +3203,18 @@ ionic.DomUtil.ready(function() {
 
   function activateElements() {
     // activate all elements in the queue
-    for (var key in queueElements) {
-      if (queueElements[key]) {
-        queueElements[key].classList.add(ACTIVATED_CLASS);
-        activeElements[key] = queueElements[key];
+    try{
+      for (var key in queueElements) {
+        if (queueElements[key]) {
+          queueElements[key].classList.add(ACTIVATED_CLASS);
+          activeElements[key] = queueElements[key];
+        }
       }
+      queueElements = {};
     }
-    queueElements = {};
+    catch(ex){
+
+    }
   }
 
   function deactivateElements() {
