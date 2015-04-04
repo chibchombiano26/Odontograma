@@ -19,27 +19,23 @@ angular.module('starter')
 }])
 
 angular.module('starter')
-.controller('piezaCompletaController', ['$rootScope', '$scope','sharedDataService','aplicarTratamientoService', 
-	function ($rootScope, $scope, sharedDataService, aplicarTratamientoService) {
+.controller('piezaCompletaController', ['$rootScope', '$scope','sharedDataService','aplicarTratamientoService', 'tratamientosPorPiezaDental','crearPropiedades',
+	function ($rootScope, $scope, sharedDataService, aplicarTratamientoService, tratamientosPorPiezaDental, crearPropiedades) {
 		
-		$scope.item.central = 'transparent';
-		$scope.item.izquierda = 'transparent';
-		$scope.item.derecha = 'transparent';
-		$scope.item.abajo = 'transparent';
-		$scope.item.arriba = 'transparent';
-		$scope.item.superior = 'transparent';
-		$scope.item.inferior = 'transparent';
-
+	
 		$scope.clickAplicar = function(e, parte){
 
 		var elemento = aplicarTratamientoService.aplicar($scope.item, parte);
+		elemento.superficie = parte;
+		
+		/*
+			Cuando se agrega al servicio donde se persisten los elementos debe indicarse el numero de pieza dental
+			a la cual se le estan realizando los procedimientos o diagnosticos
+		*/
+		elemento.numeroPiezaDental = $scope.item.numeroPiezaDental;
+		tratamientosPorPiezaDental.insertar(elemento);
 
-		for(var propertyName in elemento) {
-					
-			$scope.item[propertyName] = elemento[propertyName];
-		}
-
-
+		crearPropiedades.fill(elemento,$scope.item);
 		
 
 		if(!angular.isUndefined($scope.esPiezaCompleta) && $scope.item.numeroPiezaDental !== "Pieza seleccionada"){
@@ -54,6 +50,17 @@ angular.module('starter')
 		//Avisarle a la pieza seleccionada que se selecciono una pieza dental
 		$rootScope.$broadcast('elemento-dental-seleccionado', { seleccionado: $scope });
 	}
+
+	//ocurre cuando se elilima algun tratamiento
+	$scope.$on("eliminado" + $scope.item.numeroPiezaDental, function(event, args){		
+		var elemento = args.seleccionado;
+		var numeroPiezaDental = args.numeroPiezaDental;
+
+		if($scope.item.numeroPiezaDental == numeroPiezaDental){
+			crearPropiedades.fill(elemento,$scope.item);
+			console.log('eliminado');
+		}
+	});
 
 	$scope.$on($scope.item.numeroPiezaDental, function(event, args){
 		var seleccionado = args.seleccionado;
