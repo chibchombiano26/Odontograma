@@ -13,9 +13,26 @@ angular.module('starter')
     };
 
     dataFactory.postBlob = function (data) {
+        data = validarAntesEnviar(data);    
         return $http.post(urlBase + "blob", data);
     };
 
+
+    function validarAntesEnviar(data){
+        //El servicio espera esta propiedad para saber si debe crear o eliminar la propiedad
+        //Si no esta se debe crear
+        //Crear = 1, Eliminar = 2
+        if(!data.hasOwnProperty('Estado_Entidad')){
+            data['Estado_Entidad'] = 1;
+        }
+
+        if(!data.hasOwnProperty('generarIdentificador')){
+            data['generarIdentificador'] = false;
+        }
+
+        return data;
+
+    }
 
     return dataFactory;
 }]);

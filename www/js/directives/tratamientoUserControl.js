@@ -12,54 +12,9 @@ angular.module('starter')
 
     function ($rootScope, $scope, dataTableStorageFactory, dataBlobStorageFactory, sharedDataService) {
     
-    var itemPrueba = {
-        "PartitionKey":"item",
-        "RowKey":"1",
-        "nombreTabla":"tpdiagnosticos",
-        "AplicaTratamiento":null,
-        "Codigo":"K021",
-        "Color":null,
-        "ColorAdicional":6750207,
-        "Descripcion":"Caries de la dentina",
-        "Diagnostico":3776,
-        "Fuente":"Wingdings 3",
-        "IdIps":21,
-        "IndiceCEO":true,
-        "IndiceCOP":true,
-        "IndicePlacaBacteriana":true,
-        "Letra":null,
-        "NoCubreConvenio":false,
-        "OtraCaracteristica":null,
-        "Procedimiento":null,
-        "ProcedimientosAsociados":[],
-        "SesionRelizada":false,
-        "Severidad":true,
-        "Simbolo":"E",
-        "TipoPanel":1,
-        "Identificador":1,
-        "generarIdentificador":false,
-        "Activo":null,
-        "$$hashKey":"object:20"
-    };
-
-
-    var Mode = {
-        selectMode: {
-            text: "edit",
-            selectionMode: "single",
-            tapBehavior: "directSelect"            
-        }
-    }
 
     var Listado = [];
-    $scope.items = [];   
-    Listado.push(itemPrueba);
-    $scope.items = Listado;
-
-    $scope.mode = Mode.selectMode;
-    $scope.selection = [];
-
-   
+    $scope.items = [];
     $scope.textoBuscar = "";
     
     $scope.buscar = function(e){ 
@@ -82,15 +37,15 @@ angular.module('starter')
     }
 
      function get() {
-        dataBlobStorageFactory.getTableByPartition('tpdiagnosticos','item')
+        dataTableStorageFactory.getTableByPartition('TpTratamientos','Tratamientos')
             .success(function (data) {
                 Listado = data;
-                $scope.items = data;
+                $scope.items = Listado;
             })
             .error(function (error) {
                 $scope.status = 'Unable to load customer data: ' + error.message;
             });
-    }
+    } 
 
     get();
 }]);

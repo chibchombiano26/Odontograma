@@ -8,9 +8,9 @@ directive('odontogramaUserControl', [function () {
 }]);
 
 angular.module('starter')
-.controller("odontogramaCtrl", ['$scope', 'dataTableStorageFactory', 'dataBlobStorageFactory', 'sharedDataService', 
+.controller("odontogramaCtrl", ['$scope', 'dataTableStorageFactory', 'dataBlobStorageFactory', 'sharedDataService', 'dataTableStorageFactory','leerOdontogramaServices',
 
-    function ($scope, dataTableStorageFactory, dataBlobStorageFactory, sharedDataService) {
+    function ($scope, dataTableStorageFactory, dataBlobStorageFactory, sharedDataService, dataTableStorageFactory,leerOdontogramaServices) {
     
     $scope.items = [        
         {numeroPiezaDental: 18},
@@ -81,8 +81,18 @@ angular.module('starter')
         $scope.mode = ($scope.mode === Mode.readOnly) ? Mode.editMode : Mode.readOnly;
     };
 
+    function obtenerOdontograma(){
+        dataTableStorageFactory.getTableByPartition('TpOdontograma', 'odontogramatest')
+        .success(function(data){
+            leerOdontogramaServices.odontogramaToUi(data);
+        }).error(function(error){
+
+        })
+    }
+
     $scope.mode = Mode.readOnly;
     $scope.selection = [];
 
     get();
+    obtenerOdontograma();
 }]);

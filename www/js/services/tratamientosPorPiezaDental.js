@@ -2,12 +2,25 @@
 * El listado de los elementos aplicados a cada superficies 
 */
 angular.module('starter').
-service('tratamientosPorPiezaDental', ['$rootScope','sharedDataService', 'crearPropiedades','aplicarTratamientoService',
+service('tratamientosPorPiezaDental', ['$rootScope','sharedDataService', 'crearPropiedades','aplicarTratamientoService','dataTableStorageFactory',
 
-	function ($rootScope, sharedDataService, crearPropiedades, aplicarTratamientoService) {
+	function ($rootScope, sharedDataService, crearPropiedades, aplicarTratamientoService, dataTableStorageFactory) {
 	
 	var i = 0; 
 	var tratamientos = [];
+
+	this.setdata = function(data){
+		if(data.length > 0){
+			tratamientos = data;
+
+			//Saca el maximo indice que existe en la coleccion
+			var max =_.max(tratamientos, function(n) {
+			  return  parseInt(n.i);
+			});
+
+			i = parseInt(max.i);
+		}
+	}
 
 	this.insertar = function(item){       
 		//Tratamiento seleccionado
@@ -20,6 +33,11 @@ service('tratamientosPorPiezaDental', ['$rootScope','sharedDataService', 'crearP
 			item['i'] = i;
 			tratamientos.push(item);
 	    }
+
+	    item.nombreTabla = 'TpOdontograma';
+	    item.PartitionKey = "odontogramatest";
+	    item.RowKey = item.i;
+	    saveStorage(item);
 	}
 
 	//Filtra deacuerdo al numero de pieza dental
@@ -38,6 +56,7 @@ service('tratamientosPorPiezaDental', ['$rootScope','sharedDataService', 'crearP
 		});
 
 		tratamientos = result;
+		deleteFromStorage(item);
 		actualizarDespuesEliminarUI(item);
 	}
 
@@ -66,6 +85,14 @@ service('tratamientosPorPiezaDental', ['$rootScope','sharedDataService', 'crearP
 
 	//Obtiene el ultimo elemento de la collecion por ejemplo el ultimo del centro
 	function obtenerUltimoExistente(item){
+
+		//Si es pieza completa no se le puede hacer click porque en el canvas esta un layer mas abajo
+		//Entonces hay que validar esta propiedad
+		if(item.hasOwnProperty('esPiezaCompleta') && item.esPiezaCompleta === 'True')
+		{
+			item.superficie = "piezacompleta";	
+		}
+
 		var dato;
 		var index = _.findLastIndex(tratamientos, function(n){
 			return n.superficie === item.superficie && n.numeroPiezaDental === item.numeroPiezaDental ;
@@ -77,13 +104,32 @@ service('tratamientosPorPiezaDental', ['$rootScope','sharedDataService', 'crearP
 		}
 		else{
 			dato = null;
-
 			//Devuelve un elemento vacio para la superficie seleccionada
 			dato = aplicarTratamientoService.limpiar(item.superficie);
 		}
-		
 
 		return dato;
+	}
+
+	function saveStorage(item){
+		dataTableStorageFactory.postTable(item)
+            .success(function (data) {
+              
+            })
+            .error(function (error) {
+               
+            });
+	}
+
+	function deleteFromStorage(item){
+		item.Estado_Entidad = 2;		
+		dataTableStorageFactory.postTable(item)
+            .success(function (data) {
+              
+            })
+            .error(function (error) {
+               
+            });
 	}
 
 }])
