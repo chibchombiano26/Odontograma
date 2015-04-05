@@ -70,6 +70,7 @@ angular.module('starter')
 
         seleccionado.nombreTabla = 'TpOdontogramaSupernumerario';
         seleccionado.RowKey = i;
+        seleccionado._numeroSuperNumerario = i;
         seleccionado.PartitionKey = "odontogramatest";
         seleccionado.index = index;        
         saveStorage(seleccionado);
@@ -80,8 +81,9 @@ angular.module('starter')
         var index = _.indexOf($scope.items, seleccionado);        
         
         $scope.items.splice(index, 1);
-        seleccionado.nombreTabla = 'TpSupernumerario';
+        seleccionado.nombreTabla = 'TpOdontogramaSupernumerario';
         seleccionado.PartitionKey = "odontogramatest";
+        seleccionado.RowKey = seleccionado._numeroSuperNumerario;
         deleteFromStorage(seleccionado);
         
     });
