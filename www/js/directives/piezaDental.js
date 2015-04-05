@@ -7,7 +7,8 @@ angular.module('starter')
 			item : '=',
 			width : '=',
 			height : '=',
-			esPiezaCompleta: '='			
+			esPiezaCompleta: '=',
+			mostrarBotonSupernumerario : '='			
 		},
 		templateUrl: 'templates/directives/piezaDental.html',
 		controller : 'piezaCompletaController',
@@ -21,8 +22,7 @@ angular.module('starter')
 angular.module('starter')
 .controller('piezaCompletaController', ['$rootScope', '$scope','sharedDataService','aplicarTratamientoService', 'tratamientosPorPiezaDental','crearPropiedades',
 	function ($rootScope, $scope, sharedDataService, aplicarTratamientoService, tratamientosPorPiezaDental, crearPropiedades) {
-		
-	
+
 		$scope.clickAplicar = function(e, parte){
 		var elemento = aplicarTratamientoService.aplicar($scope.item, parte);
 		if(elemento.valido){
@@ -35,8 +35,7 @@ angular.module('starter')
 			elemento.numeroPiezaDental = $scope.item.numeroPiezaDental;
 			tratamientosPorPiezaDental.insertar(elemento);
 
-			crearPropiedades.fill(elemento,$scope.item);
-			
+			crearPropiedades.fill(elemento,$scope.item);			
 
 			if(!angular.isUndefined($scope.esPiezaCompleta) && $scope.item.numeroPiezaDental !== "Pieza seleccionada"){
 				//si se da click sobre la pieza completa debe avizasrle al elemento dentro del listado
@@ -47,9 +46,17 @@ angular.module('starter')
 	}
 	
 
-	$scope.clickSeleccionar = function(e){
+	$scope.clickSeleccionar = function(e){		
 		//Avisarle a la pieza seleccionada que se selecciono una pieza dental
 		$rootScope.$broadcast('elemento-dental-seleccionado', { seleccionado: $scope });
+	}
+
+	$scope.supernumerario = function(direccion){
+		$rootScope.$broadcast('supernumerario', { seleccionado: $scope.item, direccion : direccion });	
+	}
+
+	$scope.eliminarSupernumerario = function(){
+		$rootScope.$broadcast('eliminar-supernumerario', { seleccionado: $scope.item});		
 	}
 
 	//ocurre cuando se elilima algun tratamiento
@@ -76,6 +83,6 @@ angular.module('starter')
 
 	$scope.$on($scope.item.numeroPiezaDental, function(event, args){
 		var seleccionado = args.seleccionado;
-		$scope.item = seleccionado.item;
+		$scope.item = seleccionado.item;		
 	});
 }])

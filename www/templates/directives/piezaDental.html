@@ -4,6 +4,18 @@
     {{item.numeroPiezaDental}}
   </div>
 
+<a class="button button-icon button-clear ion-arrow-left-c" 
+    ng-click="supernumerario('izquierda')"
+    ng-show="mostrarBotonSupernumerario">Supernumerario Izquierda</a>
+
+<a class="button button-icon button-clear ion-arrow-right-c" 
+    ng-click="supernumerario('derecha')"
+    ng-show="mostrarBotonSupernumerario">Supernumerario derecha</a>
+
+<button class="button button-assertive" 
+    ng-click="eliminarSupernumerario()"
+    ng-show="item.esSupernumerario">X</button>
+
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
