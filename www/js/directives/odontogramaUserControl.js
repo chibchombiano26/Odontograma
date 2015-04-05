@@ -12,7 +12,7 @@ angular.module('starter')
 
     function ($scope, dataTableStorageFactory, dataBlobStorageFactory, sharedDataService, dataTableStorageFactory,leerOdontogramaServices) {
     
-        var numeroSuperNumerario = 1000;
+        var i = 0;
         var index = 0;
 
     $scope.items = [        
@@ -58,12 +58,21 @@ angular.module('starter')
         var seleccionado = args.seleccionado;
         var direccion = args.direccion;
         var index = _.indexOf($scope.items, seleccionado);
+        i 
 
         if(direccion === "derecha"){
             index = index+1;
         }
 
-        $scope.items.splice(index,0,{numeroPiezaDental: 'S', esSupernumerario : true, _numeroSuperNumerario : numeroSuperNumerario });
+        i = i+1;
+
+        $scope.items.splice(index,0,{numeroPiezaDental: 'S' + i, esSupernumerario : true, _numeroSuperNumerario : i });
+
+        seleccionado.nombreTabla = 'TpOdontogramaSupernumerario';
+        seleccionado.RowKey = i;
+        seleccionado.PartitionKey = "odontogramatest";
+        seleccionado.index = index;        
+        saveStorage(seleccionado);
     });
 
      $scope.$on('eliminar-supernumerario', function(event, args){      
@@ -71,7 +80,32 @@ angular.module('starter')
         var index = _.indexOf($scope.items, seleccionado);        
         
         $scope.items.splice(index, 1);
+        seleccionado.nombreTabla = 'TpSupernumerario';
+        seleccionado.PartitionKey = "odontogramatest";
+        deleteFromStorage(seleccionado);
+        
     });
+
+     function saveStorage(item){
+        dataTableStorageFactory.postTable(item)
+            .success(function (data) {
+              
+            })
+            .error(function (error) {
+               
+            });
+    }
+
+    function deleteFromStorage(item){
+        item.Estado_Entidad = 2;        
+        dataTableStorageFactory.postTable(item)
+            .success(function (data) {
+              
+            })
+            .error(function (error) {
+               
+            });
+    }
 
     get();
     obtenerOdontograma();
