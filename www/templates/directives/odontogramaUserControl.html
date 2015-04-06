@@ -1,6 +1,6 @@
 
 <div class="flex-container">
-  <ion-item ng-repeat="n in items">
+  <ion-item ng-repeat="n in items | filter:'parte1'">
     <a ui-sref="app.tratamientos" menu-toggle="right">
 	    <pieza-completa width="40" height="40" mostrar-boton-supernumerario="false" item='n'>
 		</pieza-completa> 
@@ -9,13 +9,14 @@
 </div>
 
 <!--
+
 <ion-scroll zooming="true" direction="xy">
   <div class="flex-container">
-  <ion-item ng-repeat="n in items">
+  <ion-item ng-repeat="n in items | filter:'parte1'">
     <a ui-sref="app.tratamientos" menu-toggle="right">
-	    <pieza-completa width="40" height="40" item='n'>
-		</pieza-completa> 
-	</a>
+      <pieza-completa width="40" height="40" item='n'>
+    </pieza-completa> 
+  </a>
   </ion-item>
 </div>
  </ion-scroll>
@@ -23,11 +24,11 @@
 
 <ion-scroll zooming="true" direction="xy">
   <div class="flex-container">
-  <ion-item ng-repeat="n in items">
+  <ion-item ng-repeat="n in items | filter:'parte2'">
     <a ui-sref="app.tratamientos" menu-toggle="right">
-	    <pieza-completa width="40" height="40" item='n'>
-		</pieza-completa> 
-	</a>
+      <pieza-completa width="40" height="40" item='n'>
+    </pieza-completa> 
+  </a>
   </ion-item>
 </div>
  </ion-scroll>

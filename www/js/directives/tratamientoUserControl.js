@@ -17,21 +17,7 @@ angular.module('starter')
     $scope.items = [];
     $scope.textoBuscar = "";
     
-    $scope.buscar = function(e){ 
-     var textoComparar = $scope.textoBuscar; 
-     var resultados;
-       if(!S(textoComparar).isEmpty()){
-            resultados = _.filter(Listado, function(item){
-              return S(item.Descripcion).contains(textoComparar);
-            });
-       }
-       else{            
-            resultados = Listado;        
-       }
-
-       $scope.items = resultados;
-    }
-
+  
     $scope.clickSeleccionado = function(e){
         sharedDataService.putTratamientoSeleccionado(e);
     }

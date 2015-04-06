@@ -16,34 +16,104 @@ angular.module('starter')
         var index = 0;
 
     $scope.items = [        
-        {numeroPiezaDental: 18, esSupernumerario : false},
-        {numeroPiezaDental: 17, esSupernumerario : false},
-        {numeroPiezaDental: 16, esSupernumerario : false},
-        {numeroPiezaDental: 15, esSupernumerario : false},
-        {numeroPiezaDental: 14, esSupernumerario : false},
-        {numeroPiezaDental: 13, esSupernumerario : false},
-        {numeroPiezaDental: 12, esSupernumerario : false},
-        {numeroPiezaDental: 11, esSupernumerario : false},
+        {numeroPiezaDental: 18, esSupernumerario : false, parte:'parte1' },
+        {numeroPiezaDental: 17, esSupernumerario : false, parte:'parte1'},
+        {numeroPiezaDental: 16, esSupernumerario : false, parte:'parte1'},
+        {numeroPiezaDental: 15, esSupernumerario : false, parte:'parte1'},
+        {numeroPiezaDental: 14, esSupernumerario : false, parte:'parte1'},
+        {numeroPiezaDental: 13, esSupernumerario : false, parte:'parte1'},
+        {numeroPiezaDental: 12, esSupernumerario : false, parte:'parte1'},
+        {numeroPiezaDental: 11, esSupernumerario : false, parte:'parte1'},
 
-        {numeroPiezaDental: 21, esSupernumerario : false},
-        {numeroPiezaDental: 22, esSupernumerario : false},
-        {numeroPiezaDental: 23, esSupernumerario : false},
-        {numeroPiezaDental: 24, esSupernumerario : false},
-        {numeroPiezaDental: 25, esSupernumerario : false},
-        {numeroPiezaDental: 26, esSupernumerario : false},
-        {numeroPiezaDental: 27, esSupernumerario : false},
-        {numeroPiezaDental: 28, esSupernumerario : false},        
+        {numeroPiezaDental: 21, esSupernumerario : false, parte:'parte1'},
+        {numeroPiezaDental: 22, esSupernumerario : false, parte:'parte1'},
+        {numeroPiezaDental: 23, esSupernumerario : false, parte:'parte1'},
+        {numeroPiezaDental: 24, esSupernumerario : false, parte:'parte1'},
+        {numeroPiezaDental: 25, esSupernumerario : false, parte:'parte1'},
+        {numeroPiezaDental: 26, esSupernumerario : false, parte:'parte1'},
+        {numeroPiezaDental: 27, esSupernumerario : false, parte:'parte1'},
+        {numeroPiezaDental: 28, esSupernumerario : false, parte:'parte1'},
+
+        {numeroPiezaDental: 55, esSupernumerario : false, parte:'parte2' },
+        {numeroPiezaDental: 54, esSupernumerario : false, parte:'parte2'},
+        {numeroPiezaDental: 53, esSupernumerario : false, parte:'parte2'},
+        {numeroPiezaDental: 52, esSupernumerario : false, parte:'parte2'},
+        {numeroPiezaDental: 51, esSupernumerario : false, parte:'parte2'},        
+
+        {numeroPiezaDental: 61, esSupernumerario : false, parte:'parte2'},
+        {numeroPiezaDental: 62, esSupernumerario : false, parte:'parte2'},
+        {numeroPiezaDental: 63, esSupernumerario : false, parte:'parte2'},
+        {numeroPiezaDental: 64, esSupernumerario : false, parte:'parte2'},
+        {numeroPiezaDental: 65, esSupernumerario : false, parte:'parte2'},
+
+        {numeroPiezaDental: 85, esSupernumerario : false, parte:'parte3' },
+        {numeroPiezaDental: 84, esSupernumerario : false, parte:'parte3'},
+        {numeroPiezaDental: 83, esSupernumerario : false, parte:'parte3'},
+        {numeroPiezaDental: 82, esSupernumerario : false, parte:'parte3'},
+        {numeroPiezaDental: 81, esSupernumerario : false, parte:'parte3'},        
+
+        {numeroPiezaDental: 71, esSupernumerario : false, parte:'parte3'},
+        {numeroPiezaDental: 72, esSupernumerario : false, parte:'parte3'},
+        {numeroPiezaDental: 73, esSupernumerario : false, parte:'parte3'},
+        {numeroPiezaDental: 74, esSupernumerario : false, parte:'parte3'},
+        {numeroPiezaDental: 75, esSupernumerario : false, parte:'parte3'},
+
+        {numeroPiezaDental: 48, esSupernumerario : false, parte:'parte4' },
+        {numeroPiezaDental: 47, esSupernumerario : false, parte:'parte4'},
+        {numeroPiezaDental: 46, esSupernumerario : false, parte:'parte4'},
+        {numeroPiezaDental: 45, esSupernumerario : false, parte:'parte4'},
+        {numeroPiezaDental: 44, esSupernumerario : false, parte:'parte4'},
+        {numeroPiezaDental: 43, esSupernumerario : false, parte:'parte4'},
+        {numeroPiezaDental: 42, esSupernumerario : false, parte:'parte4'},
+        {numeroPiezaDental: 41, esSupernumerario : false, parte:'parte4'},
+
+        {numeroPiezaDental: 31, esSupernumerario : false, parte:'parte4'},
+        {numeroPiezaDental: 32, esSupernumerario : false, parte:'parte4'},
+        {numeroPiezaDental: 33, esSupernumerario : false, parte:'parte4'},
+        {numeroPiezaDental: 34, esSupernumerario : false, parte:'parte4'},
+        {numeroPiezaDental: 35, esSupernumerario : false, parte:'parte4'},
+        {numeroPiezaDental: 36, esSupernumerario : false, parte:'parte4'},
+        {numeroPiezaDental: 37, esSupernumerario : false, parte:'parte4'},
+        {numeroPiezaDental: 38, esSupernumerario : false, parte:'parte4'},
+        
     ];
+        
 
-     function get() {
-        dataBlobStorageFactory.getTableByPartitionAndRowKey('odontogramas','hefesoft.entities.odontologia.odontograma.odontograma','601')
-            .success(function (data) {
-                //$scope.items = data;
-            })
-            .error(function (error) {
-                $scope.status = 'Unable to load customer data: ' + error.message;
-            });
-    }   
+    
+
+     $scope.$on('supernumerario', function(event, args){      
+        var seleccionado = args.seleccionado;
+        var direccion = args.direccion;
+        var index = _.indexOf($scope.items, seleccionado);
+         
+
+        if(direccion === "derecha"){
+            index = index+1;
+        }
+
+        i = i+1;
+
+        var supernumerarioAgregar = {numeroPiezaDental: 'S' + i, esSupernumerario : true, _numeroSuperNumerario : i, parte: seleccionado.parte};
+        $scope.items.splice(index,0, supernumerarioAgregar);
+
+        supernumerarioAgregar.nombreTabla = 'TpOdontogramaSupernumerario';
+        supernumerarioAgregar.RowKey = i;
+        supernumerarioAgregar.PartitionKey = "odontogramatest";
+        supernumerarioAgregar.index = index;
+        supernumerarioAgregar.direccion = direccion;
+        supernumerarioAgregar.numeroPiezaDentalReferencia = seleccionado.numeroPiezaDental;
+
+        saveStorage(supernumerarioAgregar);
+    });
+
+     $scope.$on('eliminar-supernumerario', function(event, args){      
+        var seleccionado = args.seleccionado;
+        var index = _.indexOf($scope.items, seleccionado);        
+        
+        $scope.items.splice(index, 1);
+        deleteFromStorage(seleccionado);
+        
+    });
 
     function obtenerOdontograma(){
         dataTableStorageFactory.getTableByPartition('TpOdontograma', 'odontogramatest')
@@ -54,39 +124,7 @@ angular.module('starter')
         })
     }
 
-     $scope.$on('supernumerario', function(event, args){      
-        var seleccionado = args.seleccionado;
-        var direccion = args.direccion;
-        var index = _.indexOf($scope.items, seleccionado);
-        i 
-
-        if(direccion === "derecha"){
-            index = index+1;
-        }
-
-        i = i+1;
-
-        $scope.items.splice(index,0,{numeroPiezaDental: 'S' + i, esSupernumerario : true, _numeroSuperNumerario : i });
-
-        seleccionado.nombreTabla = 'TpOdontogramaSupernumerario';
-        seleccionado.RowKey = i;
-        seleccionado.PartitionKey = "odontogramatest";
-        seleccionado.index = index;        
-        saveStorage(seleccionado);
-    });
-
-     $scope.$on('eliminar-supernumerario', function(event, args){      
-        var seleccionado = args.seleccionado;
-        var index = _.indexOf($scope.items, seleccionado);        
-        
-        $scope.items.splice(index, 1);
-        seleccionado.nombreTabla = 'TpSupernumerario';
-        seleccionado.PartitionKey = "odontogramatest";
-        deleteFromStorage(seleccionado);
-        
-    });
-
-     function saveStorage(item){
+    function saveStorage(item){
         dataTableStorageFactory.postTable(item)
             .success(function (data) {
               
@@ -107,6 +145,30 @@ angular.module('starter')
             });
     }
 
-    get();
-    obtenerOdontograma();
+    function obtenerSupernumerarios(){
+        dataTableStorageFactory.getTableByPartition('TpOdontogramaSupernumerario', 'odontogramatest')
+        .success(function(data){
+            for (var i = 0; i < data.length; i++) {
+                var item = data[i];
+
+                var index = _.findIndex($scope.items, function(chr) {
+                  return chr.numeroPiezaDental == item.numeroPiezaDentalReferencia;
+                });
+
+                if(item.direccion === "derecha"){
+                    index = index+1;
+                }
+
+                $scope.items.splice(index, 0, item);
+            };
+
+            obtenerOdontograma();
+
+        }).error(function(error){
+
+        })
+    }   
+
+    obtenerSupernumerarios();
+    
 }]);
