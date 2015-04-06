@@ -9,16 +9,16 @@ angular.module('starter')
 	}
 
 	var Color;
-	var ColorAdicional;
-	var AplicaSeleccionado;
+	var ColorAdicional;	
 	var Descripcion;
 	var Simbolo;
-	var Letra;
-	var Fuente;
+	var Letra;	
 
 	$scope.Aplica = [{nombre: 'Boca', codigo : 1}, {nombre: 'Superficie', codigo : 2}, {nombre: 'Pieza completa', codigo : 3}];
-	$scope.Fuentes = [{fuente: 'Arial', codigo : 1 },{fuente: 'Glyphyx', codigo : 2}, {fuente: 'signify', codigo : 3}, {fuente: 'raphael', codigo : 4}];
+	$scope.AplicaSeleccionado = $scope.Aplica[1];
 
+	$scope.Fuentes = [{fuente: 'Arial', codigo : 1 },{fuente: 'Glyphyx', codigo : 2}, {fuente: 'signify', codigo : 3}, {fuente: 'raphael', codigo : 4}];
+	$scope.Fuente = $scope.Fuentes[1];
 
 	$scope.Indices= { IndiceCEO: false, IndiceCOP: false, IndicePlacaBacteriana: false};
 	
@@ -40,25 +40,37 @@ angular.module('starter')
 	}
 
 	$scope.tratamientoSimbolo= function(e){
+
+		if(angular.isUndefined(Color)){
+			Color = "black";
+		}
+
 		$scope.tratamientoMuestra.Color = "Transparent";
-		$scope.tratamientoMuestra.ColorAdicional = color;
+		$scope.tratamientoMuestra.ColorAdicional = Color;
 		$scope.tratamientoMuestra.Simbolo = e;	
+		$scope.tratamientoMuestra.Fuente = $scope.Fuente.fuente;
 		Simbolo = e;
 	}
 
 	$scope.tratamientoLetra= function(e){
+
+		if(angular.isUndefined(Color)){
+			Color = "black";
+		}
+
 		$scope.tratamientoMuestra.Color = "Transparent";
-		$scope.tratamientoMuestra.ColorAdicional = color;
-		$scope.tratamientoMuestra.Letra = e;	
+		$scope.tratamientoMuestra.ColorAdicional = Color;
+		$scope.tratamientoMuestra.Letra = e;
+		$scope.tratamientoMuestra.Fuente = 'Arial';	
 		Letra = e;
 	}
 
-	$scope.seleccionarAplicaPara = function(e){
-		AplicaSeleccionado = e;
+	$scope.cambioFuente = function(e){
+		$scope.Fuente = e;
 	}
 
-	$scope.fuente = function(e){
-		Fuente = e;
+	$scope.cambioAplicaA = function(e){
+		$scope.AplicaSeleccionado = e;
 	}
 
 	$scope.guardar = function(){
@@ -70,14 +82,14 @@ angular.module('starter')
 						RowKey : 1000,
 						Color: Color ,
 						ColorAdicional : ColorAdicional,
-						AplicaTratamiento: AplicaSeleccionado.codigo,
+						AplicaTratamiento: $scope.AplicaSeleccionado.codigo,
 						Descripcion : Descripcion,
 						Simbolo: Simbolo,
 						Letra: Letra,
 						IndiceCEO : $scope.Indices.IndiceCEO,
 						IndiceCOP : $scope.Indices.IndiceCOP,
 						IndicePlacaBacteriana : $scope.Indices.IndicePlacaBacteriana,
-						Fuente: Fuente.fuente
+						Fuente: $scope.Fuente.fuente
 					};
 
 			dataTableStorageFactory.saveStorage(elemento);
@@ -86,7 +98,7 @@ angular.module('starter')
 
 	function validar(){
 		var valido = true;
-		if(angular.isUndefined(AplicaSeleccionado)){
+		if(angular.isUndefined($scope.AplicaSeleccionado)){
 			valido = false;
 		}
 		return valido;

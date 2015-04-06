@@ -11,16 +11,9 @@
 
 		<div class="item item-divider">
 			Aplica para
-		</div>
-
-		<ion-list>
-		  <ion-item ng-repeat="item in Aplica" ng-click="seleccionarAplicaPara(item)">
-		    Aplica para : {{item.nombre}}
-		  </ion-item>
-		</ion-list>
-
-
-
+		</div>		
+		
+		<select ng-model="AplicaSeleccionado" ng-options="aplica.nombre for aplica in Aplica" ng-change="cambioAplicaA(AplicaSeleccionado)"></select>
 
 		<div class="item item-divider">
 			Muestra
@@ -30,11 +23,7 @@
 			Fuente
 		</div>
 
-		<ion-list>
-		  <ion-item ng-repeat="item in Fuentes" ng-click="fuente(item)">
-		    {{item.fuente}}
-		  </ion-item>
-		</ion-list>
+		<select ng-model="Fuente" ng-options="fuente.fuente for fuente in Fuentes" ng-change="cambioFuente(Fuente)" ></select>
 
 		<ngjs-color-picker ng-click="clickColor(selectedColor)" selected="selectedColor" options="customOptions"></ngjs-color-picker>
 
