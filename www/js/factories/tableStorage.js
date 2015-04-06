@@ -33,8 +33,39 @@ angular.module('starter')
             data['generarIdentificador'] = false;
         }
 
-        return data;
+        if(!data.hasOwnProperty('partitionKey')){
+            console.log('post sin partitionKey de la tabla');
+             throw new Error("indique el partitionKey de la tabla");
+        }        
 
+        if(!data.hasOwnProperty('nombreTabla')){             
+             console.log('post sin nombre de la tabla');
+             throw new Error("indique el nombre de la tabla");
+
+        }
+
+        return data;
+    }
+
+    dataFactory.saveStorage = function (item){
+        dataFactory.postTable(item)
+            .success(function (data) {
+              
+            })
+            .error(function (error) {
+               
+            });
+    }
+
+    dataFactory.deleteFromStorage = function (item){
+        item.Estado_Entidad = 2;        
+        dataFactory.postTable(item)
+            .success(function (data) {
+              
+            })
+            .error(function (error) {
+               
+            });
     }
 
     return dataFactory;
