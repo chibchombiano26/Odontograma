@@ -102,17 +102,7 @@ angular.module('starter')
         supernumerarioAgregar.index = index;
         supernumerarioAgregar.direccion = direccion;
         supernumerarioAgregar.numeroPiezaDentalReferencia = seleccionado.numeroPiezaDental;
-
-<<<<<<< HEAD
         saveStorage(supernumerarioAgregar);
-=======
-        seleccionado.nombreTabla = 'TpOdontogramaSupernumerario';
-        seleccionado.RowKey = i;
-        seleccionado._numeroSuperNumerario = i;
-        seleccionado.PartitionKey = "odontogramatest";
-        seleccionado.index = index;        
-        saveStorage(seleccionado);
->>>>>>> origin/master
     });
 
      $scope.$on('eliminar-supernumerario', function(event, args){      
@@ -120,12 +110,6 @@ angular.module('starter')
         var index = _.indexOf($scope.items, seleccionado);        
         
         $scope.items.splice(index, 1);
-<<<<<<< HEAD
-=======
-        seleccionado.nombreTabla = 'TpOdontogramaSupernumerario';
-        seleccionado.PartitionKey = "odontogramatest";
-        seleccionado.RowKey = seleccionado._numeroSuperNumerario;
->>>>>>> origin/master
         deleteFromStorage(seleccionado);
         
     });
