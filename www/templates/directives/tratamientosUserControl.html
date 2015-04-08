@@ -6,10 +6,22 @@
   </label>
 </div>
 
-<ion-list>
+<ion-list
+	show-delete="shouldShowDelete"   
+>
+
+
   <ion-item ng-repeat="n in items | filter:textoBuscar">
+  	
   	<a>
     	<tratamientos item='n' ng-click="clickSeleccionado(n)"/>
     </a>
+
+	
+    <ion-delete-button class="ion-minus-circled"
+                       ng-click="eliminar(n, $index)">
+    </ion-delete-button>   
+
+
   </ion-item>
 </ion-list>

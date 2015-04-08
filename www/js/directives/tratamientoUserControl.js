@@ -16,10 +16,16 @@ angular.module('starter')
     var Listado = [];
     $scope.items = [];
     $scope.textoBuscar = "";
+    $scope.shouldShowDelete = false;   
     
   
     $scope.clickSeleccionado = function(e){
-        sharedDataService.putTratamientoSeleccionado(e);
+        sharedDataService.putTratamientoSeleccionado(e);        
+    }
+
+    $scope.eliminar = function(e, $index){
+        $scope.items.splice($index, 1)
+        dataTableStorageFactory.deleteFromStorage(e);
     }
 
      function get() {

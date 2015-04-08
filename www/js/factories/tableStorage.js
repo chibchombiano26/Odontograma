@@ -33,7 +33,7 @@ angular.module('starter')
             data['generarIdentificador'] = false;
         }
 
-        if(!data.hasOwnProperty('partitionKey')){
+        if(!data.hasOwnProperty('PartitionKey')){
             console.log('post sin partitionKey de la tabla');
              throw new Error("indique el partitionKey de la tabla");
         }        
@@ -42,6 +42,10 @@ angular.module('starter')
              console.log('post sin nombre de la tabla');
              throw new Error("indique el nombre de la tabla");
 
+        }
+
+        if(data.hasOwnProperty('partitionKey') && data.hasOwnProperty('PartitionKey')){
+            delete data.partitionKey;
         }
 
         return data;
