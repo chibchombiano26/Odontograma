@@ -17,6 +17,10 @@ angular.module('starter')
         return $http.post(urlBase + "table", data);
     };
 
+    dataFactory.existeUsuario = function (api, data) {        
+        return $http.post(urlBase + api, data);
+    };
+
 
     function validarAntesEnviar(data){
         //El servicio espera esta propiedad para saber si debe crear o eliminar la propiedad

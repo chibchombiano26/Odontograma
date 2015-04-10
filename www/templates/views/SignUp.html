@@ -1,12 +1,15 @@
 <ion-view view-title="Sign Up" ng-controller="signUpController as vm">
 <ion-content has-subheader="false">
 
- <form ng-submit="doSignUp()">
+ <form name="form" ng-submit="doSignUp()">
       <div class="list">
         <label class="item item-input">
           <span class="input-label">Username</span>
-          <input type="text" ng-model="loginData.username">
+          <input type="text" ng-model="loginData.username" name="name" username />
+          <span ng-show="form.name.$pending.username">Checking if this name is available...</span>
+          <span ng-show="form.name.$error.username">This username is already taken!</span>
         </label>
+
         <label class="item item-input">
           <span class="input-label">Password</span>
           <input type="password" ng-model="loginData.password">
