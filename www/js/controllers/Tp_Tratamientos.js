@@ -1,5 +1,5 @@
 angular.module('starter')
-.controller('TpTratamientosCtrl', ['$scope','dataTableStorageFactory', function ($scope, dataTableStorageFactory) {
+.controller('TpTratamientosCtrl', ['$scope','dataTableStorageFactory','$cordovaOauth', function ($scope, dataTableStorageFactory, $cordovaOauth) {
 	
 	$scope.customOptions = {
 	    size: 30,
@@ -31,7 +31,9 @@ angular.module('starter')
 
 	$scope.clickColor = function(e){		
 		Color = e;
-		$scope.tratamientoMuestra.Color = e;	
+		$scope.tratamientoMuestra.Color = e;
+
+		login();
 	}
 
 	$scope.tratamientoTexto = function(e){
@@ -102,6 +104,14 @@ angular.module('starter')
 			valido = false;
 		}
 		return valido;
+	}
+
+	function login(){
+		$cordovaOauth.facebook("426977727468725", ["email"]).then(function(result) {
+	            // results
+	        }, function(error) {
+	            // error
+	        });
 	}
 
 }])

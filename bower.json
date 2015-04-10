@@ -5,6 +5,7 @@
     "ionic": "driftyco/ionic-bower#1.0.0-rc.1"
   },
   "dependencies": {
-    "ngjs-color-picker": "~1.0.4"
+    "ngjs-color-picker": "~1.0.4",
+    "ng-cordova-oauth": "~0.1.0"
   }
 }

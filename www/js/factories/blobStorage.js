@@ -1,7 +1,7 @@
 angular.module('starter')
-    .factory('dataBlobStorageFactory', ['$http', function($http) {
+    .factory('dataBlobStorageFactory', ['$http', 'urlServicioFactory', function($http, urlServicioFactory) {
 
-    var urlBase = 'http://hefesoftdynamicbackend.azurewebsites.net/api/';
+    var urlBase = urlServicioFactory.getUrlService();
     var dataFactory = {};
 
     dataFactory.getTableByPartition = function (nombreTabla,PartitionKey) {
