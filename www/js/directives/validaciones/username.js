@@ -15,7 +15,12 @@ angular.module('starter')
 
         dataTableStorageFactory.existeUsuario('validateUser', {name: modelValue})
           .success(function (data) {
-              def.resolve();  
+              if(data){
+                def.reject();  
+               }
+              else{
+                def.resolve();  
+               }
             })
             .error(function (error) {
                def.reject();   
