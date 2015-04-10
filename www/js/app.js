@@ -24,8 +24,12 @@ angular.module('starter', ['ionic', 'winjs', 'starter.controllers', 'ngjsColorPi
   });
 })
 
-.config(function($compileProvider,$stateProvider, $urlRouterProvider) {
+
+.config(function($compileProvider,$stateProvider, $urlRouterProvider, $httpProvider) {
    
+   $httpProvider.defaults.withCredentials = true;
+   $httpProvider.interceptors.push('authInterceptorService');
+
    $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|ghttps?|ms-appx|x-wmapp0):/);
    // // Use $compileProvider.urlSanitizationWhitelist(...) for Angular 1.2
    $compileProvider.imgSrcSanitizationWhitelist(/^\s*(https?|ftp|file|ms-appx|x-wmapp0):|data:image\//);
@@ -94,6 +98,17 @@ angular.module('starter', ['ionic', 'winjs', 'starter.controllers', 'ngjsColorPi
         }       
         }
     })
+
+.state('app.sigin', {
+    url: "/sigin",
+    views: {
+        'menuContent': {
+            templateUrl: "templates/views/SignIn.html",
+        }       
+        }
+    })
+
+
 
 .state('app.signup', {
     url: "/signup",
