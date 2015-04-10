@@ -5,7 +5,10 @@ angular.module('starter')
 
 	$scope.doSignUp = function(){
 		var urlBase = urlServicioFactory.getUrlService();
-		$http.post(urlBase + "SignUp", $scope.loginData).
+		var data = $scope.loginData;
+		data.email = $scope.loginData.username;
+
+		$http.post(urlBase + "SignUp", data).
 			success(function (data) {
               
             })
