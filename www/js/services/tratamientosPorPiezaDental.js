@@ -2,10 +2,11 @@
 * El listado de los elementos aplicados a cada superficies 
 */
 angular.module('starter').
-service('tratamientosPorPiezaDental', ['$rootScope','sharedDataService', 'crearPropiedades','aplicarTratamientoService','dataTableStorageFactory',
+service('tratamientosPorPiezaDental', ['$rootScope','sharedDataService', 'crearPropiedades','aplicarTratamientoService','dataTableStorageFactory','users',
 
-	function ($rootScope, sharedDataService, crearPropiedades, aplicarTratamientoService, dataTableStorageFactory) {
+	function ($rootScope, sharedDataService, crearPropiedades, aplicarTratamientoService, dataTableStorageFactory, users) {
 	
+	var usuario = users.getCurrentUser();
 	var i = 0; 
 	var tratamientos = [];
 
@@ -35,7 +36,7 @@ service('tratamientosPorPiezaDental', ['$rootScope','sharedDataService', 'crearP
 	    }
 
 	    item.nombreTabla = 'TpOdontograma';
-	    item.PartitionKey = "odontogramatest";
+	    item.PartitionKey = usuario.username;
 	    item.RowKey = item.i;
 	    saveStorage(item);
 	}

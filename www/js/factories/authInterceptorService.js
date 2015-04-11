@@ -1,3 +1,7 @@
+/*
+    Se utiliza para pasar el token en el header de autenticacion
+*/
+
 angular.module('starter')
 .factory('authInterceptorService', ['$q', '$location', '$localstorage', function ($q, $location, localStorageService) {
  

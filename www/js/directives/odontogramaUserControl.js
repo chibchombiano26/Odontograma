@@ -8,10 +8,11 @@ directive('odontogramaUserControl', [function () {
 }]);
 
 angular.module('starter')
-.controller("odontogramaCtrl", ['$scope', 'dataTableStorageFactory', 'dataBlobStorageFactory', 'sharedDataService', 'dataTableStorageFactory','leerOdontogramaServices',
+.controller("odontogramaCtrl", ['$scope', 'dataTableStorageFactory', 'dataBlobStorageFactory', 'sharedDataService', 'dataTableStorageFactory','leerOdontogramaServices','users',
 
-    function ($scope, dataTableStorageFactory, dataBlobStorageFactory, sharedDataService, dataTableStorageFactory,leerOdontogramaServices) {
+    function ($scope, dataTableStorageFactory, dataBlobStorageFactory, sharedDataService, dataTableStorageFactory,leerOdontogramaServices, users) {
     
+        var usuario = users.getCurrentUser();
         var i = 0;
         var index = 0;
 
@@ -98,7 +99,7 @@ angular.module('starter')
 
         supernumerarioAgregar.nombreTabla = 'TpOdontogramaSupernumerario';
         supernumerarioAgregar.RowKey = i;
-        supernumerarioAgregar.PartitionKey = "odontogramatest";
+        supernumerarioAgregar.PartitionKey = usuario.username;
         supernumerarioAgregar.index = index;
         supernumerarioAgregar.direccion = direccion;
         supernumerarioAgregar.numeroPiezaDentalReferencia = seleccionado.numeroPiezaDental;
@@ -115,7 +116,7 @@ angular.module('starter')
     });
 
     function obtenerOdontograma(){
-        dataTableStorageFactory.getTableByPartition('TpOdontograma', 'odontogramatest')
+        dataTableStorageFactory.getTableByPartition('TpOdontograma', usuario.username)
         .success(function(data){
             leerOdontogramaServices.odontogramaToUi(data);
         }).error(function(error){
@@ -145,7 +146,7 @@ angular.module('starter')
     }
 
     function obtenerSupernumerarios(){
-        dataTableStorageFactory.getTableByPartition('TpOdontogramaSupernumerario', 'odontogramatest')
+        dataTableStorageFactory.getTableByPartition('TpOdontogramaSupernumerario', usuario.username)
         .success(function(data){
             for (var i = 0; i < data.length; i++) {
                 var item = data[i];

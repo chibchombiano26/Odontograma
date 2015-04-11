@@ -1,20 +1,23 @@
 angular.module('starter')
-.controller('signUpController', ['$scope','$http', 'urlServicioFactory', function ($scope, $http, urlServicioFactory) {
+.controller('signUpController', ['$scope', 'signFactoryService', function ($scope, signFactoryService) {
 	
 	$scope.loginData= {};
 
 	$scope.doSignUp = function(){
-		var urlBase = urlServicioFactory.getUrlService();
-		var data = $scope.loginData;
-		data.email = $scope.loginData.username;
+		signFactoryService.signUp($scope.loginData).then(success, error);
+	}
 
-		$http.post(urlBase + "SignUp", data).
-			success(function (data) {
-              
-            })
-            .error(function (error) {
-               
-            });
+	//Apenas se registre se loguea en la app
+	function success(data){
+		signFactoryService.sign(data).then(successLogin, error);
+	}
+
+	function successLogin(data){
+		console.log(data);
+	}
+
+	function error(data){
+		console.log(data);
 	}
 
 }])
