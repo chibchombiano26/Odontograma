@@ -117,10 +117,19 @@ angular.module('starter', ['ionic', 'winjs', 'starter.controllers', 'ngjsColorPi
             templateUrl: "templates/views/SignUp.html",            
         }       
         }
+    })
+
+.state('app.pacientes', {
+    url: "/pacientes",
+    views: {
+        'menuContent': {
+            templateUrl: "templates/views/Pacientes.html",            
+        }       
+        }
     });
 
 
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/signup');
+  $urlRouterProvider.otherwise('/app/pacientes');
 })
