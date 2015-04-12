@@ -1,6 +1,6 @@
 angular.module('starter')
-.controller('pacientesController', ['$scope','dataTableStorageFactory', 'users', '$cordovaCamera', 'imagesStorageFactory',
-	function ($scope, dataTableStorageFactory, users, $cordovaCamera, imagesStorageFactory) {
+.controller('pacientesController', ['$scope','dataTableStorageFactory', 'users', '$cordovaCamera', 'imagesStorageFactory','$state','varsFactoryService','$ionicLoading',
+	function ($scope, dataTableStorageFactory, users, $cordovaCamera, imagesStorageFactory, $state, varsFactoryService, $ionicLoading) {
 	
 	$scope.Paciente = {};
 	$scope.Pacientes = new Array();
@@ -8,6 +8,13 @@ angular.module('starter')
 	$scope.Imagen = 'https://hefesoft.blob.core.windows.net/profile/profile.png';
 
 	var usuario = users.getCurrentUser();
+
+	$scope.navegarOdontograma = function(item){
+		$scope.Paciente = item;
+		varsFactoryService.fijarPaciente(item.RowKey);
+		$state.go("app.odontograma", { "pacienteId": item.RowKey});
+	}
+
 
 	$scope.nuevo = function(){
 		$scope.Paciente = {};
@@ -49,11 +56,14 @@ angular.module('starter')
 	}
 
 	function obtenerPacientes(){
+		$ionicLoading.show();
 		dataTableStorageFactory.getTableByPartition('TmPacientes', usuario.username)
 		.success(function(data){
-      		$scope.Pacientes = data;      
+      		$scope.Pacientes = data;
+      		$ionicLoading.hide();
         }).error(function(error){
         	console.log(error);
+        	$ionicLoading.hide();
         })
 	}
 

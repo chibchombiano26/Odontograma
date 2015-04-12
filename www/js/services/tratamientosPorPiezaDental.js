@@ -2,13 +2,14 @@
 * El listado de los elementos aplicados a cada superficies 
 */
 angular.module('starter').
-service('tratamientosPorPiezaDental', ['$rootScope','sharedDataService', 'crearPropiedades','aplicarTratamientoService','dataTableStorageFactory','users',
+service('tratamientosPorPiezaDental', ['$rootScope','sharedDataService', 'crearPropiedades','aplicarTratamientoService','dataTableStorageFactory','users','varsFactoryService',
 
-	function ($rootScope, sharedDataService, crearPropiedades, aplicarTratamientoService, dataTableStorageFactory, users) {
+	function ($rootScope, sharedDataService, crearPropiedades, aplicarTratamientoService, dataTableStorageFactory, users, varsFactoryService) {
 	
 	var usuario = users.getCurrentUser();
 	var i = 0; 
 	var tratamientos = [];
+	var pacienteId;
 
 	this.setdata = function(data){
 		if(data.length > 0){
@@ -26,6 +27,7 @@ service('tratamientosPorPiezaDental', ['$rootScope','sharedDataService', 'crearP
 	this.insertar = function(item){       
 		//Tratamiento seleccionado
 		var tratamientoSeleccionado = sharedDataService.getTratamientoSeleccionado();
+		pacienteId = varsFactoryService.pacienteSeleccionado();
 		crearPropiedades.fill(tratamientoSeleccionado,item);
 
 		var existe = validarExiste(item);
@@ -36,7 +38,7 @@ service('tratamientosPorPiezaDental', ['$rootScope','sharedDataService', 'crearP
 	    }
 
 	    item.nombreTabla = 'TpOdontograma';
-	    item.PartitionKey = usuario.username;
+	    item.PartitionKey = usuario.username + 'paciente' + pacienteId;
 	    item.RowKey = item.i;
 	    saveStorage(item);
 	}

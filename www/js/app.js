@@ -91,7 +91,7 @@ angular.module('starter', ['ionic', 'winjs', 'starter.controllers', 'ngjsColorPi
   })
 
 .state('app.odontograma', {
-    url: "/odontograma",
+    url: "/odontograma/:pacienteId",
     views: {
         'menuContent': {
             templateUrl: "templates/odontograma.html",            

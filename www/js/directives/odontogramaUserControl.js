@@ -8,13 +8,14 @@ directive('odontogramaUserControl', [function () {
 }]);
 
 angular.module('starter')
-.controller("odontogramaCtrl", ['$scope', 'dataTableStorageFactory', 'dataBlobStorageFactory', 'sharedDataService', 'dataTableStorageFactory','leerOdontogramaServices','users',
+.controller("odontogramaCtrl", ['$scope', 'dataTableStorageFactory', 'dataBlobStorageFactory', 'sharedDataService', 'dataTableStorageFactory','leerOdontogramaServices','users','$state','$ionicLoading',
 
-    function ($scope, dataTableStorageFactory, dataBlobStorageFactory, sharedDataService, dataTableStorageFactory,leerOdontogramaServices, users) {
+    function ($scope, dataTableStorageFactory, dataBlobStorageFactory, sharedDataService, dataTableStorageFactory,leerOdontogramaServices, users, $state, $ionicLoading) {
     
         var usuario = users.getCurrentUser();
         var i = 0;
         var index = 0;
+        var pacienteId = $state.params.pacienteId;
 
     $scope.items = [        
         {numeroPiezaDental: 18, esSupernumerario : false, parte:'parte1' },
@@ -99,7 +100,7 @@ angular.module('starter')
 
         supernumerarioAgregar.nombreTabla = 'TpOdontogramaSupernumerario';
         supernumerarioAgregar.RowKey = i;
-        supernumerarioAgregar.PartitionKey = usuario.username;
+        supernumerarioAgregar.PartitionKey = usuario.username + 'paciente' + pacienteId;
         supernumerarioAgregar.index = index;
         supernumerarioAgregar.direccion = direccion;
         supernumerarioAgregar.numeroPiezaDentalReferencia = seleccionado.numeroPiezaDental;
@@ -116,11 +117,12 @@ angular.module('starter')
     });
 
     function obtenerOdontograma(){
-        dataTableStorageFactory.getTableByPartition('TpOdontograma', usuario.username)
+        dataTableStorageFactory.getTableByPartition('TpOdontograma', usuario.username + 'paciente' + pacienteId)
         .success(function(data){
             leerOdontogramaServices.odontogramaToUi(data);
+            $ionicLoading.hide();
         }).error(function(error){
-
+            $ionicLoading.hide();
         })
     }
 
@@ -146,7 +148,9 @@ angular.module('starter')
     }
 
     function obtenerSupernumerarios(){
-        dataTableStorageFactory.getTableByPartition('TpOdontogramaSupernumerario', usuario.username)
+
+        $ionicLoading.show();
+        dataTableStorageFactory.getTableByPartition('TpOdontogramaSupernumerario', usuario.username + 'paciente' + pacienteId)
         .success(function(data){
             for (var i = 0; i < data.length; i++) {
                 var item = data[i];
