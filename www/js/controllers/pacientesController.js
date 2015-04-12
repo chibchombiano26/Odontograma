@@ -1,24 +1,36 @@
 angular.module('starter')
-.controller('pacientesController', ['$scope','dataTableStorageFactory', 'users', function ($scope, dataTableStorageFactory, users) {
+.controller('pacientesController', ['$scope','dataTableStorageFactory', 'users', '$cordovaCamera', 'imagesStorageFactory',
+	function ($scope, dataTableStorageFactory, users, $cordovaCamera, imagesStorageFactory) {
 	
 	$scope.Paciente = {};
 	$scope.Pacientes = new Array();
-	$scope.shouldShowDelete = true;
-	$scope.shouldShowReorder = false;
-	$scope.listCanSwipe = false;
+	$scope.shouldShowDelete = true;	
+	$scope.Imagen = 'https://hefesoft.blob.core.windows.net/profile/profile.png';
 
 	var usuario = users.getCurrentUser();
 
+	$scope.nuevo = function(){
+		$scope.Paciente = {};
+		$scope.Imagen = 'https://hefesoft.blob.core.windows.net/profile/profile.png';
+		$scope.Paciente.urlImagen = $scope.Imagen;
+	}
+
 	$scope.addPaciente = function(){
 
-		var data = $scope.Paciente;
-		data.generarIdentificador = true;
+		var data = $scope.Paciente;		
 		data.PartitionKey = usuario.username;
-		data.generarIdentificador = true;
+
+		//Cuando es un nuevo paciente el otro caso es cuando se edita un registro
+		if(angular.isUndefined(data.RowKey)){
+			data.generarIdentificador = true;
+		}
 		data.nombreTabla= 'TmPacientes';		
 
 		dataTableStorageFactory.saveStorage(data);
-		$scope.Pacientes.push(data);
+		
+		if(angular.isUndefined(data.RowKey)){
+			$scope.Pacientes.push(data);
+		}
 	}
 
 	$scope.delete = function(data, $index){
@@ -26,6 +38,15 @@ angular.module('starter')
 		dataTableStorageFactory.saveStorage(data);
 		$scope.Pacientes.splice($index, 1)
 	} 
+
+	$scope.cargarImagen = function(item){
+		obtenerFoto();
+	}
+
+	$scope.edit = function(item){
+		$scope.Paciente = item;
+		$scope.Imagen = item.urlImagen;
+	}
 
 	function obtenerPacientes(){
 		dataTableStorageFactory.getTableByPartition('TmPacientes', usuario.username)
@@ -37,5 +58,47 @@ angular.module('starter')
 	}
 
 	obtenerPacientes();
+
+    function obtenerFoto(){
+
+    	/*Propiedades de la camara*/
+		var options = {
+	      quality: 50,
+	      destinationType: Camera.DestinationType.DATA_URL,
+	      sourceType: Camera.PictureSourceType.CAMERA,
+	      allowEdit: true,
+	      encodingType: Camera.EncodingType.JPEG,
+	      targetWidth: 100,
+	      targetHeight: 100,
+	      popoverOptions: CameraPopoverOptions,
+	      saveToPhotoAlbum: false
+	    };
+
+	    $cordovaCamera.getPicture(options).then(function(imageData) {	      
+	      $scope.Imagen = "data:image/jpeg;base64," + imageData;
+	      postImage(imageData);
+	    }, function(err) {
+	      // error
+	    });  
+	}
+
+	
+	function postImage(data){
+
+		var datos = 
+		{
+      			tipo : 1, 
+      			ImagenString : data, 
+      			folder: 'imagenes', 
+      			name: usuario.username + $scope.Paciente.nombre + $scope.Paciente.cedula + '.jpg'
+  		};
+
+		imagesStorageFactory.postImage(datos)
+			.success(function(data){
+        	$scope.Paciente.urlImagen = data;
+        }).error(function(error){
+        	console.log(data);
+        })
+	}
 
 }])

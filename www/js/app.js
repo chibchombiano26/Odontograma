@@ -131,5 +131,5 @@ angular.module('starter', ['ionic', 'winjs', 'starter.controllers', 'ngjsColorPi
 
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/pacientes');
+  $urlRouterProvider.otherwise('/app/sigin');
 })
