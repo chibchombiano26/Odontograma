@@ -21,12 +21,11 @@
 </ion-slide-box>
 -->
 
-
-<ion-scroll zooming="true" direction="x" style="width: 100%; height: 500px">
-  <div style="width: 5000px; height: 5000px; background: url('5000') repeat">
+  <button ng-click="test()">test</button>
     
-    <win-hub id="odontograma">
+    <win-hub id="odontograma" hub-test="{{moverA}}" item="{{moverA}}">   
    
+
     <win-hub-section header="'Odontograma'" is-header-static="true">
         <odontograma-user-control item="vm.item"/>
     </win-hub-section>
@@ -35,7 +34,7 @@
          <tratamiento-user-control/>
     </win-hub-section>          
 
-    <win-hub-section header="'Seleccionado'">
+    <win-hub-section header="'Seleccionado'" id="seleccionado">
          <div ng-controller="piezaSeleccionadaCtrl">           
              <pieza-completa es-pieza-completa="'true'" width="180" height="180" mostrar-boton-supernumerario="true" item='item'>
             </pieza-completa> 
@@ -52,8 +51,6 @@
     </win-hub>
 
 
-  </div>
- </ion-scroll>
 
 
 

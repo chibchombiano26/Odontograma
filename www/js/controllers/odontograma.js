@@ -1,6 +1,15 @@
 angular.module('starter')
-.controller('odontogramaController', function($scope, $rootScope){
+.controller('odontogramaController', [ '$scope', '$rootScope', 'varsFactoryService', function($scope, $rootScope, varsFactoryService){
 	
+	var i = 0;
+	$scope.test = function(){
+		i = i+1;
+		if(i == 3){
+			i = 0;
+		}
+		varsFactoryService.goToSection(i);
+	}
+
 	//Para quitar el boton de el lado derecho cuando no se necesite
 	$scope.$on('$ionicView.enter', function(){
 		$rootScope.$broadcast('boton-derecha', {valor : true});
@@ -12,4 +21,4 @@ angular.module('starter')
          console.log('$ionicView.leave called');
     });
 
-});
+}]);
