@@ -8,7 +8,7 @@ angular.module('starter')
   	try{
 	    var data = $localstorage.getObject('user');
 
-	    if(data){
+	    if(data && data.hasOwnProperty('username')){
 		    var username = data.username.split('@')[0];
 		    return {username : username, email : data.username, password: data.password};
 		}
