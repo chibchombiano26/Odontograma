@@ -88,13 +88,3 @@ box-align: center;
   translate3d(0px,0,0);
 }
 
-
-#container{
-  overflow-x:scroll;
-  height: 80px; 
-  width:400px;
-}
-#content{
-   overflow-x:scroll; /* when content is wider than container scrolling will occur on the x axis */
-   width:1200px; /* this creates the overflow area in the container */
-}
