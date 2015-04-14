@@ -3,7 +3,19 @@ angular.module('starter')
 	
 	var i = 0;
 	var hubCtrl;
-	$scope.seleccionado = false;	
+	$scope.seleccionado = false;
+	$scope.width = 40;
+	$scope.height = 40;
+
+	function platform(){
+		var deviceInformation = ionic.Platform.device();
+		var isAndroid = ionic.Platform.isAndroid();
+
+		if(isAndroid){
+			$scope.width = 20;
+			$scope.height = 20;
+		}
+	}
 
 	$scope.$on("elemento-dental-seleccionado", function(event, args){			
 		$scope.seleccionado = true;	
@@ -60,5 +72,7 @@ angular.module('starter')
     function goToSection(index){
     	hubCtrl._scrollToSection(index,true)
     }
+
+    platform();
 
 }]);
