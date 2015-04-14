@@ -3,6 +3,24 @@ angular.module('starter')
 	
 	var i = 0;
 	var hubCtrl;
+	$scope.seleccionado = false;	
+
+	$scope.$on("elemento-dental-seleccionado", function(event, args){			
+		$scope.seleccionado = true;	
+	});
+
+	$scope.odontograma = function(){
+		goToSection(0);
+	}
+
+	$scope.adicionarTratamiento = function(){
+		goToSection(1);
+	}
+
+	$scope.verTratamiento = function(){
+		goToSection(3);
+	}
+	
 	 
 	$scope.setCtrl = function(ctrl){
 		hubCtrl = ctrl;
