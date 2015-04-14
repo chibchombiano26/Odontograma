@@ -12,9 +12,11 @@ angular.module('starter')
 		return pacienteSeleccionado;
 	}
 
+	/*
 	vars.goToSection = function(index){
 		window.hub._scrollToSection(index,true)
 	}
+	*/
 
 	return vars;
 	

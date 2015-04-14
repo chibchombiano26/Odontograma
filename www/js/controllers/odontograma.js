@@ -1,13 +1,11 @@
 angular.module('starter')
-.controller('odontogramaController', [ '$scope', '$rootScope', 'varsFactoryService', function($scope, $rootScope, varsFactoryService){
+.controller('odontogramaController', [ '$scope', '$rootScope', function($scope, $rootScope){
 	
 	var i = 0;
-	$scope.test = function(){
-		i = i+1;
-		if(i == 3){
-			i = 0;
-		}
-		varsFactoryService.goToSection(i);
+	var hubCtrl;
+
+	$scope.setCtrl = function(ctrl){
+		hubCtrl = ctrl;
 	}
 
 	//va hacia la izquierda
@@ -15,7 +13,7 @@ angular.module('starter')
 		
 		if(i > 0){
 			i = i -1;
-			varsFactoryService.goToSection(i);
+			goToSection(i);
 		}
 
 		
@@ -26,7 +24,7 @@ angular.module('starter')
 		
 		if(i < 3){
 			i = i +1;
-			varsFactoryService.goToSection(i);
+			goToSection(i);
 		}
 	}
 
@@ -40,5 +38,9 @@ angular.module('starter')
 		 $rootScope.$broadcast('boton-derecha', {valor : false});
          console.log('$ionicView.leave called');
     });
+
+    function goToSection(index){
+    	hubCtrl._scrollToSection(index,true)
+    }
 
 }]);

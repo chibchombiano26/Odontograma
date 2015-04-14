@@ -3065,8 +3065,13 @@ html.win-hoverable .win-pivot .win-pivot-navbutton:hover {
   height: 100%;
 }
 .win-hub-horizontal .win-hub-section-header {
-  margin-top: 129px;
+  margin-top: 80px;
 }
+
+.platform-android .win-hub-section-header {
+  margin-top: 30px;
+}
+
 .win-hub-vertical .win-hub-section {
   width: calc(100% - 80px);
   padding: 14px 40px;

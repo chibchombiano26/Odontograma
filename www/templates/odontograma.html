@@ -20,10 +20,8 @@
   </ion-slide>
 </ion-slide-box>
 -->
-
-  <button ng-click="test()">test</button>
     
-    <win-hub id="odontograma" on-swipe-right="onSwipeRight()" on-swipe-left="onSwipeLeft()" hub-test="">   
+    <win-hub id="odontograma" on-swipe-right="onSwipeRight()" on-swipe-left="onSwipeLeft()" obtener-control="setCtrl(ctrl)">   
    
 
     <win-hub-section header="'Odontograma'" is-header-static="true">
@@ -34,14 +32,14 @@
          <tratamiento-user-control/>
     </win-hub-section>          
 
-    <win-hub-section header="'Seleccionado'" id="seleccionado">
-         <div ng-controller="piezaSeleccionadaCtrl">           
+    <win-hub-section header="'Pieza seleccionada'" id="seleccionado">
+         <div style="width:300px;" ng-controller="piezaSeleccionadaCtrl">           
              <pieza-completa es-pieza-completa="'true'" width="180" height="180" mostrar-boton-supernumerario="true" item='item'>
             </pieza-completa> 
         </div>        
     </win-hub-section>       
 
-    <win-hub-section header="'Pieza seleccionada'">
+    <win-hub-section header="'Tratamientos para esta pieza'">
         <ion-scroll direction="y" style="height: 500px">  
             <tratamientos-por-pieza-dental>
             </tratamientos-por-pieza-dental>
