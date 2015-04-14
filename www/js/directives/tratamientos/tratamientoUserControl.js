@@ -6,16 +6,16 @@ directive('tratamientoUserControl', [function () {
             delete : '=',
         },
 		controller : 'tratamientosCtrl',
-        templateUrl: 'templates/directives/tratamientosUserControl.html'
+        templateUrl: 'templates/directives/tratamientos/tratamientosUserControl.html'
 	};
 }]);
 
 angular.module('starter')
-.controller("tratamientosCtrl", ['$rootScope','$scope', 'dataTableStorageFactory', 'dataBlobStorageFactory','sharedDataService', 
+.controller("tratamientosCtrl", ['$rootScope','$scope', 'dataTableStorageFactory', 'dataBlobStorageFactory','sharedDataService','users', 
 
-    function ($rootScope, $scope, dataTableStorageFactory, dataBlobStorageFactory, sharedDataService) {
+    function ($rootScope, $scope, dataTableStorageFactory, dataBlobStorageFactory, sharedDataService, users) {
     
-
+    var usuario = users.getCurrentUser();
     var Listado = [];
     $scope.items = [];
     $scope.textoBuscar = "";
@@ -35,7 +35,7 @@ angular.module('starter')
     }
 
      function get() {
-        dataTableStorageFactory.getTableByPartition('TpTratamientos','Tratamientos')
+        dataTableStorageFactory.getTableByPartition('TpTratamientos', usuario.username)
             .success(function (data) {
                 Listado = data;
                 $scope.items = Listado;

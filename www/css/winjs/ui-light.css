@@ -3051,10 +3051,19 @@ html.win-hoverable .win-pivot .win-pivot-navbutton:hover {
   width: 100%;
   padding: 15px 0;
 }
+
+
 .win-hub-horizontal .win-hub-surface {
   height: 100%;
   padding: 0 80px;
 }
+
+.platform-android .win-hub-horizontal .win-hub-surface {
+  height: 100%;
+  padding: 0 0px;
+}
+
+
 .win-hub-section {
   display: inline-block;
   padding: 0 40px;
@@ -3064,6 +3073,7 @@ html.win-hoverable .win-pivot .win-pivot-navbutton:hover {
 .win-hub-horizontal .win-hub-section {
   height: 100%;
 }
+
 .win-hub-horizontal .win-hub-section-header {
   margin-top: 80px;
 }

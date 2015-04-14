@@ -3,7 +3,7 @@ angular.module('starter')
 .directive('tratamientosPorPiezaDental', [function () {
     return {
         restrict: 'E',      
-        templateUrl: 'templates/directives/tratamientosPorPiezaDental.html',
+        templateUrl: 'templates/directives/tratamientos/tratamientosPorPiezaDental.html',
         controller : 'tratamientosPorPiezaDentalCtrl'
     };
 }])

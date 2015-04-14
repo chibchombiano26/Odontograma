@@ -3,7 +3,7 @@ angular.module('starter')
 	
 	var i = 0;
 	var hubCtrl;
-
+	 
 	$scope.setCtrl = function(ctrl){
 		hubCtrl = ctrl;
 	}

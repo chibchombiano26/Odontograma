@@ -88,3 +88,10 @@ box-align: center;
   translate3d(0px,0,0);
 }
 
+.fondo {
+  background: url(http://dentrios.com/wp-content/uploads/2013/10/dental-background4.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}

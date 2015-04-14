@@ -6,7 +6,7 @@ angular.module('starter')
 		scope: {			
 			item : '='
 		},
-		templateUrl: 'templates/directives/tratamientos.html',
+		templateUrl: 'templates/directives/tratamientos/tratamientos.html',
 		controller : function($scope, fuenteConverterService, coloresService){
 			var item = $scope.item;
 			
