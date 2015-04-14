@@ -1,5 +1,6 @@
 angular.module('starter')
-.controller('TpTratamientosCtrl', ['$scope','dataTableStorageFactory','$cordovaOauth', function ($scope, dataTableStorageFactory, $cordovaOauth) {
+.controller('TpTratamientosCtrl', ['$scope','dataTableStorageFactory','$cordovaOauth','$ionicLoading', '$state', 
+	function ($scope, dataTableStorageFactory, $cordovaOauth,$ionicLoading, $state) {
 	
 	$scope.customOptions = {
 	    size: 30,
@@ -13,6 +14,33 @@ angular.module('starter')
 	var Descripcion;
 	var Simbolo;
 	var Letra;	
+	var i = 0;
+	var hubCtrl;
+
+	$scope.listado = function(){
+		$state.go("app.listadotratamientos");
+	}
+
+	$scope.setCtrl = function(ctrl){
+		hubCtrl = ctrl;
+	}
+
+	//va hacia la izquierda
+	$scope.onSwipeRight = function(){		
+		if(i > 0){
+			i = i -1;
+			goToSection(i);
+		}
+	}
+
+	//va hacia la derecha
+	$scope.onSwipeLeft = function(){		
+		if(i < 5){
+			i = i +1;
+			goToSection(i);
+		}
+	}
+
 
 	$scope.Aplica = [{nombre: 'Boca', codigo : 1}, {nombre: 'Superficie', codigo : 2}, {nombre: 'Pieza completa', codigo : 3}];
 	$scope.AplicaSeleccionado = $scope.Aplica[1];
@@ -77,8 +105,10 @@ angular.module('starter')
 
 	$scope.guardar = function(){
 		if(validar()){
+
+		$ionicLoading.show();
 		var elemento = { 
-						partitionKey : 'Tratamientos',
+						PartitionKey : 'Tratamientos',
 						generarIdentificador : true, 
 						nombreTabla: 'TpTratamientos',
 						RowKey : 1000,
@@ -113,5 +143,9 @@ angular.module('starter')
 	            // error
 	        });
 	}
+
+	function goToSection(index){
+    	hubCtrl._scrollToSection(index,true)
+    }
 
 }])

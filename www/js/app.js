@@ -48,19 +48,20 @@ angular.module('starter', ['ionic', 'winjs', 'starter.controllers', 'ngjsColorPi
     url: "/parametrizartratamientos",
     views: {
       'menuContent': {
-        templateUrl: "templates/views/TpTratamientos.html"
+        templateUrl: "templates/views/tratamientos/TpTratamientos.html"
       }
     }
   })
 
-  .state('app.browse', {
-    url: "/browse",
+.state('app.listadotratamientos', {
+    url: "/listadotratamientos",
     views: {
       'menuContent': {
-        templateUrl: "templates/browse.html"        
+        templateUrl: "templates/views/tratamientos/Listado.html"
       }
     }
-  })
+  })  
+    
     .state('app.playlists', {
       url: "/playlists",
       views: {
@@ -77,15 +78,6 @@ angular.module('starter', ['ionic', 'winjs', 'starter.controllers', 'ngjsColorPi
       'menuContent': {
         templateUrl: "templates/playlist.html",
         controller: 'PlaylistCtrl'
-      }
-    }
-  })
-
-  .state('app.tratamientos', {
-    url: "/tratamientos",
-    views: {
-      'menuSubcontent': {
-        templateUrl: "templates/views/tratamientosYPiezaDental.html",        
       }
     }
   })
@@ -109,7 +101,6 @@ angular.module('starter', ['ionic', 'winjs', 'starter.controllers', 'ngjsColorPi
     })
 
 
-
 .state('app.signup', {
     url: "/signup",
     views: {
@@ -119,11 +110,21 @@ angular.module('starter', ['ionic', 'winjs', 'starter.controllers', 'ngjsColorPi
         }
     })
 
+.state('app.editarPacientes', {
+    url: "/editarPacientes",
+    views: {
+        'menuContent': {
+            templateUrl: "templates/views/Pacientes/editar.html",            
+        }       
+        }
+    })
+
+
 .state('app.pacientes', {
     url: "/pacientes",
     views: {
         'menuContent': {
-            templateUrl: "templates/views/Pacientes.html",            
+            templateUrl: "templates/views/Pacientes/Listado.html",            
         }       
         }
     });

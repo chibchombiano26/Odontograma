@@ -2,6 +2,9 @@ angular.module('starter').
 directive('tratamientoUserControl', [function () {
 	return {
 		restrict: 'E',
+        scope:{
+            delete : '=',
+        },
 		controller : 'tratamientosCtrl',
         templateUrl: 'templates/directives/tratamientosUserControl.html'
 	};
@@ -18,6 +21,9 @@ angular.module('starter')
     $scope.textoBuscar = "";
     $scope.shouldShowDelete = false;   
     
+    $scope.shouldShowDelete = $scope.delete;   
+
+
   
     $scope.clickSeleccionado = function(e){
         sharedDataService.putTratamientoSeleccionado(e);        

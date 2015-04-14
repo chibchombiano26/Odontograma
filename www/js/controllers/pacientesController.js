@@ -3,6 +3,9 @@ angular.module('starter')
 	function ($scope, dataTableStorageFactory, users, $cordovaCamera, imagesStorageFactory, $state, varsFactoryService, $ionicLoading) {
 	
 	$scope.Paciente = {};
+
+	//Cuando se selecciona un paciente
+	$scope.Paciente = varsFactoryService.pacienteSeleccionado();
 	$scope.Pacientes = new Array();
 	$scope.shouldShowDelete = true;	
 	$scope.Imagen = 'https://hefesoft.blob.core.windows.net/profile/profile.png';
@@ -15,12 +18,6 @@ angular.module('starter')
 		$state.go("app.odontograma", { "pacienteId": item.RowKey});
 	}
 
-
-	$scope.nuevo = function(){
-		$scope.Paciente = {};
-		$scope.Imagen = 'https://hefesoft.blob.core.windows.net/profile/profile.png';
-		$scope.Paciente.urlImagen = $scope.Imagen;
-	}
 
 	$scope.addPaciente = function(){
 
@@ -53,6 +50,16 @@ angular.module('starter')
 	$scope.edit = function(item){
 		$scope.Paciente = item;
 		$scope.Imagen = item.urlImagen;
+		varsFactoryService.fijarPaciente(item);
+		$state.go("app.editarPacientes");
+	}
+
+	$scope.nuevo = function(){
+		$scope.Paciente = {};
+		$scope.Imagen = 'https://hefesoft.blob.core.windows.net/profile/profile.png';
+		$scope.Paciente.urlImagen = $scope.Imagen;
+		varsFactoryService.fijarPaciente({});
+		$state.go("app.editarPacientes");
 	}
 
 	function obtenerPacientes(){

@@ -1,5 +1,6 @@
 angular.module('starter')
-    .factory('dataTableStorageFactory', ['$http','urlServicioFactory', function($http, urlServicioFactory) {
+    .factory('dataTableStorageFactory', ['$http','urlServicioFactory','$ionicLoading', 
+        function($http, urlServicioFactory, $ionicLoading) {
     
     var urlBase = urlServicioFactory.getUrlService();
     var dataFactory = {};
@@ -55,10 +56,11 @@ angular.module('starter')
     dataFactory.saveStorage = function (item){
         dataFactory.postTable(item)
             .success(function (data) {
-              
+                $ionicLoading.hide();
             })
             .error(function (error) {
-               
+                console.log(error);
+                $ionicLoading.hide();
             });
     }
 

@@ -11,7 +11,9 @@ angular.module('starter')
 		$state.go("app.pacientes");	
 	}
 
-	
+	$scope.registrarse = function(){
+		$state.go("app.signup");
+	}
 
 	$scope.doSign = function(){
 		$ionicLoading.show();
