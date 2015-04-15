@@ -16,7 +16,7 @@ angular.module('starter')
 		$scope.item.rutaPiezaDental = "img/Periodontograma/periodontograma-dientes-abajo-" +  $scope.item.numeroPiezaDental + ".png";		
 	}
 
-	if($scope.item.numeroPiezaDental.toString().indexOf('b') === 0){
+	if($scope.item.lado  == "b"){
 		$scope.item.fondo = "img/Periodontograma/fondo-grafico-inf.png";
 	}
 	else{

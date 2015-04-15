@@ -2,6 +2,7 @@
 	{
 		"numeroPiezaDental":18,
 		"mostrarFurca":false,
+		"lado":"a",
 		"margen1":50,
 		"margen2":50,
 		"margen3":50,
@@ -15,6 +16,7 @@
 	{
 		"numeroPiezaDental":17,
 		"mostrarFurca":false,
+		"lado":"a",
 		"margen1":50,
 		"margen2":50,
 		"margen3":50,
@@ -27,6 +29,7 @@
 	{
 		"numeroPiezaDental":16,
 		"mostrarFurca":false,
+		"lado":"a",
 		"margen1":50,
 		"margen2":50,
 		"margen3":50,
@@ -40,6 +43,7 @@
 
 		"numeroPiezaDental":15,
 		"mostrarFurca":false,
+		"lado":"a",
 		"margen1":50,
 		"margen2":50,
 		"margen3":50,
@@ -53,6 +57,7 @@
 	{
 		"numeroPiezaDental":14,
 		"mostrarFurca":false,
+		"lado":"a",
 		"margen1":50,
 		"margen2":50,
 		"margen3":50,
@@ -65,6 +70,7 @@
 	{
 		"numeroPiezaDental":13,
 		"mostrarFurca":false,
+		"lado":"a",
 		"margen1":50,
 		"margen2":50,
 		"margen3":50,
@@ -78,6 +84,7 @@
 	{
 		"numeroPiezaDental":12,
 		"mostrarFurca":false,
+		"lado":"a",
 		"margen1":50,
 		"margen2":50,
 		"margen3":50,
@@ -90,6 +97,7 @@
 	{
 		"numeroPiezaDental":11,
 		"mostrarFurca":false,
+		"lado":"a",
 		"margen1":50,
 		"margen2":50,
 		"margen3":50,
@@ -103,6 +111,7 @@
 	{
 		"numeroPiezaDental":21,
 		"mostrarFurca":false,
+		"lado":"a",
 		"margen1":50,
 		"margen2":50,
 		"margen3":50,
@@ -116,6 +125,7 @@
 	{
 		"numeroPiezaDental":22,
 		"mostrarFurca":false,
+		"lado":"a",
 		"margen1":50,
 		"margen2":50,
 		"margen3":50,
@@ -129,6 +139,7 @@
 	{
 		"numeroPiezaDental":23,
 		"mostrarFurca":false,
+		"lado":"a",
 		"margen1":50,
 		"margen2":50,
 		"margen3":50,
@@ -142,6 +153,7 @@
 	{
 		"numeroPiezaDental":24,
 		"mostrarFurca":false,
+		"lado":"a",
 		"margen1":50,
 		"margen2":50,
 		"margen3":50,
@@ -155,6 +167,7 @@
 	{
 		"numeroPiezaDental":25,
 		"mostrarFurca":false,
+		"lado":"a",
 		"margen1":50,
 		"margen2":50,
 		"margen3":50,
@@ -168,6 +181,7 @@
 	{
 		"numeroPiezaDental":26,
 		"mostrarFurca":false,
+		"lado":"a",
 		"margen1":50,
 		"margen2":50,
 		"margen3":50,
@@ -181,6 +195,7 @@
 	{
 		"numeroPiezaDental":27,
 		"mostrarFurca":false,
+		"lado":"a",
 		"margen1":50,
 		"margen2":50,
 		"margen3":50,
@@ -194,6 +209,7 @@
 	{
 		"numeroPiezaDental":28,
 		"mostrarFurca":false,
+		"lado":"a",
 		"margen1":50,
 		"margen2":50,
 		"margen3":50,
@@ -233,6 +249,7 @@
 	{
 		"numeroPiezaDental":"18b",
 		"mostrarFurca":false,
+		"lado":"b",
 		"margen1":50,
 		"margen2":50,
 		"margen3":50,
@@ -246,6 +263,7 @@
 	{
 		"numeroPiezaDental":"17b",
 		"mostrarFurca":false,
+		"lado":"b",
 		"margen1":50,
 		"margen2":50,
 		"margen3":50,
@@ -258,6 +276,7 @@
 	{
 		"numeroPiezaDental":"16b",
 		"mostrarFurca":false,
+		"lado":"b",
 		"margen1":50,
 		"margen2":50,
 		"margen3":50,
@@ -271,6 +290,7 @@
 
 		"numeroPiezaDental":"15b",
 		"mostrarFurca":false,
+		"lado":"b",
 		"margen1":50,
 		"margen2":50,
 		"margen3":50,
@@ -284,6 +304,7 @@
 	{
 		"numeroPiezaDental":"14b",
 		"mostrarFurca":false,
+		"lado":"b",
 		"margen1":50,
 		"margen2":50,
 		"margen3":50,
@@ -296,6 +317,7 @@
 	{
 		"numeroPiezaDental":"13b",
 		"mostrarFurca":false,
+		"lado":"b",
 		"margen1":50,
 		"margen2":50,
 		"margen3":50,
@@ -309,6 +331,7 @@
 	{
 		"numeroPiezaDental":"12b",
 		"mostrarFurca":false,
+		"lado":"b",
 		"margen1":50,
 		"margen2":50,
 		"margen3":50,
@@ -321,6 +344,7 @@
 	{
 		"numeroPiezaDental":"11b",
 		"mostrarFurca":false,
+		"lado":"b",
 		"margen1":50,
 		"margen2":50,
 		"margen3":50,
@@ -334,6 +358,7 @@
 	{
 		"numeroPiezaDental":"21b",
 		"mostrarFurca":false,
+		"lado":"b",
 		"margen1":50,
 		"margen2":50,
 		"margen3":50,
@@ -347,6 +372,7 @@
 	{
 		"numeroPiezaDental":"22b",
 		"mostrarFurca":false,
+		"lado":"b",
 		"margen1":50,
 		"margen2":50,
 		"margen3":50,
@@ -360,6 +386,7 @@
 	{
 		"numeroPiezaDental":"23b",
 		"mostrarFurca":false,
+		"lado":"b",
 		"margen1":50,
 		"margen2":50,
 		"margen3":50,
@@ -373,6 +400,7 @@
 	{
 		"numeroPiezaDental":"24b",
 		"mostrarFurca":false,
+		"lado":"b",
 		"margen1":50,
 		"margen2":50,
 		"margen3":50,
@@ -386,6 +414,7 @@
 	{
 		"numeroPiezaDental":"25b",
 		"mostrarFurca":false,
+		"lado":"b",
 		"margen1":50,
 		"margen2":50,
 		"margen3":50,
@@ -399,6 +428,7 @@
 	{
 		"numeroPiezaDental":"26b",
 		"mostrarFurca":false,
+		"lado":"b",
 		"margen1":50,
 		"margen2":50,
 		"margen3":50,
@@ -412,6 +442,7 @@
 	{
 		"numeroPiezaDental":"27b",
 		"mostrarFurca":false,
+		"lado":"b",
 		"margen1":50,
 		"margen2":50,
 		"margen3":50,
@@ -425,6 +456,7 @@
 	{
 		"numeroPiezaDental":"28b",
 		"mostrarFurca":false,
+		"lado":"b",
 		"margen1":50,
 		"margen2":50,
 		"margen3":50,
@@ -459,6 +491,7 @@
 	{
 		"numeroPiezaDental":48,
 		"mostrarFurca":false,
+		"lado":"a",
 		"margen1":50,
 		"margen2":50,
 		"margen3":50,
@@ -472,6 +505,7 @@
 	{
 		"numeroPiezaDental":47,
 		"mostrarFurca":false,
+		"lado":"a",
 		"margen1":50,
 		"margen2":50,
 		"margen3":50,
@@ -484,6 +518,7 @@
 	{
 		"numeroPiezaDental":46,
 		"mostrarFurca":false,
+		"lado":"a",
 		"margen1":50,
 		"margen2":50,
 		"margen3":50,
@@ -497,6 +532,7 @@
 
 		"numeroPiezaDental":45,
 		"mostrarFurca":false,
+		"lado":"a",
 		"margen1":50,
 		"margen2":50,
 		"margen3":50,
@@ -510,6 +546,7 @@
 	{
 		"numeroPiezaDental":44,
 		"mostrarFurca":false,
+		"lado":"a",
 		"margen1":50,
 		"margen2":50,
 		"margen3":50,
@@ -522,6 +559,7 @@
 	{
 		"numeroPiezaDental":43,
 		"mostrarFurca":false,
+		"lado":"a",
 		"margen1":50,
 		"margen2":50,
 		"margen3":50,
@@ -535,6 +573,7 @@
 	{
 		"numeroPiezaDental":42,
 		"mostrarFurca":false,
+		"lado":"a",
 		"margen1":50,
 		"margen2":50,
 		"margen3":50,
@@ -547,6 +586,7 @@
 	{
 		"numeroPiezaDental":41,
 		"mostrarFurca":false,
+		"lado":"a",
 		"margen1":50,
 		"margen2":50,
 		"margen3":50,
@@ -560,6 +600,7 @@
 	{
 		"numeroPiezaDental":31,
 		"mostrarFurca":false,
+		"lado":"a",
 		"margen1":50,
 		"margen2":50,
 		"margen3":50,
@@ -573,6 +614,7 @@
 	{
 		"numeroPiezaDental":32,
 		"mostrarFurca":false,
+		"lado":"a",
 		"margen1":50,
 		"margen2":50,
 		"margen3":50,
@@ -586,6 +628,7 @@
 	{
 		"numeroPiezaDental":33,
 		"mostrarFurca":false,
+		"lado":"a",
 		"margen1":50,
 		"margen2":50,
 		"margen3":50,
@@ -599,6 +642,7 @@
 	{
 		"numeroPiezaDental":34,
 		"mostrarFurca":false,
+		"lado":"a",
 		"margen1":50,
 		"margen2":50,
 		"margen3":50,
@@ -612,6 +656,7 @@
 	{
 		"numeroPiezaDental":35,
 		"mostrarFurca":false,
+		"lado":"a",
 		"margen1":50,
 		"margen2":50,
 		"margen3":50,
@@ -625,6 +670,7 @@
 	{
 		"numeroPiezaDental":36,
 		"mostrarFurca":false,
+		"lado":"a",
 		"margen1":50,
 		"margen2":50,
 		"margen3":50,
@@ -638,6 +684,7 @@
 	{
 		"numeroPiezaDental":37,
 		"mostrarFurca":false,
+		"lado":"a",
 		"margen1":50,
 		"margen2":50,
 		"margen3":50,
@@ -651,6 +698,7 @@
 	{
 		"numeroPiezaDental":38,
 		"mostrarFurca":false,
+		"lado":"a",
 		"margen1":50,
 		"margen2":50,
 		"margen3":50,
@@ -690,6 +738,7 @@
 	{
 		"numeroPiezaDental":"48b",
 		"mostrarFurca":false,
+		"lado":"b",
 		"margen1":50,
 		"margen2":50,
 		"margen3":50,
@@ -703,6 +752,7 @@
 	{
 		"numeroPiezaDental":"47b",
 		"mostrarFurca":false,
+		"lado":"b",
 		"margen1":50,
 		"margen2":50,
 		"margen3":50,
@@ -715,6 +765,7 @@
 	{
 		"numeroPiezaDental":"46b",
 		"mostrarFurca":false,
+		"lado":"b",
 		"margen1":50,
 		"margen2":50,
 		"margen3":50,
@@ -728,6 +779,7 @@
 
 		"numeroPiezaDental":"45b",
 		"mostrarFurca":false,
+		"lado":"b",
 		"margen1":50,
 		"margen2":50,
 		"margen3":50,
@@ -741,6 +793,7 @@
 	{
 		"numeroPiezaDental":"44b",
 		"mostrarFurca":false,
+		"lado":"b",
 		"margen1":50,
 		"margen2":50,
 		"margen3":50,
@@ -753,6 +806,7 @@
 	{
 		"numeroPiezaDental":"43b",
 		"mostrarFurca":false,
+		"lado":"b",
 		"margen1":50,
 		"margen2":50,
 		"margen3":50,
@@ -766,6 +820,7 @@
 	{
 		"numeroPiezaDental":"42b",
 		"mostrarFurca":false,
+		"lado":"b",
 		"margen1":50,
 		"margen2":50,
 		"margen3":50,
@@ -778,6 +833,7 @@
 	{
 		"numeroPiezaDental":"41b",
 		"mostrarFurca":false,
+		"lado":"b",
 		"margen1":50,
 		"margen2":50,
 		"margen3":50,
@@ -791,6 +847,7 @@
 	{
 		"numeroPiezaDental":"31b",
 		"mostrarFurca":false,
+		"lado":"b",
 		"margen1":50,
 		"margen2":50,
 		"margen3":50,
@@ -804,6 +861,7 @@
 	{
 		"numeroPiezaDental":"32b",
 		"mostrarFurca":false,
+		"lado":"b",
 		"margen1":50,
 		"margen2":50,
 		"margen3":50,
@@ -817,6 +875,7 @@
 	{
 		"numeroPiezaDental":"33b",
 		"mostrarFurca":false,
+		"lado":"b",
 		"margen1":50,
 		"margen2":50,
 		"margen3":50,
@@ -830,6 +889,7 @@
 	{
 		"numeroPiezaDental":"34b",
 		"mostrarFurca":false,
+		"lado":"b",
 		"margen1":50,
 		"margen2":50,
 		"margen3":50,
@@ -843,6 +903,7 @@
 	{
 		"numeroPiezaDental":"35b",
 		"mostrarFurca":false,
+		"lado":"b",
 		"margen1":50,
 		"margen2":50,
 		"margen3":50,
@@ -856,6 +917,7 @@
 	{
 		"numeroPiezaDental":"36b",
 		"mostrarFurca":false,
+		"lado":"b",
 		"margen1":50,
 		"margen2":50,
 		"margen3":50,
@@ -869,6 +931,7 @@
 	{
 		"numeroPiezaDental":"37b",
 		"mostrarFurca":false,
+		"lado":"b",
 		"margen1":50,
 		"margen2":50,
 		"margen3":50,
@@ -882,6 +945,7 @@
 	{
 		"numeroPiezaDental":"38b",
 		"mostrarFurca":false,
+		"lado":"b",
 		"margen1":50,
 		"margen2":50,
 		"margen3":50,
