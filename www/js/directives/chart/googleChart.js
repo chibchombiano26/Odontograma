@@ -6,15 +6,15 @@ angular.module('starter')
 		  
 		  var elemento = iElement[0];
 		  var data = new google.visualization.DataTable();
-	      data.addColumn('number', 'X');
-	      data.addColumn('number', 'Margen');
+	      data.addColumn('number', '');
+	      data.addColumn('number', '');
 
 	      data.addRows([
-	        [0, 0],   [1, 10],  [2, 10]       
+	        [0, 60],   [0, 50],  [0, 60]       
 	      ]);
 
 	      var options = {	      	
-        	'width':40,
+        	'width':65,
         	'height':40,        	
 	        hAxis: {
 	         title: '',
@@ -28,6 +28,7 @@ angular.module('starter')
 	         gridlineColor: 'transparent',
 	         textPosition: 'none'
 	        },
+	        'chartArea': {'width': '100%', 'height': '100%'},
 	        legend: {position: 'none'},
 	        backgroundColor: 'transparent'
 	      };

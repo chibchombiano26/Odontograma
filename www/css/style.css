@@ -96,6 +96,6 @@ box-align: center;
   background-size: cover;
 }
 
-.overlay{
-  position: absolute;   
+.contenedor{
+  position: relative;;
 }
