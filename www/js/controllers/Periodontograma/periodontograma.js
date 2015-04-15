@@ -1,24 +1,25 @@
 angular.module('starter')
-.controller('PeriodontogramaCtrl', ['$scope', function ($scope) {
+.controller('PeriodontogramaCtrl', ['$scope','dataTableStorageFactory', function ($scope, dataTableStorageFactory) {
 	
  $scope.selecionado = {numeroPiezaDental: 18, mostrarFurca : false, tipoFurca: 'vacio', parte: 'parte1'};
- $scope.items = [        
-        {numeroPiezaDental: 18, mostrarFurca : false, margen1: 50, margen2: 50, margen3: 50, tipoFurca: 'vacio', parte: 'parte1', click : clickPiezaDental},
-        {numeroPiezaDental: 16, mostrarFurca : false, margen1: 50, margen2: 50, margen3: 50, tipoFurca: 'vacio', parte: 'parte1', click : clickPiezaDental},
-        {numeroPiezaDental: 15, mostrarFurca : false, margen1: 50, margen2: 50, margen3: 50, tipoFurca: 'vacio', parte: 'parte1', click : clickPiezaDental},
-        {numeroPiezaDental: 14, mostrarFurca : false, margen1: 50, margen2: 50, margen3: 50, tipoFurca: 'vacio', parte: 'parte1', click : clickPiezaDental},
-        {numeroPiezaDental: 13, mostrarFurca : false, margen1: 50, margen2: 50, margen3: 50, tipoFurca: 'vacio', parte: 'parte1', click : clickPiezaDental},
-        {numeroPiezaDental: 12, mostrarFurca : false, margen1: 50, margen2: 50, margen3: 50, tipoFurca: 'vacio', parte: 'parte1', click : clickPiezaDental},
-        {numeroPiezaDental: 11, mostrarFurca : false, margen1: 50, margen2: 50, margen3: 50, tipoFurca: 'vacio', parte: 'parte1', click : clickPiezaDental},
-    ];
+ 
+    function obtenerPeriodontogramaBase(){
+        dataTableStorageFactory.getJsonData('Periodontograma.json').success(function (data) {
+                for (var i = 0; i < data.length; i++) {
+                    data[i].click = clickPiezaDental;
+                };
 
-
-
+                $scope.items = data;
+            })
+            .error(function (error) {
+                console.log(error);                
+            });
+    }
 
     function clickPiezaDental(item){
         $scope.selecionado = item;
-        $scope.selecionado.margen2 =100;
-        
     }
+
+    obtenerPeriodontogramaBase();
 
 }])

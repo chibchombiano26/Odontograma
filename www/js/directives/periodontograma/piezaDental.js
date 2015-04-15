@@ -3,14 +3,13 @@ angular.module('starter')
 	return {
 		restrict: 'E',
 		scope:{			
-			width : '=',
-			height : '=',
+			zoom : '=',			
 			item: '='
 		},
 		templateUrl : 'templates/directives/periodontograma/piezaDental.html',
 		controller : 'periodontogramaPiezaDentalCtrl',
 		link: function (scope, el, attr) {
-					 
+			$(el[0]).css('zoom', scope.zoom);
 		}
 	};
 }])

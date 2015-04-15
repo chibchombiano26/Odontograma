@@ -1,0 +1,897 @@
+[
+	{
+		"numeroPiezaDental":18,
+		"mostrarFurca":false,
+		"margen1":50,
+		"margen2":50,
+		"margen3":50,
+		"profundidad1":50,
+		"profundidad2":50,
+		"profundidad3":50,
+		"tipoFurca":"vacio",
+		"parte":"parte1"
+	},
+
+	{
+		"numeroPiezaDental":17,
+		"mostrarFurca":false,
+		"margen1":50,
+		"margen2":50,
+		"margen3":50,
+		"profundidad1":50,
+		"profundidad2":50,
+		"profundidad3":50,
+		"tipoFurca":"vacio",
+		"parte":"parte1"
+	},
+	{
+		"numeroPiezaDental":16,
+		"mostrarFurca":false,
+		"margen1":50,
+		"margen2":50,
+		"margen3":50,
+		"profundidad1":50,
+		"profundidad2":50,
+		"profundidad3":50,
+		"tipoFurca":"vacio",
+		"parte":"parte1"
+	},
+	{
+
+		"numeroPiezaDental":15,
+		"mostrarFurca":false,
+		"margen1":50,
+		"margen2":50,
+		"margen3":50,
+		"profundidad1":50,
+		"profundidad2":50,
+		"profundidad3":50,
+		"tipoFurca":"vacio",
+		"parte":"parte1"
+	},
+
+	{
+		"numeroPiezaDental":14,
+		"mostrarFurca":false,
+		"margen1":50,
+		"margen2":50,
+		"margen3":50,
+		"profundidad1":50,
+		"profundidad2":50,
+		"profundidad3":50,
+		"tipoFurca":"vacio",
+		"parte":"parte1"
+	},
+	{
+		"numeroPiezaDental":13,
+		"mostrarFurca":false,
+		"margen1":50,
+		"margen2":50,
+		"margen3":50,
+		"profundidad1":50,
+		"profundidad2":50,
+		"profundidad3":50,
+		"tipoFurca":"vacio",
+		"parte":"parte1"
+	},
+
+	{
+		"numeroPiezaDental":12,
+		"mostrarFurca":false,
+		"margen1":50,
+		"margen2":50,
+		"margen3":50,
+		"profundidad1":50,
+		"profundidad2":50,
+		"profundidad3":50,
+		"tipoFurca":"vacio",
+		"parte":"parte1"
+	},
+	{
+		"numeroPiezaDental":11,
+		"mostrarFurca":false,
+		"margen1":50,
+		"margen2":50,
+		"margen3":50,
+		"profundidad1":50,
+		"profundidad2":50,
+		"profundidad3":50,
+		"tipoFurca":"vacio",
+		"parte":"parte1"
+	},
+
+	{
+		"numeroPiezaDental":21,
+		"mostrarFurca":false,
+		"margen1":50,
+		"margen2":50,
+		"margen3":50,
+		"profundidad1":50,
+		"profundidad2":50,
+		"profundidad3":50,
+		"tipoFurca":"vacio",
+		"parte":"parte1"
+	},
+
+	{
+		"numeroPiezaDental":22,
+		"mostrarFurca":false,
+		"margen1":50,
+		"margen2":50,
+		"margen3":50,
+		"profundidad1":50,
+		"profundidad2":50,
+		"profundidad3":50,
+		"tipoFurca":"vacio",
+		"parte":"parte1"
+	},
+
+	{
+		"numeroPiezaDental":23,
+		"mostrarFurca":false,
+		"margen1":50,
+		"margen2":50,
+		"margen3":50,
+		"profundidad1":50,
+		"profundidad2":50,
+		"profundidad3":50,
+		"tipoFurca":"vacio",
+		"parte":"parte1"
+	},
+
+	{
+		"numeroPiezaDental":24,
+		"mostrarFurca":false,
+		"margen1":50,
+		"margen2":50,
+		"margen3":50,
+		"profundidad1":50,
+		"profundidad2":50,
+		"profundidad3":50,
+		"tipoFurca":"vacio",
+		"parte":"parte1"
+	},
+
+	{
+		"numeroPiezaDental":25,
+		"mostrarFurca":false,
+		"margen1":50,
+		"margen2":50,
+		"margen3":50,
+		"profundidad1":50,
+		"profundidad2":50,
+		"profundidad3":50,
+		"tipoFurca":"vacio",
+		"parte":"parte1"
+	},
+
+	{
+		"numeroPiezaDental":26,
+		"mostrarFurca":false,
+		"margen1":50,
+		"margen2":50,
+		"margen3":50,
+		"profundidad1":50,
+		"profundidad2":50,
+		"profundidad3":50,
+		"tipoFurca":"vacio",
+		"parte":"parte1"
+	},
+
+	{
+		"numeroPiezaDental":27,
+		"mostrarFurca":false,
+		"margen1":50,
+		"margen2":50,
+		"margen3":50,
+		"profundidad1":50,
+		"profundidad2":50,
+		"profundidad3":50,
+		"tipoFurca":"vacio",
+		"parte":"parte1"
+	},
+
+	{
+		"numeroPiezaDental":28,
+		"mostrarFurca":false,
+		"margen1":50,
+		"margen2":50,
+		"margen3":50,
+		"profundidad1":50,
+		"profundidad2":50,
+		"profundidad3":50,
+		"tipoFurca":"vacio",
+		"parte":"parte1"
+	},
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	{
+		"numeroPiezaDental":"18b",
+		"mostrarFurca":false,
+		"margen1":50,
+		"margen2":50,
+		"margen3":50,
+		"profundidad1":50,
+		"profundidad2":50,
+		"profundidad3":50,
+		"tipoFurca":"vacio",
+		"parte":"parte2"
+	},
+
+	{
+		"numeroPiezaDental":"17b",
+		"mostrarFurca":false,
+		"margen1":50,
+		"margen2":50,
+		"margen3":50,
+		"profundidad1":50,
+		"profundidad2":50,
+		"profundidad3":50,
+		"tipoFurca":"vacio",
+		"parte":"parte2"
+	},
+	{
+		"numeroPiezaDental":"16b",
+		"mostrarFurca":false,
+		"margen1":50,
+		"margen2":50,
+		"margen3":50,
+		"profundidad1":50,
+		"profundidad2":50,
+		"profundidad3":50,
+		"tipoFurca":"vacio",
+		"parte":"parte2"
+	},
+	{
+
+		"numeroPiezaDental":"15b",
+		"mostrarFurca":false,
+		"margen1":50,
+		"margen2":50,
+		"margen3":50,
+		"profundidad1":50,
+		"profundidad2":50,
+		"profundidad3":50,
+		"tipoFurca":"vacio",
+		"parte":"parte2"
+	},
+
+	{
+		"numeroPiezaDental":"14b",
+		"mostrarFurca":false,
+		"margen1":50,
+		"margen2":50,
+		"margen3":50,
+		"profundidad1":50,
+		"profundidad2":50,
+		"profundidad3":50,
+		"tipoFurca":"vacio",
+		"parte":"parte2"
+	},
+	{
+		"numeroPiezaDental":"13b",
+		"mostrarFurca":false,
+		"margen1":50,
+		"margen2":50,
+		"margen3":50,
+		"profundidad1":50,
+		"profundidad2":50,
+		"profundidad3":50,
+		"tipoFurca":"vacio",
+		"parte":"parte2"
+	},
+
+	{
+		"numeroPiezaDental":"12b",
+		"mostrarFurca":false,
+		"margen1":50,
+		"margen2":50,
+		"margen3":50,
+		"profundidad1":50,
+		"profundidad2":50,
+		"profundidad3":50,
+		"tipoFurca":"vacio",
+		"parte":"parte2"
+	},
+	{
+		"numeroPiezaDental":"11b",
+		"mostrarFurca":false,
+		"margen1":50,
+		"margen2":50,
+		"margen3":50,
+		"profundidad1":50,
+		"profundidad2":50,
+		"profundidad3":50,
+		"tipoFurca":"vacio",
+		"parte":"parte2"
+	},
+
+	{
+		"numeroPiezaDental":"21b",
+		"mostrarFurca":false,
+		"margen1":50,
+		"margen2":50,
+		"margen3":50,
+		"profundidad1":50,
+		"profundidad2":50,
+		"profundidad3":50,
+		"tipoFurca":"vacio",
+		"parte":"parte2"
+	},
+
+	{
+		"numeroPiezaDental":"22b",
+		"mostrarFurca":false,
+		"margen1":50,
+		"margen2":50,
+		"margen3":50,
+		"profundidad1":50,
+		"profundidad2":50,
+		"profundidad3":50,
+		"tipoFurca":"vacio",
+		"parte":"parte2"
+	},
+
+	{
+		"numeroPiezaDental":"23b",
+		"mostrarFurca":false,
+		"margen1":50,
+		"margen2":50,
+		"margen3":50,
+		"profundidad1":50,
+		"profundidad2":50,
+		"profundidad3":50,
+		"tipoFurca":"vacio",
+		"parte":"parte2"
+	},
+
+	{
+		"numeroPiezaDental":"24b",
+		"mostrarFurca":false,
+		"margen1":50,
+		"margen2":50,
+		"margen3":50,
+		"profundidad1":50,
+		"profundidad2":50,
+		"profundidad3":50,
+		"tipoFurca":"vacio",
+		"parte":"parte2"
+	},
+
+	{
+		"numeroPiezaDental":"25b",
+		"mostrarFurca":false,
+		"margen1":50,
+		"margen2":50,
+		"margen3":50,
+		"profundidad1":50,
+		"profundidad2":50,
+		"profundidad3":50,
+		"tipoFurca":"vacio",
+		"parte":"parte2"
+	},
+
+	{
+		"numeroPiezaDental":"26b",
+		"mostrarFurca":false,
+		"margen1":50,
+		"margen2":50,
+		"margen3":50,
+		"profundidad1":50,
+		"profundidad2":50,
+		"profundidad3":50,
+		"tipoFurca":"vacio",
+		"parte":"parte2"
+	},
+
+	{
+		"numeroPiezaDental":"27b",
+		"mostrarFurca":false,
+		"margen1":50,
+		"margen2":50,
+		"margen3":50,
+		"profundidad1":50,
+		"profundidad2":50,
+		"profundidad3":50,
+		"tipoFurca":"vacio",
+		"parte":"parte2"
+	},
+
+	{
+		"numeroPiezaDental":"28b",
+		"mostrarFurca":false,
+		"margen1":50,
+		"margen2":50,
+		"margen3":50,
+		"profundidad1":50,
+		"profundidad2":50,
+		"profundidad3":50,
+		"tipoFurca":"vacio",
+		"parte":"parte2"
+	},
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	{
+		"numeroPiezaDental":48,
+		"mostrarFurca":false,
+		"margen1":50,
+		"margen2":50,
+		"margen3":50,
+		"profundidad1":50,
+		"profundidad2":50,
+		"profundidad3":50,
+		"tipoFurca":"vacio",
+		"parte":"parte3"
+	},
+
+	{
+		"numeroPiezaDental":47,
+		"mostrarFurca":false,
+		"margen1":50,
+		"margen2":50,
+		"margen3":50,
+		"profundidad1":50,
+		"profundidad2":50,
+		"profundidad3":50,
+		"tipoFurca":"vacio",
+		"parte":"parte3"
+	},
+	{
+		"numeroPiezaDental":46,
+		"mostrarFurca":false,
+		"margen1":50,
+		"margen2":50,
+		"margen3":50,
+		"profundidad1":50,
+		"profundidad2":50,
+		"profundidad3":50,
+		"tipoFurca":"vacio",
+		"parte":"parte3"
+	},
+	{
+
+		"numeroPiezaDental":45,
+		"mostrarFurca":false,
+		"margen1":50,
+		"margen2":50,
+		"margen3":50,
+		"profundidad1":50,
+		"profundidad2":50,
+		"profundidad3":50,
+		"tipoFurca":"vacio",
+		"parte":"parte3"
+	},
+
+	{
+		"numeroPiezaDental":44,
+		"mostrarFurca":false,
+		"margen1":50,
+		"margen2":50,
+		"margen3":50,
+		"profundidad1":50,
+		"profundidad2":50,
+		"profundidad3":50,
+		"tipoFurca":"vacio",
+		"parte":"parte3"
+	},
+	{
+		"numeroPiezaDental":43,
+		"mostrarFurca":false,
+		"margen1":50,
+		"margen2":50,
+		"margen3":50,
+		"profundidad1":50,
+		"profundidad2":50,
+		"profundidad3":50,
+		"tipoFurca":"vacio",
+		"parte":"parte3"
+	},
+
+	{
+		"numeroPiezaDental":42,
+		"mostrarFurca":false,
+		"margen1":50,
+		"margen2":50,
+		"margen3":50,
+		"profundidad1":50,
+		"profundidad2":50,
+		"profundidad3":50,
+		"tipoFurca":"vacio",
+		"parte":"parte3"
+	},
+	{
+		"numeroPiezaDental":41,
+		"mostrarFurca":false,
+		"margen1":50,
+		"margen2":50,
+		"margen3":50,
+		"profundidad1":50,
+		"profundidad2":50,
+		"profundidad3":50,
+		"tipoFurca":"vacio",
+		"parte":"parte3"
+	},
+
+	{
+		"numeroPiezaDental":31,
+		"mostrarFurca":false,
+		"margen1":50,
+		"margen2":50,
+		"margen3":50,
+		"profundidad1":50,
+		"profundidad2":50,
+		"profundidad3":50,
+		"tipoFurca":"vacio",
+		"parte":"parte3"
+	},
+
+	{
+		"numeroPiezaDental":32,
+		"mostrarFurca":false,
+		"margen1":50,
+		"margen2":50,
+		"margen3":50,
+		"profundidad1":50,
+		"profundidad2":50,
+		"profundidad3":50,
+		"tipoFurca":"vacio",
+		"parte":"parte3"
+	},
+
+	{
+		"numeroPiezaDental":33,
+		"mostrarFurca":false,
+		"margen1":50,
+		"margen2":50,
+		"margen3":50,
+		"profundidad1":50,
+		"profundidad2":50,
+		"profundidad3":50,
+		"tipoFurca":"vacio",
+		"parte":"parte3"
+	},
+
+	{
+		"numeroPiezaDental":34,
+		"mostrarFurca":false,
+		"margen1":50,
+		"margen2":50,
+		"margen3":50,
+		"profundidad1":50,
+		"profundidad2":50,
+		"profundidad3":50,
+		"tipoFurca":"vacio",
+		"parte":"parte3"
+	},
+
+	{
+		"numeroPiezaDental":35,
+		"mostrarFurca":false,
+		"margen1":50,
+		"margen2":50,
+		"margen3":50,
+		"profundidad1":50,
+		"profundidad2":50,
+		"profundidad3":50,
+		"tipoFurca":"vacio",
+		"parte":"parte3"
+	},
+
+	{
+		"numeroPiezaDental":36,
+		"mostrarFurca":false,
+		"margen1":50,
+		"margen2":50,
+		"margen3":50,
+		"profundidad1":50,
+		"profundidad2":50,
+		"profundidad3":50,
+		"tipoFurca":"vacio",
+		"parte":"parte3"
+	},
+
+	{
+		"numeroPiezaDental":37,
+		"mostrarFurca":false,
+		"margen1":50,
+		"margen2":50,
+		"margen3":50,
+		"profundidad1":50,
+		"profundidad2":50,
+		"profundidad3":50,
+		"tipoFurca":"vacio",
+		"parte":"parte3"
+	},
+
+	{
+		"numeroPiezaDental":38,
+		"mostrarFurca":false,
+		"margen1":50,
+		"margen2":50,
+		"margen3":50,
+		"profundidad1":50,
+		"profundidad2":50,
+		"profundidad3":50,
+		"tipoFurca":"vacio",
+		"parte":"parte3"
+	},
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	{
+		"numeroPiezaDental":"48b",
+		"mostrarFurca":false,
+		"margen1":50,
+		"margen2":50,
+		"margen3":50,
+		"profundidad1":50,
+		"profundidad2":50,
+		"profundidad3":50,
+		"tipoFurca":"vacio",
+		"parte":"parte4"
+	},
+
+	{
+		"numeroPiezaDental":"47b",
+		"mostrarFurca":false,
+		"margen1":50,
+		"margen2":50,
+		"margen3":50,
+		"profundidad1":50,
+		"profundidad2":50,
+		"profundidad3":50,
+		"tipoFurca":"vacio",
+		"parte":"parte4"
+	},
+	{
+		"numeroPiezaDental":"46b",
+		"mostrarFurca":false,
+		"margen1":50,
+		"margen2":50,
+		"margen3":50,
+		"profundidad1":50,
+		"profundidad2":50,
+		"profundidad3":50,
+		"tipoFurca":"vacio",
+		"parte":"parte4"
+	},
+	{
+
+		"numeroPiezaDental":"45b",
+		"mostrarFurca":false,
+		"margen1":50,
+		"margen2":50,
+		"margen3":50,
+		"profundidad1":50,
+		"profundidad2":50,
+		"profundidad3":50,
+		"tipoFurca":"vacio",
+		"parte":"parte4"
+	},
+
+	{
+		"numeroPiezaDental":"44b",
+		"mostrarFurca":false,
+		"margen1":50,
+		"margen2":50,
+		"margen3":50,
+		"profundidad1":50,
+		"profundidad2":50,
+		"profundidad3":50,
+		"tipoFurca":"vacio",
+		"parte":"parte4"
+	},
+	{
+		"numeroPiezaDental":"43b",
+		"mostrarFurca":false,
+		"margen1":50,
+		"margen2":50,
+		"margen3":50,
+		"profundidad1":50,
+		"profundidad2":50,
+		"profundidad3":50,
+		"tipoFurca":"vacio",
+		"parte":"parte4"
+	},
+
+	{
+		"numeroPiezaDental":"42b",
+		"mostrarFurca":false,
+		"margen1":50,
+		"margen2":50,
+		"margen3":50,
+		"profundidad1":50,
+		"profundidad2":50,
+		"profundidad3":50,
+		"tipoFurca":"vacio",
+		"parte":"parte4"
+	},
+	{
+		"numeroPiezaDental":"41b",
+		"mostrarFurca":false,
+		"margen1":50,
+		"margen2":50,
+		"margen3":50,
+		"profundidad1":50,
+		"profundidad2":50,
+		"profundidad3":50,
+		"tipoFurca":"vacio",
+		"parte":"parte4"
+	},
+
+	{
+		"numeroPiezaDental":"31b",
+		"mostrarFurca":false,
+		"margen1":50,
+		"margen2":50,
+		"margen3":50,
+		"profundidad1":50,
+		"profundidad2":50,
+		"profundidad3":50,
+		"tipoFurca":"vacio",
+		"parte":"parte4"
+	},
+
+	{
+		"numeroPiezaDental":"32b",
+		"mostrarFurca":false,
+		"margen1":50,
+		"margen2":50,
+		"margen3":50,
+		"profundidad1":50,
+		"profundidad2":50,
+		"profundidad3":50,
+		"tipoFurca":"vacio",
+		"parte":"parte4"
+	},
+
+	{
+		"numeroPiezaDental":"33b",
+		"mostrarFurca":false,
+		"margen1":50,
+		"margen2":50,
+		"margen3":50,
+		"profundidad1":50,
+		"profundidad2":50,
+		"profundidad3":50,
+		"tipoFurca":"vacio",
+		"parte":"parte4"
+	},
+
+	{
+		"numeroPiezaDental":"34b",
+		"mostrarFurca":false,
+		"margen1":50,
+		"margen2":50,
+		"margen3":50,
+		"profundidad1":50,
+		"profundidad2":50,
+		"profundidad3":50,
+		"tipoFurca":"vacio",
+		"parte":"parte4"
+	},
+
+	{
+		"numeroPiezaDental":"35b",
+		"mostrarFurca":false,
+		"margen1":50,
+		"margen2":50,
+		"margen3":50,
+		"profundidad1":50,
+		"profundidad2":50,
+		"profundidad3":50,
+		"tipoFurca":"vacio",
+		"parte":"parte4"
+	},
+
+	{
+		"numeroPiezaDental":"36b",
+		"mostrarFurca":false,
+		"margen1":50,
+		"margen2":50,
+		"margen3":50,
+		"profundidad1":50,
+		"profundidad2":50,
+		"profundidad3":50,
+		"tipoFurca":"vacio",
+		"parte":"parte4"
+	},
+
+	{
+		"numeroPiezaDental":"37b",
+		"mostrarFurca":false,
+		"margen1":50,
+		"margen2":50,
+		"margen3":50,
+		"profundidad1":50,
+		"profundidad2":50,
+		"profundidad3":50,
+		"tipoFurca":"vacio",
+		"parte":"parte4"
+	},
+
+	{
+		"numeroPiezaDental":"38b",
+		"mostrarFurca":false,
+		"margen1":50,
+		"margen2":50,
+		"margen3":50,
+		"profundidad1":50,
+		"profundidad2":50,
+		"profundidad3":50,
+		"tipoFurca":"vacio",
+		"parte":"parte4"
+	}
+
+
+
+]

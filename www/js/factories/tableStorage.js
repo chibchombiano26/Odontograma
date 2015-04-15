@@ -5,6 +5,11 @@ angular.module('starter')
     var urlBase = urlServicioFactory.getUrlService();
     var dataFactory = {};
 
+
+    dataFactory.getJsonData = function (nombre) {
+        return $http.get('js/data/' + nombre);
+    };
+
     dataFactory.getTableByPartition = function (nombreTabla,PartitionKey) {
         return $http.get(urlBase + "table/?nombreTabla=" + nombreTabla +"&partitionKey="+ PartitionKey);
     };

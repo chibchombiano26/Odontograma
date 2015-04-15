@@ -1,31 +1,87 @@
 <ion-view view-title="Periodontograma" ng-controller="PeriodontogramaCtrl as vm">
-
 <ion-content has-subheader="false">
-<div class="flex-container" style="justify-content:center;">
-	<div ng-repeat="item in items">
+
+
+<win-hub id="Periodontograma" on-swipe-right="onSwipeRight()" on-swipe-left="onSwipeLeft()" obtener-control="setCtrl(ctrl)">
+
+    <win-hub-section header="'Periodontograma'" is-header-static="true">
+        <div class="flex-container" style="justify-content:center;">
+			<div ng-repeat="item in items | filter:'parte1'">
+				<periodontograma-pieza-dental 
+					numero-pieza-dental="item.numeroPiezaDental" 
+					zoom="0.6"					
+					item="item"
+					>
+				</periodontograma-pieza-dental>
+			</div>
+		</div>
+
+		<div class="flex-container" style="justify-content:center;">
+			<div ng-repeat="item in items | filter:'parte2'">
+				<periodontograma-pieza-dental 
+					numero-pieza-dental="item.numeroPiezaDental" 
+					zoom="0.6"					
+					item="item"
+					>
+				</periodontograma-pieza-dental>
+			</div>
+		</div>
+
+		<div class="flex-container" style="justify-content:center;">
+			<div ng-repeat="item in items | filter:'parte3'">
+				<periodontograma-pieza-dental 
+					numero-pieza-dental="item.numeroPiezaDental" 
+					zoom="0.6"					
+					item="item"
+					>
+				</periodontograma-pieza-dental>
+			</div>
+		</div>
+
+		<div class="flex-container" style="justify-content:center;">
+			<div ng-repeat="item in items | filter:'parte4'">
+				<periodontograma-pieza-dental 
+					numero-pieza-dental="item.numeroPiezaDental" 
+					zoom="0.6"					
+					item="item"
+					>
+				</periodontograma-pieza-dental>
+			</div>
+		</div>
+
 		
+    </win-hub-section>
 
-		<periodontograma-pieza-dental 
-			numero-pieza-dental="item.numeroPiezaDental" 
-			width="70" 
-			height="140" 			
-			item="item"
-			>
+    
+    <win-hub-section header="''" id="seleccionado">        
+	    <periodontograma-pieza-dental 
+				numero-pieza-dental="selecionado.numeroPiezaDental" 
+				width="40" 
+				height="120"			
+				item="selecionado"
+				>
 		</periodontograma-pieza-dental>
+    </win-hub-section>       
+
+    <win-hub-section header="'Pieza seleccionada'" id="seleccionado">
+		<!--Margenes-->
 		
+		<h5> Margen gingival </h5>
+		<ul>
+			<li><div class="item range range-assertive"><input type="range" ng-model="selecionado.margen1"/></div></li>
+			<li><div class="item range range-assertive"><input type="range" ng-model="selecionado.margen2"/></div></li>
+			<li><div class="item range range-assertive"><input type="range" ng-model="selecionado.margen3"/></div></li>
+		</ul>
 
-	</div>
-</div>
-	
+		<h5> Profundidad sondaje </h5>
+		<ul>
+			<li><div class="item range range-positive"><input type="range" ng-model="selecionado.profundidad1"/></div></li>
+			<li><div class="item range range-positive"><input type="range" ng-model="selecionado.profundidad2"/></div></li>
+			<li><div class="item range range-positive"><input type="range" ng-model="selecionado.profundidad3"/></div></li>
+		</ul>
 
-	<periodontograma-pieza-dental 
-			numero-pieza-dental="selecionado.numeroPiezaDental" 
-			width="40" 
-			height="120"			
-			item="selecionado"
-			>
-		</periodontograma-pieza-dental>
-
+    </win-hub-section>
+    
+</win-hub>
 </ion-content>
-
 </ion-view>
