@@ -1,0 +1,31 @@
+<ion-view view-title="Periodontograma" ng-controller="PeriodontogramaCtrl as vm">
+
+<ion-content has-subheader="false">
+<div class="flex-container" style="justify-content:center;">
+	<div ng-repeat="item in items">
+		
+
+		<periodontograma-pieza-dental 
+			numero-pieza-dental="item.numeroPiezaDental" 
+			width="70" 
+			height="140" 			
+			item="item"
+			>
+		</periodontograma-pieza-dental>
+		
+
+	</div>
+</div>
+	
+
+	<periodontograma-pieza-dental 
+			numero-pieza-dental="selecionado.numeroPiezaDental" 
+			width="40" 
+			height="120"			
+			item="selecionado"
+			>
+		</periodontograma-pieza-dental>
+
+</ion-content>
+
+</ion-view>

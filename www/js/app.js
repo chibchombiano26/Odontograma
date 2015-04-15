@@ -62,31 +62,21 @@ angular.module('starter', ['ionic', 'winjs', 'starter.controllers', 'ngjsColorPi
     }
   })  
     
-    .state('app.playlists', {
-      url: "/playlists",
-      views: {
-        'menuContent': {
-          templateUrl: "templates/playlists.html",
-          controller: 'PlaylistsCtrl'
-        }
-      }
-    })
-
-  .state('app.single', {
-    url: "/playlists/:playlistId",
-    views: {
-      'menuContent': {
-        templateUrl: "templates/playlist.html",
-        controller: 'PlaylistCtrl'
-      }
-    }
-  })
-
+   
 .state('app.odontograma', {
     url: "/odontograma/:pacienteId",
     views: {
         'menuContent': {
             templateUrl: "templates/odontograma.html",            
+        }       
+        }
+    })
+
+.state('app.periodontograma', {
+    url: "/periodontograma/:pacienteId",
+    views: {
+        'menuContent': {
+            templateUrl: "templates/views/Periodontograma/Periodontograma.html",            
         }       
         }
     })

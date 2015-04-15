@@ -18,6 +18,12 @@ angular.module('starter')
 		$state.go("app.odontograma", { "pacienteId": item.RowKey});
 	}
 
+	$scope.navegarPeriododntograma = function(item){
+		$scope.Paciente = item;
+		varsFactoryService.fijarPaciente(item.RowKey);
+		$state.go("app.periodontograma", { "pacienteId": item.RowKey});
+	}
+
 
 	$scope.addPaciente = function(){
 
