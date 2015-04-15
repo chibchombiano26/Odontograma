@@ -17,8 +17,7 @@ angular.module('starter')
         return $http.post(urlBase + "blob", data);
     };
 
-
-    function validarAntesEnviar(data){
+ function validarAntesEnviar(data){
         //El servicio espera esta propiedad para saber si debe crear o eliminar la propiedad
         //Si no esta se debe crear
         //Crear = 1, Eliminar = 2
@@ -30,9 +29,45 @@ angular.module('starter')
             data['generarIdentificador'] = false;
         }
 
-        return data;
+        if(!data.hasOwnProperty('PartitionKey')){
+            console.log('post sin partitionKey de la tabla');
+             throw new Error("indique el partitionKey de la tabla");
+        }        
 
+        if(!data.hasOwnProperty('nombreTabla')){             
+             console.log('post sin nombre de la tabla');
+             throw new Error("indique el nombre de la tabla");
+
+        }
+
+        if(data.hasOwnProperty('partitionKey') && data.hasOwnProperty('PartitionKey')){
+            delete data.partitionKey;
+        }
+
+        return data;
     }
+
+    dataFactory.saveStorage = function (item){
+        dataFactory.postTable(item)
+            .success(function (data) {
+                $ionicLoading.hide();
+            })
+            .error(function (error) {
+                console.log(error);
+                $ionicLoading.hide();
+            });
+    }
+
+    dataFactory.deleteFromStorage = function (item){
+        item.Estado_Entidad = 2;        
+        dataFactory.postTable(item)
+            .success(function (data) {
+              
+            })
+            .error(function (error) {
+               
+            });
+    }       
 
     return dataFactory;
 }]);
