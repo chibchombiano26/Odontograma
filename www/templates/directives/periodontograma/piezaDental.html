@@ -1,13 +1,18 @@
- {{item.numeroPiezaDental}}
-<div class="contenedor">
-	<img ng-src="{{item.rutaPiezaDental}}" style="Height:150px;" alt="Description" />
-	<img ng-src="img/Periodontograma/fondo-grafico.png" style="z-index: 1; position: absolute; left: 0px; top: 0px;" />
-	<img ng-src="{{item.furca}}" style="z-index: 2; position: absolute;  left: 30%;  top: 50%;" />
+ <div ng-click="item.click(item)">
+	 {{item.numeroPiezaDental}}
+	<div class="contenedor">
+		<img ng-src="{{item.rutaPiezaDental}}" style="Height:150px;" alt="Description" />
+		<img ng-src="img/Periodontograma/fondo-grafico.png" style="z-index: 1; position: absolute; left: 0px; top: 0px;" />
+		<img ng-src="{{item.furca}}" style="z-index: 2; position: absolute;  left: 30%;  top: 50%;" />
 
-	<div style="z-index: 3; position: absolute;  left: 0px;  top: 25%;  width:100%; height:50%;">
-	
-		<margen></margen>
+		<div style="z-index: 3; position: absolute;  left: 0px;  top: 25%;  width:100%; height:50%;">
+		
+			<svg height="200" width="500">
+			  <!-- Primero en x segundoen y -->
+			  <polyline ngpoints="0,{{item.margen1 | pointnull}} 30,{{item.margen2 | pointnull}} 60,{{item.margen3 | pointnull}}"
+			  style="fill:none;stroke:red;stroke-width:3" />
+			</svg>
 
+		</div>
 	</div>
-
 </div>
