@@ -99,3 +99,10 @@ box-align: center;
 .contenedor{
   position: relative;  
 }
+
+input[type="range"]::-ms-fill-upper {
+    background-color: green;
+}
+input[type="range"]::-ms-fill-lower {
+        background-color: limegreen;
+}
