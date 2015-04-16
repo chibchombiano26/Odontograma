@@ -3162,9 +3162,15 @@ ionic.DomUtil.ready(function() {
             eleToActivate = ele;
             break;
           }
-          if (ele.classList.contains('button')) {
-            eleToActivate = ele;
-            break;
+
+          try{
+            if (ele.classList.contains('button')) {
+              eleToActivate = ele;
+              break;
+            }
+          }
+          catch(ex){
+            console.log(ex);
           }
           // no sense climbing past these
           if (ele.tagName == 'ION-CONTENT' || (ele.classList && ele.classList.contains('pane')) || ele.tagName == 'BODY') {
