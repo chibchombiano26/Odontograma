@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'winjs', 'starter.controllers', 'ngjsColorPicker', 'ngCordova'])
+angular.module('starter', ['ionic', 'winjs', 'ngjsColorPicker', 'ngCordova'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -67,7 +67,7 @@ angular.module('starter', ['ionic', 'winjs', 'starter.controllers', 'ngjsColorPi
     url: "/odontograma/:pacienteId",
     views: {
         'menuContent': {
-            templateUrl: "templates/odontograma.html",            
+            templateUrl: "templates/views/Odontograma/odontograma.html",            
         }       
         }
     })
@@ -85,7 +85,7 @@ angular.module('starter', ['ionic', 'winjs', 'starter.controllers', 'ngjsColorPi
     url: "/sigin",
     views: {
         'menuContent': {
-            templateUrl: "templates/views/SignIn.html",
+            templateUrl: "templates/views/Sign/SignIn.html",
         }       
         }
     })
@@ -95,7 +95,7 @@ angular.module('starter', ['ionic', 'winjs', 'starter.controllers', 'ngjsColorPi
     url: "/signup",
     views: {
         'menuContent': {
-            templateUrl: "templates/views/SignUp.html",            
+            templateUrl: "templates/views/Sign/SignUp.html",            
         }       
         }
     })
