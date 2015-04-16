@@ -9,6 +9,7 @@ angular.module('starter')
 	$scope.Pacientes = new Array();
 	$scope.shouldShowDelete = true;	
 	$scope.Imagen = 'https://hefesoft.blob.core.windows.net/profile/profile.png';
+	$scope.textoBuscar;
 
 	var usuario = users.getCurrentUser();
 

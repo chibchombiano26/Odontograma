@@ -1,5 +1,5 @@
 <ion-view view-title="Periodontograma" ng-controller="PeriodontogramaCtrl as vm">
-<ion-content has-subheader="false">
+<ion-content class="fondo">
 
 
 <win-hub id="Periodontograma" on-swipe-right="onSwipeRight()" on-swipe-left="onSwipeLeft()" obtener-control="setCtrl(ctrl)">
@@ -10,7 +10,7 @@
 
 				<periodontograma-pieza-dental 
 					numero-pieza-dental="item.numeroPiezaDental" 
-					zoom="0.6"					
+					zoom="zoom"					
 					item="item"
 					>
 				</periodontograma-pieza-dental>
@@ -21,7 +21,7 @@
 			<div ng-repeat="item in items | filter:'parte2'">
 				<periodontograma-pieza-dental 
 					numero-pieza-dental="item.numeroPiezaDental" 
-					zoom="0.6"					
+					zoom="zoom"					
 					item="item"
 					>
 				</periodontograma-pieza-dental>
@@ -32,7 +32,7 @@
 			<div ng-repeat="item in items | filter:'parte3'">
 				<periodontograma-pieza-dental 
 					numero-pieza-dental="item.numeroPiezaDental" 
-					zoom="0.6"					
+					zoom="zoom"					
 					item="item"
 					>
 				</periodontograma-pieza-dental>
@@ -43,7 +43,7 @@
 			<div ng-repeat="item in items | filter:'parte4'">
 				<periodontograma-pieza-dental 
 					numero-pieza-dental="item.numeroPiezaDental" 
-					zoom="0.6"					
+					zoom="zoom"					
 					item="item"
 					>
 				</periodontograma-pieza-dental>

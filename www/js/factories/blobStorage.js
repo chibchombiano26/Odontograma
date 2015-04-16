@@ -37,7 +37,9 @@ angular.module('starter')
         if(!data.hasOwnProperty('nombreTabla')){             
              console.log('post sin nombre de la tabla');
              throw new Error("indique el nombre de la tabla");
-
+        }
+        else{
+            data.nombreTabla = data.nombreTabla.toLowerCase();
         }
 
         if(data.hasOwnProperty('partitionKey') && data.hasOwnProperty('PartitionKey')){

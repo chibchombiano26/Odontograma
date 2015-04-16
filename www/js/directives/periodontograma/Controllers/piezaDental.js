@@ -1,13 +1,29 @@
 angular.module('starter')
 .controller('periodontogramaPiezaDentalCtrl', ['$scope', function($scope){
 	
-	$scope.item.margen1 = 50;
-	$scope.item.margen2 = 50;
-	$scope.item.margen3 = 50;
+	if(!$scope.item.hasOwnProperty('margen1')){
+		$scope.item.margen1 = 50;
+	}
+	
+	if(!$scope.item.hasOwnProperty('margen2')){
+		$scope.item.margen2 = 50;
+	}
 
-	$scope.item.profundidad1 = 50;
-	$scope.item.profundidad2 = 50;
-	$scope.item.profundidad3 = 50;
+	if(!$scope.item.hasOwnProperty('margen3')){
+		$scope.item.margen3 = 50;
+	}
+
+	if(!$scope.item.hasOwnProperty('profundidad1')){
+		$scope.item.profundidad1 = 50;
+	}
+
+	if(!$scope.item.hasOwnProperty('profundidad2')){	
+		$scope.item.profundidad2 = 50;
+	}
+
+	if(!$scope.item.hasOwnProperty('profundidad3')){	
+		$scope.item.profundidad3 = 50;
+	}
 
 	if($scope.item.parte == "parte1" || $scope.item.parte == "parte2"){
 		$scope.item.rutaPiezaDental = "img/Periodontograma/periodontograma-dientes-arriba-" +  $scope.item.numeroPiezaDental + ".png";		

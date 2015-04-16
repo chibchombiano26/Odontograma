@@ -6,20 +6,43 @@ angular.module('starter')
  $scope.mostrarFurca = false;
  var usuario = users.getCurrentUser();
  var pacienteId = $state.params.pacienteId;
- 
+ var datosGuardar = {};
+ $scope.zoom = 0.7;
 
-    $scope.$on('$ionicView.leave', function(){
-        $ionicLoading.show();
+    function platform(){
+        var deviceInformation = ionic.Platform.device();
+        var isAndroid = ionic.Platform.isAndroid();
+
+        if(isAndroid){
+            $scope.zoom = 0.4;            
+        }
+    }
+
+    $scope.$on('$ionicView.leave', function(){        
+        
+        $ionicLoading.show({
+            template: "Guardando periodontograma..."
+        })
 
         var usuario = users.getCurrentUser();
-        var datosGuardar = 
+        datosGuardar = 
         { 
-            PartitionKey : usuario.username+ 'paciente' + pacienteId,
-            generarIdentificador : true, 
-            nombreTabla: 'TmPeriodontograma',
-            RowKey : 1000,
-            data: $scope.items
+            PartitionKey : usuario.username,            
+
+            //En los blobs debe ir con minuscula
+            nombreTabla: 'tmperiodontograma',            
+            data: $scope.items,
+            generarIdentificador : false,
+            RowKey : pacienteId
         }
+
+        /*
+        if(!datosGuardar.hasOwnProperty('generarIdentificador'))
+        {
+            datosGuardar.generarIdentificador = true; 
+            datosGuardar.RowKey = 1000; 
+        }
+        */
 
         dataBlobStorageFactory.postBlob(datosGuardar).success(function (data) {
            $ionicLoading.hide();
@@ -37,10 +60,38 @@ angular.module('starter')
                 };
 
                 $scope.items = data;
+                $ionicLoading.hide();
             })
             .error(function (error) {
                 console.log(error);                
+                $ionicLoading.hide();
             });
+    }
+
+    function obtenerPeriodontogramaBlob(){
+        $ionicLoading.show();
+        var usuario = users.getCurrentUser();
+        dataBlobStorageFactory.getTableByPartitionAndRowKey('tmperiodontograma',usuario.username, pacienteId)
+        .success(success)
+        .error(error);
+    }
+
+    function success(result){
+        if(result.hasOwnProperty('data')){
+            datosGuardar = result;
+            var data = result.data;
+            for (var i = 0; i < data.length; i++) {
+                data[i].click = clickPiezaDental;
+            };
+
+            $scope.items = data;
+            $ionicLoading.hide();
+        }
+    }
+
+    function error(error){
+        console.log(error);
+        obtenerPeriodontogramaBase();
     }
 
     $scope.sangradoSupurado = function(parte){
@@ -110,7 +161,8 @@ angular.module('starter')
         $scope.selecionado = item;
         $scope.mostrarFurca = Boolean(item.mostrarFurca);
     }
-
-    obtenerPeriodontogramaBase();
+    
+    obtenerPeriodontogramaBlob();
+    platform();
 
 }])
