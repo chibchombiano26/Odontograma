@@ -2,12 +2,13 @@ angular.module('starter')
 .controller('PeriodontogramaCtrl', ['$scope','dataTableStorageFactory','dataBlobStorageFactory','$ionicLoading','users','$state',
     function ($scope, dataTableStorageFactory, dataBlobStorageFactory, $ionicLoading, users, $state) {
 	
- $scope.selecionado = {numeroPiezaDental: 18, mostrarFurca : false, tipoFurca: 'vacio', parte: 'parte1'};
+ $scope.selecionado = {numeroPiezaDental: 18, mostrarFurca : false, tipoFurca: 'vacio', "movilidad" : "", parte: 'parte1'};
  $scope.mostrarFurca = false;
  var usuario = users.getCurrentUser();
  var pacienteId = $state.params.pacienteId;
  var datosGuardar = {};
  $scope.zoom = 0.7;
+ 
 
     function platform(){
         var deviceInformation = ionic.Platform.device();

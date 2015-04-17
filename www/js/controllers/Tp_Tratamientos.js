@@ -3,10 +3,11 @@ angular.module('starter')
 	function ($scope, dataTableStorageFactory, $cordovaOauth,$ionicLoading, $state, users) {
 	
 	$scope.customOptions = {
-	    size: 30,
+	    size: 40,
+	    columns: 4,
 	    roundCorners: true,
-	    randomColors: 30,
-	    total: 30
+	    randomColors: 40,
+	    total: 40
 	}
 
 	var Color;
