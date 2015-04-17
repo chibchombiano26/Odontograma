@@ -23,12 +23,27 @@ angular.module('starter')
         return $http.post(urlBase + "table", data);
     };
 
+    //RowKey es el campo que actuara como rowKey
+    dataFactory.postTableArray = function (data, nombreTabla ,PartitionKey, RowKey) {
+        
+        for (var i = data.length - 1; i >= 0; i--) {
+            data[i]['nombreTabla'] = nombreTabla;
+            data[i]['PartitionKey'] = PartitionKey;
+            data[i]['RowKey'] = data[i][RowKey];
+
+            validarAntesEnviar(data[i]);
+        };
+        
+        return $http.post(urlBase + "tableGroup", data);
+    };
+
     dataFactory.existeUsuario = function (api, data) {        
         return $http.post(urlBase + api, data);
     };
 
 
-    function validarAntesEnviar(data){
+    function validarAntesEnviar(data){        
+
         //El servicio espera esta propiedad para saber si debe crear o eliminar la propiedad
         //Si no esta se debe crear
         //Crear = 1, Eliminar = 2
@@ -57,6 +72,8 @@ angular.module('starter')
 
         return data;
     }
+
+
 
     dataFactory.saveStorage = function (item){
         dataFactory.postTable(item)

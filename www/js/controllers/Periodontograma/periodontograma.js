@@ -6,7 +6,6 @@ angular.module('starter')
  $scope.mostrarFurca = false;
  var usuario = users.getCurrentUser();
  var pacienteId = $state.params.pacienteId;
- var datosGuardar = {};
  $scope.zoom = 0.7;
  
 
@@ -25,27 +24,11 @@ angular.module('starter')
             template: "Guardando periodontograma..."
         })
 
-        var usuario = users.getCurrentUser();
-        datosGuardar = 
-        { 
-            PartitionKey : usuario.username,            
+        var usuario = users.getCurrentUser();      
 
-            //En los blobs debe ir con minuscula
-            nombreTabla: 'tmperiodontograma',            
-            data: $scope.items,
-            generarIdentificador : false,
-            RowKey : pacienteId
-        }
-
-        /*
-        if(!datosGuardar.hasOwnProperty('generarIdentificador'))
-        {
-            datosGuardar.generarIdentificador = true; 
-            datosGuardar.RowKey = 1000; 
-        }
-        */
-
-        dataBlobStorageFactory.postBlob(datosGuardar).success(function (data) {
+        //Datos, Nombre tabla, partition key, y campo que servira como row key
+        dataTableStorageFactory.postTableArray($scope.items, 'TmPeriodontograma',  usuario.username+'paciente'+pacienteId, 'numeroPiezaDental').success(
+        function (data) {
            $ionicLoading.hide();
         })
         .error(function (error) {
@@ -72,21 +55,24 @@ angular.module('starter')
     function obtenerPeriodontogramaBlob(){
         $ionicLoading.show();
         var usuario = users.getCurrentUser();
-        dataBlobStorageFactory.getTableByPartitionAndRowKey('tmperiodontograma',usuario.username, pacienteId)
+        dataTableStorageFactory.getTableByPartition('TmPeriodontograma', usuario.username+'paciente'+pacienteId)
         .success(success)
         .error(error);
     }
 
     function success(result){
-        if(result.hasOwnProperty('data')){
+        if(result.length > 0 ){
             datosGuardar = result;
-            var data = result.data;
+            var data = result;
             for (var i = 0; i < data.length; i++) {
                 data[i].click = clickPiezaDental;
             };
 
             $scope.items = data;
             $ionicLoading.hide();
+        }
+        else{
+            obtenerPeriodontogramaBase();    
         }
     }
 
