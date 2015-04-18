@@ -1,6 +1,6 @@
 angular.module('starter')
-.controller('signInController', ['$scope','signFactoryService','$ionicLoading','$state', 'users', 
-	function ($scope, signFactoryService, $ionicLoading, $state, users) {
+.controller('signInController', ['$scope','signFactoryService','$ionicLoading','$state', 'users', 'pushFactory',
+	function ($scope, signFactoryService, $ionicLoading, $state, users, pushFactory) {
 	
 	$scope.loginData= {};
 	var usuario = users.getCurrentUser();
@@ -24,6 +24,7 @@ angular.module('starter')
 		console.log(data);
 		$ionicLoading.hide();
 		$state.go("app.pacientes");
+		pushFactory.registerAndroid();
 	}
 
 	function error(data){

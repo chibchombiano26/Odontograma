@@ -1,8 +1,59 @@
 angular.module('starter')
-.factory('pushFactory', ['$http','urlServicioFactory' , '$q', function ($http, urlServicioFactory, $q) {
+.factory('pushFactory', ['$http','urlServicioFactory' , '$q', '$rootScope', 
+  function ($http, urlServicioFactory, $q, $rootScope) {
 	
 	var urlBase = urlServicioFactory.getUrlBase();
     var dataFactory = {};
+
+    var androidConfig = {
+        "senderID": "505952414500",
+    };
+ 
+
+
+    $rootScope.$on('$cordovaPush:notificationReceived', function(event, notification) {
+      switch(notification.event) {
+        case 'registered':
+          if (notification.regid.length > 0 ) {
+            console.log('registration ID = ' + notification.regid);            
+          }
+          break;
+
+        case 'message':
+          // this is the actual push notification. its format depends on the data model from the push server
+          alert('message = ' + notification.message + ' msgCount = ' + notification.msgcnt);
+          break;
+
+        case 'error':
+          alert('GCM error = ' + notification.msg);
+          break;
+
+        default:
+          alert('An unknown GCM event has occurred');
+          break;
+      }
+    });
+
+    dataFactory.registerAndroid = function(){
+        var deviceInformation = ionic.Platform.device();
+        var isAndroid = ionic.Platform.isAndroid();
+
+      if(isAndroid){
+            $cordovaPush.register(androidConfig).then(function(result) {
+                console.log(result);
+                var key = result;
+                dataFactory.register(key);
+            }, function(err) {
+                console.log(err);
+            })
+          }
+      else{
+
+        //Key de pruebas
+        var key = "APA91bFFa2kqzL9AE8utHBuoE4B-AtnQZKQuRPIdSP50PbeQEbjTsLUC4ZCyLOnKc7A1jYg91TuQ7_29PUqZjh5H9lyqT0-pmcDQE4JTWNLHlEdCMXyV3nPUCLQMdnGs22fEKSTO5ht9I5paXjCabIxT4veR55F9bfx2d4U7GRKaNRn3q212m2Q";
+        dataFactory.register(key);
+      }
+    }
 
     dataFactory.register = function(key){
     	var deferred = $q.defer();
@@ -51,11 +102,15 @@ angular.module('starter')
             $http(req).success(function(data) { 
                 console.log(data);               
                 deferred.resolve(data);
+                //Prueba
+                dataFactory.enviarMensaje("futbolito152@gmail.com", "futbolito152@gmail.com");
             }).error(function(data) { 
                 console.log(data);
                 deferred.reject(data);                 
             });
 	}
+
+
 
 	function getPlatform(){
     	var deviceInformation = ionic.Platform.device();

@@ -7,8 +7,7 @@
 angular.module('starter', ['ionic', 'winjs', 'ngjsColorPicker', 'ngCordova'])
 
 .run(function($ionicPlatform, $rootScope) {
-  $ionicPlatform.ready(function() {
-    $rootScope.$broadcast('Dispositivo listo');
+  $ionicPlatform.ready(function() {    
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
     
