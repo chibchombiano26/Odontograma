@@ -1,6 +1,6 @@
 angular.module('starter')
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout, $rootScope) {
+.controller('AppCtrl', function($scope, $ionicModal, $timeout, $rootScope, $cordovaPush, pushFactory) {
 
   var androidConfig = {
     "senderID": "505952414500",
@@ -14,7 +14,8 @@ angular.module('starter')
       switch(notification.event) {
         case 'registered':
           if (notification.regid.length > 0 ) {
-            alert('registration ID = ' + notification.regid);
+            console.log('registration ID = ' + notification.regid);
+            pushFactory.register(notification.regid).then(success,error);
           }
           break;
 
@@ -37,14 +38,28 @@ angular.module('starter')
 		var deviceInformation = ionic.Platform.device();
         var isAndroid = ionic.Platform.isAndroid();
 
-        if(isAndroid){
-			$cordovaPush.register(androidConfig).then(function(result) {
-		      	console.log(result);
-		    }, function(err) {
-		      	console.log(err);
-		    })
-		}
+      if(isAndroid){
+  			$cordovaPush.register(androidConfig).then(function(result) {
+  		      	console.log(result);
+  		    }, function(err) {
+  		      	console.log(err);
+  		    })
+		  }
+      else{
+
+        //Key de pruebas
+        var key = "APA91bFFa2kqzL9AE8utHBuoE4B-AtnQZKQuRPIdSP50PbeQEbjTsLUC4ZCyLOnKc7A1jYg91TuQ7_29PUqZjh5H9lyqT0-pmcDQE4JTWNLHlEdCMXyV3nPUCLQMdnGs22fEKSTO5ht9I5paXjCabIxT4veR55F9bfx2d4U7GRKaNRn3q212m2Q";
+        pushFactory.register(key).then(success,error);
+      }
 	}
+
+  function success(){
+    pushFactory.enviarMensaje("username:futbolito152@gmail.com", "futbolito152@gmail.com");
+  }
+
+  function error(data){
+    console.log(data);
+  }
 
 	function inicializarTimer(){
 		$timeout(function() {
