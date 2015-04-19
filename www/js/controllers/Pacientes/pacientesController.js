@@ -1,6 +1,6 @@
 angular.module('starter')
-.controller('pacientesController', ['$scope','dataTableStorageFactory', 'users', '$cordovaCamera', 'imagesStorageFactory','$state','varsFactoryService','$ionicLoading','$rootScope',
-	function ($scope, dataTableStorageFactory, users, $cordovaCamera, imagesStorageFactory, $state, varsFactoryService, $ionicLoading, $rootScope) {
+.controller('pacientesController', ['$scope','dataTableStorageFactory', 'users', '$cordovaCamera', 'imagesStorageFactory','$state','varsFactoryService','$ionicLoading','$rootScope', 'emailFactory',
+	function ($scope, dataTableStorageFactory, users, $cordovaCamera, imagesStorageFactory, $state, varsFactoryService, $ionicLoading, $rootScope, emailFactory) {
 	
 	$scope.Paciente = {};
 
@@ -60,6 +60,13 @@ angular.module('starter')
 		$scope.Imagen = item.urlImagen;
 		varsFactoryService.fijarPaciente(item);
 		$state.go("app.editarPacientes");
+
+		//prueba
+		/*
+		var usuario = users.getCurrentUser();
+		var email = "futbolito152@gmail.com, chibchombiano26@gmail.com";
+		emailFactory.enviarEmail(usuario.email, email , "Test", "texto mensaje", "texto html");
+		*/
 	}
 
 	$scope.nuevo = function(){
@@ -67,7 +74,7 @@ angular.module('starter')
 		$scope.Imagen = 'https://hefesoft.blob.core.windows.net/profile/profile.png';
 		$scope.Paciente.urlImagen = $scope.Imagen;
 		varsFactoryService.fijarPaciente({});
-		$state.go("app.editarPacientes");
+		$state.go("app.editarPacientes");		
 	}
 
 	function obtenerPacientes(){
