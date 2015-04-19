@@ -1,6 +1,6 @@
 angular.module('starter')
-.factory('pushFactory', ['$http','urlServicioFactory' , '$q', '$rootScope', 
-  function ($http, urlServicioFactory, $q, $rootScope) {
+.factory('pushFactory', ['$http','urlServicioFactory' , '$q', '$rootScope','$cordovaPush', 
+  function ($http, urlServicioFactory, $q, $rootScope, $cordovaPush) {
 	
 	var urlBase = urlServicioFactory.getUrlBase();
     var dataFactory = {};
@@ -103,7 +103,7 @@ angular.module('starter')
                 console.log(data);               
                 deferred.resolve(data);
                 //Prueba
-                dataFactory.enviarMensaje("futbolito152@gmail.com", "futbolito152@gmail.com");
+                //dataFactory.enviarMensaje("futbolito152@gmail.com", "futbolito152@gmail.com");
             }).error(function(data) { 
                 console.log(data);
                 deferred.reject(data);                 

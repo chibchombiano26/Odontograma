@@ -6,9 +6,9 @@ angular.module('starter')
 	urlFactory.getUrlService = function(){
 
 		//Produccion
-	    //var urlBase = 'https://hefesoftdynamicbackend.azurewebsites.net/api/';
+	    var urlBase = 'https://hefesoftdynamicbackend.azurewebsites.net/api/';
 	    //Pruebas
-	    var urlBase = 'http://localhost:3481/api/'
+	    //var urlBase = 'http://localhost:3481/api/'
 	    return urlBase;
 
 	}
@@ -16,9 +16,9 @@ angular.module('starter')
 	urlFactory.getUrlBase = function(){
 
 		//Produccion
-	    //var urlBase = 'https://hefesoftdynamicbackend.azurewebsites.net/';
+	    var urlBase = 'https://hefesoftdynamicbackend.azurewebsites.net/';
 	    //Pruebas
-	    var urlBase = 'http://localhost:3481/'
+	    //var urlBase = 'http://localhost:3481/'
 	    return urlBase;
 
 	}
