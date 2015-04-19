@@ -117,6 +117,15 @@ angular.module('starter', ['ionic', 'winjs', 'ngjsColorPicker', 'ngCordova'])
             templateUrl: "templates/views/Pacientes/Listado.html",            
         }       
         }
+    })
+
+.state('app.prestador', {
+    url: "/prestador",
+    views: {
+        'menuContent': {
+            templateUrl: "templates/views/Prestador/misDatos.html",            
+        }       
+        }
     });
 
 

@@ -76,6 +76,7 @@ angular.module('starter')
 
 
     dataFactory.saveStorage = function (item){
+        $ionicLoading.show();
         dataFactory.postTable(item)
             .success(function (data) {
                 $ionicLoading.hide();
