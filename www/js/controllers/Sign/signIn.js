@@ -1,6 +1,6 @@
 angular.module('starter')
-.controller('signInController', ['$scope','signFactoryService','$ionicLoading','$state', 'users', 'pushFactory',
-	function ($scope, signFactoryService, $ionicLoading, $state, users, pushFactory) {
+.controller('signInController', ['$scope','signFactoryService','$ionicLoading','$state', 'users', 'pushFactory','signalrService',
+	function ($scope, signFactoryService, $ionicLoading, $state, users, pushFactory, signalrService) {
 	
 	$scope.loginData= {};
 	var usuario = users.getCurrentUser();
@@ -24,7 +24,23 @@ angular.module('starter')
 		console.log(data);
 		$ionicLoading.hide();
 		$state.go("app.pacientes");
+		
+		//Notification Hub
 		pushFactory.registerAndroid();
+
+		//SignalR
+		signalrService.inicializarProxy('chatHub').then(function() {
+		  	signalrService.sendMessage('futbolito152@gmail.com', {mensaje : 'mensaje', to: 'futbolito152@gmail.com'});
+		}, function(reason) {
+		  alert('Failed: ' + reason);
+		}, function(update) {
+		  alert('Got notification: ' + update);
+		});
+
+	}
+
+	function proxyInicializado(){
+		
 	}
 
 	function error(data){
