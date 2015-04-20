@@ -1,6 +1,6 @@
 angular.module('starter')
-.controller('prestadorCtrl', ['$scope', 'users', 'dataTableStorageFactory', '$cordovaCamera', 'imagesStorageFactory','$ionicLoading',
-	function ($scope, users, dataTableStorageFactory, $cordovaCamera, imagesStorageFactory, $ionicLoading) {
+.controller('prestadorCtrl', ['$scope', 'users', 'dataTableStorageFactory', '$cordovaCamera', 'imagesStorageFactory','$ionicLoading', 'pushFactory',
+	function ($scope, users, dataTableStorageFactory, $cordovaCamera, imagesStorageFactory, $ionicLoading, pushFactory) {
 	
   var usuario = users.getCurrentUser();
   $scope.Imagen = 'https://hefesoft.blob.core.windows.net/profile/profile.png';
@@ -16,6 +16,8 @@ angular.module('starter')
 
 
   $scope.salvar = function(){
+      var platformPush = pushFactory.getPlatform();
+      $scope.Datos['platform'] = platformPush;
   		dataTableStorageFactory.saveStorage($scope.Datos);
   }
 
@@ -90,6 +92,5 @@ angular.module('starter')
 
 
   obtenerDatos();
-
 
 }])

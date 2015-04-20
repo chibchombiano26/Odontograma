@@ -119,6 +119,16 @@ angular.module('starter', ['ionic', 'winjs', 'ngjsColorPicker', 'ngCordova'])
         }
     })
 
+.state('app.citas', {
+    url: "/citas",
+    views: {
+        'menuContent': {
+            templateUrl: "templates/views/Citas/Listado.html", 
+            controller: 'citasCtrl'           
+        }       
+        }
+    })
+
 .state('app.prestador', {
     url: "/prestador",
     views: {
