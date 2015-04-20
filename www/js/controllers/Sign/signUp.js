@@ -1,5 +1,6 @@
 angular.module('starter')
-.controller('signUpController', ['$scope', 'signFactoryService','$ionicLoading', function ($scope, signFactoryService, $ionicLoading) {
+.controller('signUpController', ['$scope', 'signFactoryService','$ionicLoading', 
+	function ($scope, signFactoryService, $ionicLoading) {
 	
 	$scope.loginData= {};
 
@@ -10,7 +11,8 @@ angular.module('starter')
 
 	//Apenas se registre se loguea en la app
 	function success(data){
-		signFactoryService.sign(data).then(successLogin, error);
+		signFactoryService.sign(data)
+		.then(successLogin, error);
 	}
 
 	function successLogin(data){

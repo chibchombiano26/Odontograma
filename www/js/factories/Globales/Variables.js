@@ -3,6 +3,7 @@ angular.module('starter')
 	
 	var vars = {};
 	var pacienteSeleccionado;
+	var autologueado = true;
 
 	vars.fijarPaciente = function(paciente){
 		pacienteSeleccionado = paciente;
@@ -12,12 +13,14 @@ angular.module('starter')
 		return pacienteSeleccionado;
 	}
 
-	/*
-	vars.goToSection = function(index){
-		window.hub._scrollToSection(index,true)
+	vars.getAutologueado = function(){
+		return autologueado;
 	}
-	*/
+
+	vars.setAutologueado = function(valor){
+		autologueado = valor;
+	}
 
 	return vars;
-	
+
 }])

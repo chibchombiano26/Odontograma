@@ -34,6 +34,8 @@ app.service('signalrService', ['$rootScope','$q', 'urlServicioFactory', 'tokenSe
 
             var usuario = users.getCurrentUser();
             connection.qs = { bearer_token: token, usuario: usuario.email};               
+
+            //Se hace con longpoling xq websocket en azure (las cuentas gratis solo soportan 5 conexiones simultaneas)
             connection.start({ transport: 'longPolling', jsonp : true}).done(function(){ 
                     console.log("Proxy inicializado");
                     deferred.resolve('Proxy inicializado');     

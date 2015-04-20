@@ -6,6 +6,8 @@ angular.module('starter')
  $scope.mostrarFurca = false;
  var usuario = users.getCurrentUser();
  var pacienteId = $state.params.pacienteId;
+ var cambioDetectado = false; 
+
  $scope.zoom = 0.7;
  
 
@@ -19,22 +21,23 @@ angular.module('starter')
     }
 
     $scope.$on('$ionicView.leave', function(){        
-        
-        $ionicLoading.show({
-            template: "Guardando periodontograma..."
-        })
+        if(cambioDetectado){
+            $ionicLoading.show({
+                template: "Guardando periodontograma..."
+            })
 
-        var usuario = users.getCurrentUser();      
+            var usuario = users.getCurrentUser();      
 
-        //Datos, Nombre tabla, partition key, y campo que servira como row key
-        dataTableStorageFactory.postTableArray($scope.items, 'TmPeriodontograma',  usuario.username+'paciente'+pacienteId, 'numeroPiezaDental').success(
-        function (data) {
-           $ionicLoading.hide();
-        })
-        .error(function (error) {
-            $ionicLoading.hide();
-            console.log(error);                
-        });
+            //Datos, Nombre tabla, partition key, y campo que servira como row key
+            dataTableStorageFactory.postTableArray($scope.items, 'TmPeriodontograma',  usuario.username+'paciente'+pacienteId, 'numeroPiezaDental').success(
+            function (data) {
+               $ionicLoading.hide();
+            })
+            .error(function (error) {
+                $ionicLoading.hide();
+                console.log(error);                
+            });
+        }
     });
 
     function obtenerPeriodontogramaBase(){
@@ -147,6 +150,7 @@ angular.module('starter')
     function clickPiezaDental(item){
         $scope.selecionado = item;
         $scope.mostrarFurca = Boolean(item.mostrarFurca);
+        cambioDetectado = true;
     }
     
     obtenerPeriodontogramaBlob();

@@ -1,14 +1,21 @@
 angular.module('starter')
-.controller('signInController', ['$scope','signFactoryService','$ionicLoading','$state', 'users', 'pushFactory','signalrService',
-	function ($scope, signFactoryService, $ionicLoading, $state, users, pushFactory, signalrService) {
+.controller('signInController', 
+	['$scope','signFactoryService','$ionicLoading','$state', 'users', 'pushFactory','signalrService', 'varsFactoryService',
+	function ($scope, signFactoryService, $ionicLoading, $state, users, pushFactory, signalrService, varsFactoryService) {
 	
 	$scope.loginData= {};
 	var usuario = users.getCurrentUser();
 
-	if(!angular.isUndefined(usuario) && usuario.email.length >0){
-		$scope.loginData.username = usuario.email;
-		$scope.loginData.password = usuario.password;
-		$state.go("app.pacientes");	
+	if(varsFactoryService.getAutologueado()){
+		if(!angular.isUndefined(usuario) && usuario.email.length >0){
+			$scope.loginData.username = usuario.email;
+			$scope.loginData.password = usuario.password;
+			
+			varsFactoryService.setAutologueado(false);
+			//Se busca que en el primer ingreso el usuario no tenga que poner su usuario y contraseña
+			//Pero despues pueda volver a esta pagina sin que lo autologuee
+			$state.go("app.pacientes");	
+		}
 	}
 
 	$scope.registrarse = function(){
@@ -29,18 +36,13 @@ angular.module('starter')
 		pushFactory.registerAndroid();
 
 		//SignalR
-		signalrService.inicializarProxy('chatHub').then(function() {
-		  	signalrService.sendMessage('futbolito152@gmail.com', {mensaje : 'mensaje', to: 'futbolito152@gmail.com'});
-		}, function(reason) {
-		  alert('Failed: ' + reason);
-		}, function(update) {
-		  alert('Got notification: ' + update);
-		});
+		signalrService.inicializarProxy('chatHub')
+		.then(proxyInicializado,error,error);
 
 	}
 
 	function proxyInicializado(){
-		
+		//signalrService.sendMessage('futbolito152@gmail.com', {mensaje : 'mensaje', to: 'futbolito152@gmail.com'});
 	}
 
 	function error(data){
