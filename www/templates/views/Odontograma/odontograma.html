@@ -1,11 +1,12 @@
 <ion-view view-title="Odontograma" ng-controller="odontogramaController as vm">
  <ion-content class="fondo"> 
-    
+   
     <div class="bar bar-header bar-positive" ng-show="seleccionado">
         <div class="button-bar">
           <a class="button" ng-click="adicionarTratamiento()">Adicionar tratamiento</a>
           <a class="button" ng-click="verTratamiento()">Ver tratamientos</a>          
-          <a class="button" ng-click="odontograma()">Odontograma</a>          
+          <a class="button" ng-click="odontograma()">Odontograma</a>
+          <a class="button" ng-click="imprimir()">imprimir</a>          
         </div>
     </div>
 
@@ -29,8 +30,10 @@
 
     <win-hub-section header="'Tratamientos para esta pieza'">
         <ion-scroll direction="y" style="height: 500px">  
-            <tratamientos-por-pieza-dental>
-            </tratamientos-por-pieza-dental>
+            <div id="tratamientosPorPiezaDental">
+                <tratamientos-por-pieza-dental>
+                </tratamientos-por-pieza-dental>
+            </div>
         </ion-scroll>
     </win-hub-section>    
    

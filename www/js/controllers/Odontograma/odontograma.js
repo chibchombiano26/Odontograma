@@ -1,5 +1,5 @@
 angular.module('starter')
-.controller('odontogramaController', [ '$scope', '$rootScope', function($scope, $rootScope){
+.controller('odontogramaController', [ '$scope', '$rootScope', '$state', function($scope, $rootScope, $state){
 	
 	var i = 0;
 	var hubCtrl;
@@ -20,6 +20,10 @@ angular.module('starter')
 	$scope.$on("elemento-dental-seleccionado", function(event, args){			
 		$scope.seleccionado = true;	
 	});
+
+	$scope.imprimir = function(){
+		$state.go('app.odontogramaimprimir');
+	}
 
 	$scope.odontograma = function(){
 		goToSection(0);
