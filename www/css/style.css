@@ -1,3 +1,15 @@
+body {
+  -ms-content-zooming: none;
+}
+
+@font-face {
+  font-family: 'Ionicons';
+  src: url(data:application/x-font-woff;charset=utf-8;base64,***) format('woff'),
+  url(data:application/x-font-ttf;charset=utf-8;base64,***) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 @font-face{ 
 font-family: 'Glyphyx';
 src: url('fonts/Glyphyx/Glyphyx.eot');
@@ -99,11 +111,4 @@ box-align: center;
 
 .contenedor{
   position: relative;  
-}
-
-input[type="range"]::-ms-fill-upper {
-    background-color: green;
-}
-input[type="range"]::-ms-fill-lower {
-        background-color: limegreen;
 }
