@@ -1,11 +1,14 @@
 angular.module('starter')
-.controller('odontogramaController', [ '$scope', '$rootScope', '$state', function($scope, $rootScope, $state){
+.controller('odontogramaController', [ '$scope', '$rootScope', '$state','validarNavegacionService', 
+	function($scope, $rootScope, $state, validarNavegacionService){
 	
 	var i = 0;
 	var hubCtrl;
 	$scope.seleccionado = false;
 	$scope.width = 40;
 	$scope.height = 40;
+
+	validarNavegacionService.validarPacienteSeleccionado();
 
 	function platform(){
 		var deviceInformation = ionic.Platform.device();

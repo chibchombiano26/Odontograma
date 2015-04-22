@@ -94,25 +94,6 @@ angular.module('starter', ['ionic', 'winjs', 'ngjsColorPicker', 'ngCordova'])
         }
     })
 
-.state('app.sigin', {
-    url: "/sigin",
-    views: {
-        'menuContent': {
-            templateUrl: "templates/views/Sign/SignIn.html",
-        }       
-        }
-    })
-
-
-.state('app.signup', {
-    url: "/signup",
-    views: {
-        'menuContent': {
-            templateUrl: "templates/views/Sign/SignUp.html",            
-        }       
-        }
-    })
-
 .state('app.editarPacientes', {
     url: "/editarPacientes",
     views: {
@@ -142,6 +123,17 @@ angular.module('starter', ['ionic', 'winjs', 'ngjsColorPicker', 'ngCordova'])
         }
     })
 
+.state('sigin', {
+  url: '/sigin',
+  templateUrl: 'templates/views/Sign/SignIn.html'  
+})
+
+.state('signup', {
+  url: '/signup',
+  templateUrl: 'templates/views/Sign/SignUp.html'  
+})
+
+
 .state('app.prestador', {
     url: "/prestador",
     views: {
@@ -154,5 +146,5 @@ angular.module('starter', ['ionic', 'winjs', 'ngjsColorPicker', 'ngCordova'])
 
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/sigin');
+  $urlRouterProvider.otherwise('/sigin');
 })
